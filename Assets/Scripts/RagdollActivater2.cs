@@ -14,6 +14,7 @@ public class RagdollActivater2 : MonoBehaviour
     public float timerr = 5f;
     public PunchPush2 p;
     public static bool quase = false;
+    public bool morision = true;
     // Start is called before the first frame update
     void Awake()
     {
@@ -37,6 +38,18 @@ public class RagdollActivater2 : MonoBehaviour
 
     void Update() 
     {
+        if (morision == false)
+        {
+            timerr -= Time.deltaTime;
+            if (timerr <= 0)
+            {
+                Levantarse();
+                reiniciartiempo();
+                //colliderfollow = 1;
+            }
+        }
+
+        Debug.Log(timerr);
         p = FindObjectOfType<PunchPush2>();
         //Debug.Log(PunchPush2.knock2);
          //Debug.Log(p.knock2);
@@ -84,12 +97,32 @@ public class RagdollActivater2 : MonoBehaviour
         
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+
+        if (collision.gameObject.tag == "car")
+        {
+            Debug.Log("Do something");
+            DoRagdoll2(true);
+            Debug.Log(timerr);
+            gameObject.layer = LayerMask.NameToLayer("RAGDOLLOFF");
+            morision = false;
+            
+            
+        }
+
+
+
+
+
+    }
 
     void Levantarse() {
             quase = false;
             p.knock2 = 0;
             DoRagdoll2(true);
             DoRagdoll2(false);
+            morision = true;
             gameObject.layer = LayerMask.NameToLayer("RAGDOLL2");
             //colliderfollow = 0;
         }
