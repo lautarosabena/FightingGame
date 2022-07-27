@@ -107,8 +107,9 @@ public class RagdollActivater2 : MonoBehaviour
             Debug.Log(timerr);
             gameObject.layer = LayerMask.NameToLayer("RAGDOLLOFF");
             morision = false;
-            
-            
+            quase = true;
+
+
         }
 
 
