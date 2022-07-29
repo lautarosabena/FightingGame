@@ -49,7 +49,7 @@ public class RagdollActivater2 : MonoBehaviour
             }
         }
 
-        Debug.Log(timerr);
+        //Debug.Log(timerr);
         p = FindObjectOfType<PunchPush2>();
         //Debug.Log(PunchPush2.knock2);
          //Debug.Log(p.knock2);
@@ -111,6 +111,16 @@ public class RagdollActivater2 : MonoBehaviour
 
 
         }
+
+        if (collision.gameObject.tag == "GAMEOVER")
+        {
+            Debug.Log("sapoooooooooooo");
+           
+            // PUT HERE THE POINT AND CHANGE LEVEL FUNCTIONS
+
+
+        }
+
 
 
 

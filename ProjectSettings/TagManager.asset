@@ -13,6 +13,8 @@ TagManager:
   - ragdoll
   - punio2
   - puniete
+  - car
+  - GAMEOVER
   layers:
   - Default
   - TransparentFX
