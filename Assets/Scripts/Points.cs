@@ -27,10 +27,10 @@ public class Points : MonoBehaviour
         {
             if (PJ1Wins > PJ2Wins)
             {
-                Debug.Log("Ganador P1");
+                //Debug.Log("Ganador P1");
             } else if (PJ2Wins > PJ1Wins)
             {
-                Debug.Log("Ganadpr P2");
+                //Debug.Log("Ganadpr P2");
             }
         }
     }

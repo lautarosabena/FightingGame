@@ -22,6 +22,7 @@ public class RagdollActivater2 : MonoBehaviour
         AllColliders = GetComponentsInChildren<Collider>(true);
         DoRagdoll2(false);
         MainCollider.enabled = true;
+        //AllColliders[2].enabled = true;
     }
 
     // Update is called once per frame
@@ -38,6 +39,7 @@ public class RagdollActivater2 : MonoBehaviour
 
     void Update() 
     {
+        
         if (morision == false)
         {
             timerr -= Time.deltaTime;
