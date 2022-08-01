@@ -18,7 +18,7 @@ public class RagdollActivater2 : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        MainCollider = GetComponent<Collider>();
+        MainCollider = GetComponent<BoxCollider>();
         AllColliders = GetComponentsInChildren<Collider>(true);
         DoRagdoll2(false);
         MainCollider.enabled = true;
@@ -39,7 +39,7 @@ public class RagdollActivater2 : MonoBehaviour
 
     void Update() 
     {
-        
+        MainCollider.enabled = true;
         if (morision == false)
         {
             timerr -= Time.deltaTime;

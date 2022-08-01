@@ -34,11 +34,11 @@ public class Cars : MonoBehaviour
             switch (aut)
             {
                 case 1:
-                    car.transform.position = car.transform.position + Vector3.right * 10f * Time.deltaTime;
+                    car.transform.position = car.transform.position + Vector3.right * 20f * Time.deltaTime;
                     //Debug.Log("asd");
                     break;
                 case 2:
-                    car2.transform.position = car2.transform.position + Vector3.right * 10f * Time.deltaTime;
+                    car2.transform.position = car2.transform.position + Vector3.right * 20f * Time.deltaTime;
                     //Debug.Log("asd");
                     break;
                
@@ -52,11 +52,11 @@ public class Cars : MonoBehaviour
             {
                 
                 case 1:
-                    car3.transform.position = car3.transform.position + Vector3.left * 10f * Time.deltaTime;
+                    car3.transform.position = car3.transform.position + Vector3.left * 20f * Time.deltaTime;
                     //Debug.Log("asd");
                     break;
                 case 2:
-                    car4.transform.position = car4.transform.position + Vector3.left * 10f * Time.deltaTime;
+                    car4.transform.position = car4.transform.position + Vector3.left * 20f * Time.deltaTime;
                     //Debug.Log("asd");
                     break;
 
@@ -64,27 +64,31 @@ public class Cars : MonoBehaviour
         }
 
 
-        if (car.transform.position.x >= 15)
+        if (car.transform.position.x >= 35)
         {
-            car.transform.position = new Vector3(-30, car.transform.position.y, car.transform.position.z);
+            car.transform.position = new Vector3(-60, car.transform.position.y, car.transform.position.z);
+            car.transform.rotation = Quaternion.Euler(0, 90, 0);
             started = false;
         }
 
-        if (car2.transform.position.x >= 15)
+        if (car2.transform.position.x >= 35)
         {
-            car2.transform.position = new Vector3(-30, car2.transform.position.y, car2.transform.position.z);
+            car2.transform.position = new Vector3(-60, car2.transform.position.y, car2.transform.position.z);
+            car2.transform.rotation = Quaternion.Euler(0, 90, 0);
             started = false;
         }
 
-        if (car3.transform.position.x <= -30)
+        if (car3.transform.position.x <= -60)
         {
-            car3.transform.position = new Vector3(3, car3.transform.position.y, car3.transform.position.z);
+            car3.transform.position = new Vector3(35, car3.transform.position.y, car3.transform.position.z);
+            car3.transform.rotation = Quaternion.Euler(0, -90, 0);
             started2 = false;
         }
 
-        if (car4.transform.position.x <= -30)
+        if (car4.transform.position.x <= -60)
         {
-            car4.transform.position = new Vector3(3, car4.transform.position.y, car4.transform.position.z);
+            car4.transform.position = new Vector3(35, car4.transform.position.y, car4.transform.position.z);
+            car4.transform.rotation = Quaternion.Euler(0, -90, 0);
             started2 = false;
         }
 
