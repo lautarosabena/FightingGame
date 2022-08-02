@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 44139
+  controlID: 30762
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 44140
+  controlID: 30763
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -166,7 +166,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 44099
+  controlID: 30735
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -226,7 +226,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: e648feff4067feff5217ffffaa98ffff9aecffffa4efffffa8efffffb2efffffbcefffffc0efffff16f0ffff1af0ffff1ef0ffff88f0ffff08f2ffff30fbffffc8690000
+      m_ExpandedIDs: 72e0feff74e5feff9ceefeff32f5feffb8f9feff3e4effff9c86ffff228bffffd691ffff3c92fffff693ffff2a95ffff4c97ffff52d6ffff2cd8ffff9adcffff38e1ffff94e6ffff8ae9fffff8edffff74f0ffff5af5ffff30fbffff3c720000b48400005e850000b685000058870000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -501,9 +501,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -24.0115, y: 10.873327, z: -21.66856}
+    m_Target: {x: 244.37006, y: 20.952505, z: -289.9908}
     speed: 2
-    m_Value: {x: -24.0115, y: 10.873327, z: -21.66856}
+    m_Value: {x: 244.37006, y: 20.952505, z: -289.9908}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -550,13 +550,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.13189547, y: -0.0008940211, z: 0.000029265597, w: -0.9910213}
+    m_Target: {x: 0.017681308, y: -0.009885649, z: -0.00018341244, w: -0.9995397}
     speed: 2
-    m_Value: {x: -0.1319271, y: -0.00089423556, z: 0.000029272616, w: -0.991259}
+    m_Value: {x: 0.01768582, y: -0.009888171, z: -0.00018345923, w: -0.99979466}
   m_Size:
-    m_Target: 0.3754965
+    m_Target: 12.46182
     speed: 2
-    m_Value: 0.3754965
+    m_Value: 12.46182
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -605,7 +605,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 44141
+  controlID: 30764
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -674,22 +674,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs/Escenario
+    - Assets/Sounds
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs/Escenario
+  - Assets/Sounds
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Lautaro\Documents\GitHub\FightingGame
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 586}
-    m_SelectedIDs: 32a30000
-    m_LastClickedID: 41778
-    m_ExpandedIDs: 00000000ce620000d0620000d2620000d4620000d6620000d8620000da620000dc620000de620000e4620000ec620000f462000022630000e663000000ca9a3b
+    scrollPos: {x: 0, y: 698}
+    m_SelectedIDs: f8640000
+    m_LastClickedID: 25848
+    m_ExpandedIDs: 00000000e2630000e4630000e6630000e8630000ea630000ec630000ee630000f0630000f2630000f4630000f6630000f8630000fa63000096640000d8820000f682000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -717,7 +717,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000ce620000d0620000d2620000d4620000d6620000d8620000da620000dc620000de620000ec620000f462000022630000e663000000ca9a3b
+    m_ExpandedIDs: 00000000e2630000e4630000e6630000e8630000ea630000ec630000ee630000f0630000f2630000f4630000f6630000f8630000fa630000d8820000f682000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -742,9 +742,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 88f0ffff
-    m_LastClickedInstanceID: -3960
-    m_HadKeyboardFocusLastEvent: 0
+    m_SelectedInstanceIDs: a6a70000
+    m_LastClickedInstanceID: 42918
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000ec600000be77000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -887,7 +887,7 @@ MonoBehaviour:
     m_CachedPref: 160
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
-  m_LastInspectedObjectInstanceID: -3960
+  m_LastInspectedObjectInstanceID: 42918
   m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_InspectorMode: 0

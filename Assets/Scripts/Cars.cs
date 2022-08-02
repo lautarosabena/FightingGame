@@ -14,11 +14,14 @@ public class Cars : MonoBehaviour
     private int aut2 = 0;
     private float cont = 5;
     [SerializeField] private GameObject[] cars;
+    public AudioSource MusicLvl2;
 
     
     void Start()
     {
         //carSpawn();
+        MusicLvl2.Play();
+        
     }
 
     

@@ -16,6 +16,8 @@ public class RagdollActivater2 : MonoBehaviour
     public static bool quase = false;
     public bool morision = true;
     // Start is called before the first frame update
+    public AudioSource SonidoChoque;
+    public AudioSource SonidoChoque2;
     void Awake()
     {
         MainCollider = GetComponent<BoxCollider>();
@@ -23,6 +25,7 @@ public class RagdollActivater2 : MonoBehaviour
         DoRagdoll2(false);
         MainCollider.enabled = true;
         //AllColliders[2].enabled = true;
+        //SonidoChoque = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -110,6 +113,8 @@ public class RagdollActivater2 : MonoBehaviour
             gameObject.layer = LayerMask.NameToLayer("RAGDOLLOFF");
             morision = false;
             quase = true;
+            SonidoChoque.Play();
+            SonidoChoque2.Play();
 
 
         }
