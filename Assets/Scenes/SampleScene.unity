@@ -1345,6 +1345,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PjNegro
       objectReference: {fileID: 0}
+    - target: {fileID: 2953233691270142438, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 3272688303711218408, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
       propertyPath: respawn
       value: 
@@ -1369,6 +1373,10 @@ PrefabInstance:
     - target: {fileID: 8330474876169463208, guid: 5672996eb87a0b94bae19a9931b3f363, type: 3}
       propertyPath: m_Name
       value: PjRojo
+      objectReference: {fileID: 0}
+    - target: {fileID: 8330474876169463208, guid: 5672996eb87a0b94bae19a9931b3f363, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 8687787800378350940, guid: 5672996eb87a0b94bae19a9931b3f363, type: 3}
       propertyPath: respawn

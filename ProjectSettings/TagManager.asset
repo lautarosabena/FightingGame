@@ -15,6 +15,7 @@ TagManager:
   - puniete
   - car
   - GAMEOVER
+  - reset
   layers:
   - Default
   - TransparentFX

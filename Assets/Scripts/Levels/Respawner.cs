@@ -19,17 +19,22 @@ public class Respawner : MonoBehaviour
     {
         Scene currentScene = SceneManager.GetActiveScene();
         string sceneName = currentScene.name;
-        Debug.Log(sceneName);
+        //Debug.Log(sceneName);
         if (body.position.y <= 0) {
            pj.position = respawn.position;
            Debug.Log(pj); 
         }
 
-        if (body.position.z >= 14 || body.position.z <= -18 || body.position.x <= -40 || body.position.x >= -4)
+        if (sceneName == "CalleLevel")
         {
-            pj.position = respawn.position;
-            Debug.Log(pj);
+            if (body.position.z >= 14 || body.position.z <= -18 || body.position.x <= -40 || body.position.x >= -4)
+                    {
+                        pj.position = respawn.position;
+                        Debug.Log(pj);
+                    }
         }
+
+        
 
     }
 }
