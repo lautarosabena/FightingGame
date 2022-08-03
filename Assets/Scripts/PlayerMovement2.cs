@@ -64,6 +64,8 @@ public class PlayerMovement2 : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        transform.position += Vector3.up;
+        transform.position -= Vector3.up;
         //Debug.Log(RagdollActivater.sabanamogolico);
         //condition3 = PunchPush.knock;
         //transform.position = transform.position + new Vector3(0, -10, 0) * Time.deltaTime;

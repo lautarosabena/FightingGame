@@ -21,7 +21,8 @@ public class soporte1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        sabanatiragoma.transform.Rotate(Vector3.up.normalized * 35f * Time.deltaTime);
+        transform.position += Vector3.zero;
+        sabanatiragoma.transform.Rotate(Vector3.back * 35f * Time.deltaTime);
         timer -= Time.deltaTime;
         if (timer <= 0)
         {
@@ -45,5 +46,18 @@ public class soporte1 : MonoBehaviour
         }
     }
 
-   
+    private void OnCollisionEnter(Collision collision)
+    {
+
+        if (collision.gameObject.tag == "car")
+        {
+            Debug.Log("Do something");
+        }
+
+
+
+
+
+    }
+
 }
