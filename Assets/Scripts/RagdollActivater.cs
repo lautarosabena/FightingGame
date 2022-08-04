@@ -8,10 +8,14 @@ public class RagdollActivater : MonoBehaviour
     public Collider[] AllColliders;
     public Transform player;
     public bool isRagdoll;
+    public AudioSource SonidoChoque;
+    public AudioSource SonidoChoque2;
     public int condition = 0;
     public float timerr = 5f;
     public PunchPush a;
+    public static bool quase = false;
     public static bool sabanamogolico2 = false;
+    public bool morision = true;
     //Rigidbody rigidbodii;
     // Start is called before the first frame update
     void Awake()
@@ -35,6 +39,18 @@ public class RagdollActivater : MonoBehaviour
 
     void Update() 
     {
+        Debug.Log(timerr);
+
+        if (morision == false)
+        {
+            timerr -= Time.deltaTime;
+            if (timerr <= 0)
+            {
+                Levantarse();
+                reiniciartiempo();
+                //colliderfollow = 1;
+            }
+        }
         a = FindObjectOfType<PunchPush>();
 
         if (a.knock >= 15) 
@@ -78,20 +94,46 @@ public class RagdollActivater : MonoBehaviour
             //GameObject.FindGameObjectWithTag("Player").GetComponent<BoxCollider>().enabled = true;
         } */
 
+     
+
+
+
+
         
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+
+        if (collision.gameObject.tag == "car")
+        {
+            Debug.Log("Do something");
+            DoRagdoll(true);
+            Debug.Log(timerr);
+            gameObject.layer = LayerMask.NameToLayer("RAGDOLLOFF");
+            morision = false;
+            sabanamogolico2 = true;
+            SonidoChoque.Play();
+            SonidoChoque2.Play();
+
+
+        }
+    }
+
     void Levantarse() {
+            quase = false;
             a.knock = 0;
             DoRagdoll(true);
             DoRagdoll(false);
             sabanamogolico2 = false;
+            morision = true;
             gameObject.layer = LayerMask.NameToLayer("RAGDOLL");
             //colliderfollow = 0;
         }
 
 
-    void reiniciartiempo() {
+    void reiniciartiempo() 
+        {
             timerr = 5f;
         }
 }

@@ -10,40 +10,44 @@ public class soporte1 : MonoBehaviour
     public GameObject sabanatiragoma;
     public bool sabanamogolico = false;
     public float timer;
+    public float asd3 = 6;
+    public float maxdist;
+
     // Start is called before the first frame update
     void Start()
     {
         timer = 3;
-        asd = new Vector3(0, 1, 0);
-        asd2 = new Vector3(0, -5, 0);
+        asd = new Vector3(1, 8, -7);
+        asd2 = new Vector3(1, 1, -7);
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position += Vector3.zero;
-        sabanatiragoma.transform.Rotate(Vector3.back * 35f * Time.deltaTime);
-        timer -= Time.deltaTime;
-        if (timer <= 0)
-        {
-            sabanamogolico = false;
+        
+        sabanatiragoma.transform.Rotate(Vector3.back * 60f * Time.deltaTime);
 
-        }
+        
+    }
 
-        if (timer <= -3)
-        {
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawRay(transform.position, Vector3.down * maxdist);
+    }
+    private void sabanamogolicoenfermito()
+    {
+        
             sabanamogolico = true;
-            timer = 3;
+       
+    }
 
-        }
-        if (sabanamogolico == true)
-        {
-            sabanatiragoma.transform.position = sabanatiragoma.transform.position + (Vector3.up.normalized * speed * Time.deltaTime);
-        }
-        else
-        {
-            sabanatiragoma.transform.position = sabanatiragoma.transform.position + (-Vector3.up.normalized * speed * Time.deltaTime);
-        }
+    private void facuamigazofacheraso()
+    {
+        
+           
+            sabanamogolico = false;
+       
     }
 
     private void OnCollisionEnter(Collision collision)

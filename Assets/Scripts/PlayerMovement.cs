@@ -62,6 +62,9 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+
+        transform.position += Vector3.up;
+        transform.position -= Vector3.up;
         //condition4 = PunchPush2.knock2;
         //transform.position = transform.position + new Vector3(0, -10, 0) * Time.deltaTime;
         timer -= Time.deltaTime;

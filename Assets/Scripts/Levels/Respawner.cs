@@ -20,10 +20,7 @@ public class Respawner : MonoBehaviour
         Scene currentScene = SceneManager.GetActiveScene();
         string sceneName = currentScene.name;
         //Debug.Log(sceneName);
-        if (body.position.y <= 0) {
-           pj.position = respawn.position;
-           Debug.Log(pj); 
-        }
+        
 
         if (sceneName == "CalleLevel")
         {
@@ -34,7 +31,25 @@ public class Respawner : MonoBehaviour
                     }
         }
 
-        
+        if (sceneName == "PilarGiratorio")
+        {
+            if (body.position.y <= -10)
+            {
+                pj.position = respawn.position;
+                Debug.Log(pj);
+            }
+        }
+
+        if (sceneName == "SampleScene")
+        {
+            if (body.position.x <= -0)
+            {
+                pj.position = respawn.position;
+                Debug.Log(pj);
+            }
+        }
+
+
 
     }
 }
