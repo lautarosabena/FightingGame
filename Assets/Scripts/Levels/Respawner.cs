@@ -4,49 +4,111 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class Respawner : MonoBehaviour
 {
-    public Transform body;
-    public Transform pj;
+    public Transform PJNEGRO;
+    public Transform PJROJO;
     public Transform respawn;
+
+    public float timerr = 10;
+    public int escena;
+    public bool one;
+    public bool two;
+    public bool three;
+    public int niveles = 0;
+    
+
+
     public 
     // Start is called before the first frame update
     void Start()
     {
-       
+        
+        one = true;
+        two = true;
+        three = true;
     }
 
     // Update is called once per frame
     void Update()
     {
+        
+        timerr -= Time.deltaTime;
+        Debug.Log(niveles);
         Scene currentScene = SceneManager.GetActiveScene();
         string sceneName = currentScene.name;
-        //Debug.Log(sceneName);
-        
+        Debug.Log(sceneName);
+        //PJNEGRO = GameObject.FindGameObjectWithTag("PJNEGRO").transform;
+
+        if (sceneName == "CalleLevel" && timerr <= 0 && one == true)
+        {
+            SceneManager.LoadScene("PilarGiratorio");
+            timerr = 10;
+            Debug.Log("cambianod nivel pilar");
+            niveles = niveles +1;
+        }
+
+        if (sceneName == "PilarGiratorio" && timerr <= 0 && two == true)
+        {
+            
+            SceneManager.LoadScene("SampleScene");
+            timerr = 10;
+            Debug.Log("cambianod nivel uno");
+            niveles = niveles + 1;
+        }
+
+        if (sceneName == "SampleScene" && timerr <= 0 && three == true)
+        {
+            
+            SceneManager.LoadScene("CalleLevel");
+            timerr = 10;
+            Debug.Log("cambianod nivel calle");
+            niveles = niveles + 1;
+
+        }
+
+        if (niveles == 3)
+        {
+            niveles = 4;
+            SceneManager.LoadScene("MainMenu");
+        }
 
         if (sceneName == "CalleLevel")
         {
-            if (body.position.z >= 14 || body.position.z <= -18 || body.position.x <= -40 || body.position.x >= -4)
+            one = true;
+            if (PJNEGRO.position.z >= 14 || PJNEGRO.position.z <= -18 || PJNEGRO.position.x <= -40 || PJNEGRO.position.x >= -4)
                     {
-                        pj.position = respawn.position;
-                        Debug.Log(pj);
+                        PJNEGRO.position = respawn.position;
+                        
                     }
+        } else
+        {
+            one = false;
         }
 
         if (sceneName == "PilarGiratorio")
         {
-            if (body.position.y <= -10)
+            two = true;
+            if (PJNEGRO.position.y <= -10)
             {
-                pj.position = respawn.position;
-                Debug.Log(pj);
+                PJNEGRO.position = respawn.position;
+                
             }
+        } else
+        {
+            two = false;
         }
 
         if (sceneName == "SampleScene")
         {
-            if (body.position.x <= -0)
+            three = true;
+            if (PJNEGRO.position.y <= -0)
             {
-                pj.position = respawn.position;
-                Debug.Log(pj);
+                PJNEGRO.position = respawn.position;
+                
             }
+        }
+        else
+        {
+            three = false;
         }
 
 

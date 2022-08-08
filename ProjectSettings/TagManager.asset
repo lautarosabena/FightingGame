@@ -16,6 +16,8 @@ TagManager:
   - car
   - GAMEOVER
   - reset
+  - spawner
+  - PJNEGRO
   layers:
   - Default
   - TransparentFX

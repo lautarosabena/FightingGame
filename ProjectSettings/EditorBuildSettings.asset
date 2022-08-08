@@ -23,5 +23,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Options.unity
     guid: 381125410de499b408d52ff533f269e9
+  - enabled: 1
+    path: Assets/Scenes/PilarGiratorio.unity
+    guid: 9f0e75c0bd8c5d442ac192912c6d8102
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: bfee2f0d838b0cb438865bffbcb83fc6, type: 2}

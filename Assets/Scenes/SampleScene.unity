@@ -230,6 +230,7 @@ GameObject:
   m_Component:
   - component: {fileID: 88419150}
   - component: {fileID: 88419151}
+  - component: {fileID: 88419152}
   m_Layer: 0
   m_Name: respawn
   m_TagString: Untagged
@@ -348,6 +349,27 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &88419152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 88419149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be26ce63512acdf48b87089aa96825ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PJNEGRO: {fileID: 946356095}
+  PJROJO: {fileID: 0}
+  respawn: {fileID: 88419150}
+  timerr: 10
+  escena: 0
+  one: 0
+  two: 0
+  three: 0
+  niveles: 0
 --- !u!1 &139621494
 GameObject:
   m_ObjectHideFlags: 0
@@ -681,6 +703,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &946356095 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2571606830877705052, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
+  m_PrefabInstance: {fileID: 3272688304532308308}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1350,6 +1377,10 @@ PrefabInstance:
       value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 3272688303711218408, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
+      propertyPath: timerr
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3272688303711218408, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
       propertyPath: respawn
       value: 
       objectReference: {fileID: 88419150}
@@ -1357,7 +1388,8 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3272688303711218408, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
 --- !u!1001 &8687787799862125632
 PrefabInstance:
@@ -1426,5 +1458,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8687787800378350940, guid: 5672996eb87a0b94bae19a9931b3f363, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5672996eb87a0b94bae19a9931b3f363, type: 3}

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.11261173, g: 0.281462, b: 0.70873743, a: 1}
+  m_IndirectSpecularColor: {r: 0.11273542, g: 0.28156483, b: 0.70871764, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -290,9 +290,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be26ce63512acdf48b87089aa96825ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  body: {fileID: 1979124451}
-  pj: {fileID: 1979124451}
+  PJNEGRO: {fileID: 1979124438}
+  PJROJO: {fileID: 0}
   respawn: {fileID: 73553572}
+  timerr: 10
+  escena: 0
+  one: 0
+  two: 0
+  three: 0
+  niveles: 0
 --- !u!1001 &102190824
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3717,7 +3723,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2571606830877705052, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -23.13
+      value: -13.73
       objectReference: {fileID: 0}
     - target: {fileID: 2571606830877705052, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3725,7 +3731,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2571606830877705052, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -9.32
+      value: 22.1
       objectReference: {fileID: 0}
     - target: {fileID: 2571606830877705052, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3813,13 +3819,14 @@ PrefabInstance:
       objectReference: {fileID: 1979124437}
     m_RemovedComponents:
     - {fileID: 3272688303711218410, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
+    - {fileID: 3272688303711218408, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
 --- !u!65 &1979124437 stripped
 BoxCollider:
   m_CorrespondingSourceObject: {fileID: 2610565736356193159, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
   m_PrefabInstance: {fileID: 1948092569}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1979124451 stripped
+--- !u!4 &1979124438 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2571606830877705052, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
   m_PrefabInstance: {fileID: 1948092569}

@@ -39,7 +39,7 @@ public class RagdollActivater : MonoBehaviour
 
     void Update() 
     {
-        Debug.Log(timerr);
+        //Debug.Log(timerr);
 
         if (morision == false)
         {
