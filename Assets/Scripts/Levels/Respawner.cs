@@ -7,13 +7,14 @@ public class Respawner : MonoBehaviour
     public Transform PJNEGRO;
     public Transform PJROJO;
     public Transform respawn;
-
+    public bool isRagdoll;
     public float timerr = 10;
     public int escena;
     public bool one;
     public bool two;
     public bool three;
     public int niveles = 0;
+    
     
 
 
@@ -44,6 +45,7 @@ public class Respawner : MonoBehaviour
             timerr = 10;
             Debug.Log("cambianod nivel pilar");
             niveles = niveles +1;
+            
         }
 
         if (sceneName == "PilarGiratorio" && timerr <= 0 && two == true)
@@ -53,6 +55,7 @@ public class Respawner : MonoBehaviour
             timerr = 10;
             Debug.Log("cambianod nivel uno");
             niveles = niveles + 1;
+            
         }
 
         if (sceneName == "SampleScene" && timerr <= 0 && three == true)
@@ -62,6 +65,7 @@ public class Respawner : MonoBehaviour
             timerr = 10;
             Debug.Log("cambianod nivel calle");
             niveles = niveles + 1;
+            
 
         }
 
@@ -79,6 +83,11 @@ public class Respawner : MonoBehaviour
                         PJNEGRO.position = respawn.position;
                         
                     }
+            if (PJROJO.position.z >= 14 || PJROJO.position.z <= -18 || PJROJO.position.x <= -40 || PJROJO.position.x >= -4)
+                    {
+                        PJROJO.position = respawn.position;
+                        
+                    }
         } else
         {
             one = false;
@@ -92,6 +101,11 @@ public class Respawner : MonoBehaviour
                 PJNEGRO.position = respawn.position;
                 
             }
+            if (PJROJO.position.y <= -10)
+            {
+                PJROJO.position = respawn.position;
+                
+            }
         } else
         {
             two = false;
@@ -103,6 +117,11 @@ public class Respawner : MonoBehaviour
             if (PJNEGRO.position.y <= -0)
             {
                 PJNEGRO.position = respawn.position;
+                
+            }
+            if (PJROJO.position.y <= -0)
+            {
+                PJROJO.position = respawn.position;
                 
             }
         }

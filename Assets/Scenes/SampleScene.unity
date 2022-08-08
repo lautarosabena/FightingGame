@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.08046441, g: 0.099839285, b: 0.3010608, a: 1}
+  m_IndirectSpecularColor: {r: 0.08040362, g: 0.099779695, b: 0.30100197, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -362,7 +362,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PJNEGRO: {fileID: 946356095}
-  PJROJO: {fileID: 0}
+  PJROJO: {fileID: 1942292167}
   respawn: {fileID: 88419150}
   timerr: 10
   escena: 0
@@ -1220,6 +1220,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1942292167 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8705487147086774034, guid: 5672996eb87a0b94bae19a9931b3f363, type: 3}
+  m_PrefabInstance: {fileID: 8687787799862125632}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1956906224
 GameObject:
   m_ObjectHideFlags: 0
