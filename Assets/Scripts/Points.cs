@@ -19,6 +19,7 @@ public class Points : MonoBehaviour
     {
         LevelFinished();
         timer -= Time.deltaTime;
+        LoadData();
     }
 
     public void LevelFinished()
@@ -35,5 +36,14 @@ public class Points : MonoBehaviour
         }
     }
 
-    
+    private void LoadData()
+    {
+        PJ1Wins = Respawner.points;
+        
+        int points = PlayerPrefs.GetInt("Puntos");
+        Debug.Log(PJ1Wins);
+        
+    }
+
+
 }

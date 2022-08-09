@@ -28,6 +28,11 @@ public class RagdollActivater2 : MonoBehaviour
         //SonidoChoque = GetComponent<AudioSource>();
     }
 
+    private void Start()
+    {
+        quase = false;
+    }
+
     // Update is called once per frame
     public void DoRagdoll2(bool isRagdoll)
     {
