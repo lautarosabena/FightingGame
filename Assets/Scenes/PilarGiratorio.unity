@@ -285,7 +285,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PJNEGRO: {fileID: 0}
+  PJNEGROBody: {fileID: 0}
   PJROJO: {fileID: 0}
+  PJROJOBody: {fileID: 0}
   respawn: {fileID: 0}
   isRagdoll: 0
   timerr: 10
@@ -298,6 +300,8 @@ MonoBehaviour:
   PuntosNegroText: {fileID: 0}
   scene: {fileID: 0}
   TimerText: {fileID: 0}
+  PjNegroTimer: 0
+  PjRojoTimer: 0
 --- !u!1 &182188997
 GameObject:
   m_ObjectHideFlags: 0
@@ -1246,7 +1250,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 18333905351286916, guid: ffd4c1d0e6b280a42a7254eb1a2b49f4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.3500001
+      value: 12.47
       objectReference: {fileID: 0}
     - target: {fileID: 18333905351286916, guid: ffd4c1d0e6b280a42a7254eb1a2b49f4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1254,23 +1258,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 18333905351286916, guid: ffd4c1d0e6b280a42a7254eb1a2b49f4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.5800002
+      value: -3.47
       objectReference: {fileID: 0}
     - target: {fileID: 18333905351286916, guid: ffd4c1d0e6b280a42a7254eb1a2b49f4, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7535999
       objectReference: {fileID: 0}
     - target: {fileID: 18333905351286916, guid: ffd4c1d0e6b280a42a7254eb1a2b49f4, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 18333905351286916, guid: ffd4c1d0e6b280a42a7254eb1a2b49f4, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.65733343
       objectReference: {fileID: 0}
     - target: {fileID: 18333905351286916, guid: ffd4c1d0e6b280a42a7254eb1a2b49f4, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 18333905351286916, guid: ffd4c1d0e6b280a42a7254eb1a2b49f4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1278,7 +1282,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 18333905351286916, guid: ffd4c1d0e6b280a42a7254eb1a2b49f4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -82.194
       objectReference: {fileID: 0}
     - target: {fileID: 18333905351286916, guid: ffd4c1d0e6b280a42a7254eb1a2b49f4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -1722,7 +1726,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2571606830877705052, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.750001
+      value: -8.27
       objectReference: {fileID: 0}
     - target: {fileID: 2571606830877705052, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1730,7 +1734,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2571606830877705052, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.01
+      value: -1.21
       objectReference: {fileID: 0}
     - target: {fileID: 2571606830877705052, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1792,6 +1796,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2571606830877705052, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
   m_PrefabInstance: {fileID: 1045325837}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1107990356 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5481285754409795600, guid: ffd4c1d0e6b280a42a7254eb1a2b49f4, type: 3}
+  m_PrefabInstance: {fileID: 694515889}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1114154553
 GameObject:
   m_ObjectHideFlags: 0
@@ -1837,7 +1846,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PJNEGRO: {fileID: 1045325838}
+  PJNEGROBody: {fileID: 1686955307}
   PJROJO: {fileID: 694515890}
+  PJROJOBody: {fileID: 1107990356}
   respawn: {fileID: 1114154554}
   isRagdoll: 0
   timerr: 90
@@ -1850,6 +1861,8 @@ MonoBehaviour:
   PuntosNegroText: {fileID: 66604585}
   scene: {fileID: 718043717}
   TimerText: {fileID: 182188999}
+  PjNegroTimer: 0
+  PjRojoTimer: 0
 --- !u!1 &1154175988
 GameObject:
   m_ObjectHideFlags: 0
@@ -2797,6 +2810,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!4 &1686955307 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8061579694239212488, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
+  m_PrefabInstance: {fileID: 1045325837}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1837308567
 PrefabInstance:
   m_ObjectHideFlags: 0

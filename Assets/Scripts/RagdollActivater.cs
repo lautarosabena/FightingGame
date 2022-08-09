@@ -107,9 +107,9 @@ public class RagdollActivater : MonoBehaviour
 
         if (collision.gameObject.tag == "car")
         {
-            Debug.Log("Do something");
+            //Debug.Log("Do something");
             DoRagdoll(true);
-            Debug.Log(timerr);
+            //Debug.Log(timerr);
             gameObject.layer = LayerMask.NameToLayer("RAGDOLLOFF");
             morision = false;
             sabanamogolico2 = true;

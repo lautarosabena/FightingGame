@@ -291,7 +291,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PJNEGRO: {fileID: 1979124438}
+  PJNEGROBody: {fileID: 1628571007}
   PJROJO: {fileID: 638949944}
+  PJROJOBody: {fileID: 654953377}
   respawn: {fileID: 73553572}
   isRagdoll: 0
   timerr: 90
@@ -304,6 +306,8 @@ MonoBehaviour:
   PuntosNegroText: {fileID: 1127777480}
   scene: {fileID: 1137457250}
   TimerText: {fileID: 78153219}
+  PjNegroTimer: 0
+  PjRojoTimer: 0
 --- !u!1 &78153217
 GameObject:
   m_ObjectHideFlags: 0
@@ -1538,6 +1542,11 @@ PrefabInstance:
 --- !u!4 &638949944 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8705487147086774034, guid: 5672996eb87a0b94bae19a9931b3f363, type: 3}
+  m_PrefabInstance: {fileID: 1582710550}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &654953377 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3783103554007048070, guid: 5672996eb87a0b94bae19a9931b3f363, type: 3}
   m_PrefabInstance: {fileID: 1582710550}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &656955753
@@ -4067,6 +4076,11 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 8687787800378350940, guid: 5672996eb87a0b94bae19a9931b3f363, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5672996eb87a0b94bae19a9931b3f363, type: 3}
+--- !u!4 &1628571007 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8061579694239212488, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
+  m_PrefabInstance: {fileID: 1948092569}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1642282719 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8805357877899257467, guid: 13e1c01a695289c4eb7cb54900de6b1c, type: 3}

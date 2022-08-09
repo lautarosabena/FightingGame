@@ -69,7 +69,7 @@ public class RagdollActivater2 : MonoBehaviour
         {
             quase = true;
             DoRagdoll2(true);
-            Debug.Log(timerr);
+            //Debug.Log(timerr);
             gameObject.layer = LayerMask.NameToLayer("RAGDOLLOFF");
             timerr -= Time.deltaTime;
             if (timerr <= 0) 
@@ -112,9 +112,9 @@ public class RagdollActivater2 : MonoBehaviour
 
         if (collision.gameObject.tag == "car")
         {
-            Debug.Log("Do something");
+            //Debug.Log("Do something");
             DoRagdoll2(true);
-            Debug.Log(timerr);
+            //Debug.Log(timerr);
             gameObject.layer = LayerMask.NameToLayer("RAGDOLLOFF");
             morision = false;
             quase = true;
@@ -126,7 +126,7 @@ public class RagdollActivater2 : MonoBehaviour
 
         if (collision.gameObject.tag == "GAMEOVER")
         {
-            Debug.Log("sapoooooooooooo");
+            //Debug.Log("sapoooooooooooo");
            
             // PUT HERE THE POINT AND CHANGE LEVEL FUNCTIONS
 

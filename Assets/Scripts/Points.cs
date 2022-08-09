@@ -41,7 +41,7 @@ public class Points : MonoBehaviour
         PJ1Wins = Respawner.pointsRojo;
         
         int pointsRojo = PlayerPrefs.GetInt("Puntos");
-        Debug.Log(PJ1Wins);
+        
         
     }
 

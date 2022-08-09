@@ -6,7 +6,9 @@ using UnityEngine.UI;
 public class Respawner : MonoBehaviour
 {
     public Transform PJNEGRO;
+    public Transform PJNEGROBody;
     public Transform PJROJO;
+    public Transform PJROJOBody;
     public Transform respawn;
     public bool isRagdoll;
     public float timerr = 10;
@@ -19,6 +21,8 @@ public class Respawner : MonoBehaviour
     public Text PuntosNegroText;
     public Text scene;
     public Text TimerText;
+    public float PjNegroTimer;
+    public float PjRojoTimer;
 
     public static int pointsRojo;
     public static int pointsNegro;
@@ -78,6 +82,7 @@ public class Respawner : MonoBehaviour
             timerr = 10;
             Debug.Log("cambianod nivel uno");
             niveles = niveles + 1;
+        
             
         }
 
@@ -104,14 +109,38 @@ public class Respawner : MonoBehaviour
             if (PJNEGRO.position.z >= 14 || PJNEGRO.position.z <= -18 || PJNEGRO.position.x <= -40 || PJNEGRO.position.x >= -4)
                     {
                         PJNEGRO.position = respawn.position;
-                pointsRojo = pointsRojo + 1;
-                        
+                        pointsRojo = pointsRojo + 1;             
                     }
+            
+            /*if (PJNEGROBody.position.z >= 14 || PJNEGROBody.position.z <= -18 || PJNEGROBody.position.x <= -40 || PJNEGROBody.position.x >= -4)
+                    {
+                        PJNEGROBody.position = respawn.position;
+                        pointsRojo = pointsRojo + 1;
+                        
+                                                                                          
+                    }      
+            */
+            if(RagdollActivater2.quase == true && PJNEGROBody.position.z >= 14 || PJNEGROBody.position.z <= -18 || PJNEGROBody.position.x <= -40 || PJNEGROBody.position.x >= -4)
+            {
+                PJNEGROBody.position = respawn.position;
+                pointsRojo = pointsRojo + 1;
+                                
+            }      
+
             if (PJROJO.position.z >= 14 || PJROJO.position.z <= -18 || PJROJO.position.x <= -40 || PJROJO.position.x >= -4)
                     {
                         PJROJO.position = respawn.position;
                         pointsNegro = pointsNegro + 1;
                     }
+            
+            if(RagdollActivater.sabanamogolico2 == true && PJROJOBody.position.z >= 14 || PJROJOBody.position.z <= -18 || PJROJOBody.position.x <= -40 || PJROJOBody.position.x >= -4)
+            {
+                PJROJOBody.position = respawn.position;
+                pointsNegro = pointsNegro + 1;
+                                
+            }    
+             
+
         } else
         {
             one = false;
@@ -126,11 +155,28 @@ public class Respawner : MonoBehaviour
                 pointsRojo = pointsRojo + 1;
 
             }
+
+            if(RagdollActivater2.quase == true && PJNEGROBody.position.y <= -10)
+            {
+                PJNEGROBody.position = respawn.position;
+                pointsRojo = pointsRojo + 1;
+                                
+            }
+               
+        
             if (PJROJO.position.y <= -10)
             {
                 PJROJO.position = respawn.position;
                 pointsNegro = pointsNegro + 1;
             }
+
+            if(RagdollActivater.sabanamogolico2 == true && PJROJOBody.position.y <= -10)
+            {
+                PJROJOBody.position = respawn.position;
+                pointsNegro = pointsNegro + 1;
+                                
+            }
+
         } else
         {
             two = false;
@@ -145,11 +191,23 @@ public class Respawner : MonoBehaviour
                 pointsRojo = pointsRojo + 1;
 
             }
+            if(RagdollActivater2.quase == true && PJNEGROBody.position.y <= -0)
+            {
+                PJNEGROBody.position = respawn.position;
+                pointsRojo = pointsRojo + 1;
+                                
+            }
             if (PJROJO.position.y <= -0)
             {
                 PJROJO.position = respawn.position;
                 pointsNegro = pointsNegro + 1;
                 
+            }
+            if(RagdollActivater.sabanamogolico2 == true && PJROJOBody.position.y <= -0)
+            {
+                PJROJOBody.position = respawn.position;
+                pointsNegro = pointsNegro + 1;
+                                
             }
         }
         else
