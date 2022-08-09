@@ -15,12 +15,16 @@ public class Respawner : MonoBehaviour
     public bool two;
     public bool three;
     public int niveles = 0;
-    public Text text;
+    public Text PuntosRojoText;
+    public Text PuntosNegroText;
     public Text scene;
+    public Text TimerText;
 
-    public static int points;
+    public static int pointsRojo;
+    public static int pointsNegro;
     private string level;
-    private string pointsPrefsName = "points";
+    private string pointsRojoPrefsName = "pointsRojo";
+    private string pointsNegroPrefsName = "pointsNegro";
     private string levelsPrefsName = "levels";
     public static Scene currentScene;
 
@@ -46,9 +50,12 @@ public class Respawner : MonoBehaviour
     {
         currentScene = SceneManager.GetActiveScene();
         scene.text = currentScene.name.ToString();
-        text.text = points.ToString();
-        //Debug.Log(points);
+        PuntosRojoText.text = pointsRojo.ToString();
+        //Debug.Log(pointsRojo);
+        PuntosNegroText.text = pointsNegro.ToString();
+        //Debug.Log(pointsNegro);
         timerr -= Time.deltaTime;
+        TimerText.text = timerr.ToString("00");
         //Debug.Log(niveles);
         
         string sceneName = currentScene.name;
@@ -97,13 +104,13 @@ public class Respawner : MonoBehaviour
             if (PJNEGRO.position.z >= 14 || PJNEGRO.position.z <= -18 || PJNEGRO.position.x <= -40 || PJNEGRO.position.x >= -4)
                     {
                         PJNEGRO.position = respawn.position;
-                points = points + 1;
+                pointsRojo = pointsRojo + 1;
                         
                     }
             if (PJROJO.position.z >= 14 || PJROJO.position.z <= -18 || PJROJO.position.x <= -40 || PJROJO.position.x >= -4)
                     {
                         PJROJO.position = respawn.position;
-                        
+                        pointsNegro = pointsNegro + 1;
                     }
         } else
         {
@@ -116,13 +123,13 @@ public class Respawner : MonoBehaviour
             if (PJNEGRO.position.y <= -10)
             {
                 PJNEGRO.position = respawn.position;
-                points = points + 1;
+                pointsRojo = pointsRojo + 1;
 
             }
             if (PJROJO.position.y <= -10)
             {
                 PJROJO.position = respawn.position;
-                
+                pointsNegro = pointsNegro + 1;
             }
         } else
         {
@@ -135,12 +142,13 @@ public class Respawner : MonoBehaviour
             if (PJNEGRO.position.y <= -0)
             {
                 PJNEGRO.position = respawn.position;
-                points = points + 1;
+                pointsRojo = pointsRojo + 1;
 
             }
             if (PJROJO.position.y <= -0)
             {
                 PJROJO.position = respawn.position;
+                pointsNegro = pointsNegro + 1;
                 
             }
         }
@@ -159,7 +167,7 @@ public class Respawner : MonoBehaviour
 
     //private void LoadData()
    // {
-       // int points = PlayerPrefs.GetInt("Puntos", 0);
+       // int pointsRojo = PlayerPrefs.GetInt("Puntos", 0);
        // level = PlayerPrefs.GetString(levelsPrefsName);
    // }
 }

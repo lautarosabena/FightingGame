@@ -11,7 +11,7 @@ public class Points : MonoBehaviour
     void Start()
     {
         PJ1Wins = 10;
-        timer = 10;
+        timer = 90;
     }
 
     // Update is called once per frame
@@ -38,9 +38,9 @@ public class Points : MonoBehaviour
 
     private void LoadData()
     {
-        PJ1Wins = Respawner.points;
+        PJ1Wins = Respawner.pointsRojo;
         
-        int points = PlayerPrefs.GetInt("Puntos");
+        int pointsRojo = PlayerPrefs.GetInt("Puntos");
         Debug.Log(PJ1Wins);
         
     }
