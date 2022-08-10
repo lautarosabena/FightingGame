@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 10041ed75dfc83348b51293d1364069a
+guid: 79af2a369d4d50544bdc53459b388e47
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable:
   - first:
       74: -203655887218126122
-    second: Dancing
+    second: Slide Hip Hop Dance
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -36,11 +36,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Dancing
+      name: Slide Hip Hop Dance
       takeName: mixamo.com
       internalID: 0
       firstFrame: 0
-      lastFrame: 243
+      lastFrame: 519
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

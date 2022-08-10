@@ -295,7 +295,6 @@ MonoBehaviour:
   one: 0
   two: 0
   three: 0
-  niveles: 0
   PuntosRojoText: {fileID: 0}
   PuntosNegroText: {fileID: 0}
   scene: {fileID: 0}
@@ -1348,10 +1347,10 @@ RectTransform:
   m_Father: {fileID: 1681503365}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 35, y: -955}
-  m_SizeDelta: {x: 500, y: 500}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 186, y: 155}
+  m_SizeDelta: {x: 300, y: 150}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &718043717
 MonoBehaviour:
@@ -1856,7 +1855,6 @@ MonoBehaviour:
   one: 0
   two: 0
   three: 0
-  niveles: 0
   PuntosRojoText: {fileID: 305812967}
   PuntosNegroText: {fileID: 66604585}
   scene: {fileID: 718043717}

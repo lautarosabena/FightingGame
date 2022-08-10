@@ -26,5 +26,14 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PilarGiratorio.unity
     guid: 9f0e75c0bd8c5d442ac192912c6d8102
+  - enabled: 1
+    path: Assets/Scenes/PJNEGROWIN/PJNEGROWIN.unity
+    guid: 440427979db3b6545ac61d7f2983fd1d
+  - enabled: 1
+    path: Assets/Scenes/PJNEGROWIN/PJROJOWIN.unity
+    guid: 29e7b3d8597f90d49b0bc95bfab653b3
+  - enabled: 1
+    path: Assets/Scenes/PJNEGROWIN/EMPATESCENE.unity
+    guid: 3867af7a0203ea743a6ea467b03ed97c
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: bfee2f0d838b0cb438865bffbcb83fc6, type: 2}

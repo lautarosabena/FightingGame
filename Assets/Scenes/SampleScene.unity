@@ -364,6 +364,7 @@ MonoBehaviour:
   PJNEGRO: {fileID: 946356095}
   PJNEGROBody: {fileID: 1655252528}
   PJROJO: {fileID: 1942292167}
+  PJROJOBody: {fileID: 0}
   respawn: {fileID: 88419150}
   isRagdoll: 0
   timerr: 90
@@ -371,7 +372,6 @@ MonoBehaviour:
   one: 0
   two: 0
   three: 0
-  niveles: 0
   PuntosRojoText: {fileID: 1952189623}
   PuntosNegroText: {fileID: 2028313630}
   scene: {fileID: 1719300176}
@@ -1748,8 +1748,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 35, y: -955}
-  m_SizeDelta: {x: 500, y: 500}
+  m_AnchoredPosition: {x: 189, y: -930}
+  m_SizeDelta: {x: 400, y: 150}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1719300176
 MonoBehaviour:

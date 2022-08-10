@@ -79,10 +79,24 @@ public class Respawner : MonoBehaviour
 
         if (niveles == 3 && pointsNegro > pointsRojo)
         {
-            SceneManager.LoadScene("MainMenu");
-        } else if(niveles == 3 && pointsNegro < pointsRojo)
+            SceneManager.LoadScene("PJNEGROWIN");
+            niveles = 0;
+            pointsNegro = 0;
+            pointsRojo = 0;
+        } 
+        if(niveles == 3 && pointsNegro < pointsRojo)
         {
-            SceneManager.LoadScene("MainMenu");
+            SceneManager.LoadScene("PJROJOWIN");
+            niveles = 0;
+            pointsNegro = 0;
+            pointsRojo = 0;
+        } 
+        if (niveles == 3 && pointsNegro == pointsRojo)
+        {
+            SceneManager.LoadScene("EMPATESCENE");
+            niveles = 0;
+            pointsNegro = 0;
+            pointsRojo = 0;
         }
 
         if (sceneName == "PilarGiratorio" && timerr <= 0 && two == true)
@@ -107,11 +121,11 @@ public class Respawner : MonoBehaviour
 
         }
 
-        if (niveles == 3)
+        /*if (niveles == 3)
         {
             niveles = 4;
             SceneManager.LoadScene("MainMenu");
-        }
+        }*/
 
         if (sceneName == "CalleLevel")
         {
