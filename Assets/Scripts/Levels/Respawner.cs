@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 public class Respawner : MonoBehaviour
 {
     public Transform PJNEGRO;
@@ -17,10 +18,10 @@ public class Respawner : MonoBehaviour
     public bool two;
     public bool three;
     public static int niveles = 0;
-    public Text PuntosRojoText;
-    public Text PuntosNegroText;
-    public Text scene;
-    public Text TimerText;
+    public TextMeshProUGUI PuntosRojoText;
+    public TextMeshProUGUI PuntosNegroText;
+    public TextMeshProUGUI scene;
+    public TextMeshProUGUI TimerText;
     public float PjNegroTimer;
     public float PjRojoTimer;
 
