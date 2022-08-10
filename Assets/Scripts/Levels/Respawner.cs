@@ -16,7 +16,7 @@ public class Respawner : MonoBehaviour
     public bool one;
     public bool two;
     public bool three;
-    public int niveles = 0;
+    public static int niveles = 0;
     public Text PuntosRojoText;
     public Text PuntosNegroText;
     public Text scene;
@@ -26,6 +26,7 @@ public class Respawner : MonoBehaviour
 
     public static int pointsRojo;
     public static int pointsNegro;
+    public static int levelsplayed;
     private string level;
     private string pointsRojoPrefsName = "pointsRojo";
     private string pointsNegroPrefsName = "pointsNegro";
@@ -52,6 +53,7 @@ public class Respawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(niveles);
         currentScene = SceneManager.GetActiveScene();
         scene.text = currentScene.name.ToString();
         PuntosRojoText.text = pointsRojo.ToString();
@@ -73,6 +75,14 @@ public class Respawner : MonoBehaviour
             Debug.Log("cambianod nivel pilar");
             niveles = niveles +1;
             
+        }
+
+        if (niveles == 3 && pointsNegro > pointsRojo)
+        {
+            SceneManager.LoadScene("MainMenu");
+        } else if(niveles == 3 && pointsNegro < pointsRojo)
+        {
+            SceneManager.LoadScene("MainMenu");
         }
 
         if (sceneName == "PilarGiratorio" && timerr <= 0 && two == true)

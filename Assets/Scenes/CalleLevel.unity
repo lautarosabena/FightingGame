@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.056808695, g: 0.28804883, b: 0.9709884, a: 1}
+  m_IndirectSpecularColor: {r: 0.05683432, g: 0.2880699, b: 0.97097, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -296,12 +296,11 @@ MonoBehaviour:
   PJROJOBody: {fileID: 654953377}
   respawn: {fileID: 73553572}
   isRagdoll: 0
-  timerr: 90
+  timerr: 5
   escena: 0
   one: 0
   two: 0
   three: 0
-  niveles: 0
   PuntosRojoText: {fileID: 1824429290}
   PuntosNegroText: {fileID: 1127777480}
   scene: {fileID: 1137457250}
