@@ -54,7 +54,7 @@ public class Respawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(niveles);
+        //Debug.Log(niveles);
         currentScene = SceneManager.GetActiveScene();
         scene.text = currentScene.name.ToString();
         PuntosRojoText.text = pointsRojo.ToString();

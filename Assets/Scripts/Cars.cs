@@ -13,6 +13,7 @@ public class Cars : MonoBehaviour
     private int aut = 0;
     private int aut2 = 0;
     private float cont = 5;
+    public Rigidbody carrr;
     [SerializeField] private GameObject[] cars;
     public AudioSource MusicLvl2;
 
@@ -37,11 +38,12 @@ public class Cars : MonoBehaviour
             switch (aut)
             {
                 case 1:
-                    car.transform.position = car.transform.position + Vector3.right * 20f * Time.deltaTime;
+                    car.transform.position = car.transform.position + Vector3.right * 40f * Time.deltaTime;
                     //Debug.Log("asd");
+                    carrr.isKinematic = false;
                     break;
                 case 2:
-                    car2.transform.position = car2.transform.position + Vector3.right * 20f * Time.deltaTime;
+                    car2.transform.position = car2.transform.position + Vector3.right * 40f * Time.deltaTime;
                     //Debug.Log("asd");
                     break;
                
@@ -55,11 +57,11 @@ public class Cars : MonoBehaviour
             {
                 
                 case 1:
-                    car3.transform.position = car3.transform.position + Vector3.left * 20f * Time.deltaTime;
+                    car3.transform.position = car3.transform.position + Vector3.left * 40f * Time.deltaTime;
                     //Debug.Log("asd");
                     break;
                 case 2:
-                    car4.transform.position = car4.transform.position + Vector3.left * 20f * Time.deltaTime;
+                    car4.transform.position = car4.transform.position + Vector3.left * 40f * Time.deltaTime;
                     //Debug.Log("asd");
                     break;
 
@@ -69,8 +71,9 @@ public class Cars : MonoBehaviour
 
         if (car.transform.position.x >= 35)
         {
-            car.transform.position = new Vector3(-60, car.transform.position.y, car.transform.position.z);
+            car.transform.position = new Vector3(-60, 1, -1);
             car.transform.rotation = Quaternion.Euler(0, 90, 0);
+            carrr.isKinematic = true;
             started = false;
         }
 
@@ -126,8 +129,8 @@ public class Cars : MonoBehaviour
             started2 = true;
             aut = Random.Range(1, 3);
             aut2 = Random.Range(1, 3);
-            Debug.Log(aut);
-            Debug.Log(aut2);
+            //Debug.Log(aut);
+            //Debug.Log(aut2);
             cont = 6;
         }
     }

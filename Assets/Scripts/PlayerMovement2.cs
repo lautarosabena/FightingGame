@@ -24,6 +24,7 @@ public class PlayerMovement2 : MonoBehaviour
     private Rigidbody[] rigidbodies;
     public int condition3 = 0;
     private Vector3 movimiento;
+    public float speed;
     
     
     [SerializeField] private PlayerInput PlayerInput;
@@ -31,9 +32,9 @@ public class PlayerMovement2 : MonoBehaviour
     {
         
         input = new PlayerInput();
-        input.CharacterControls.Teclado.performed += ctx => {
-        currentMovement = ctx.ReadValue<Vector2>();
-        currentMovement.Normalize();
+        input.CharacterControls.Movement.performed += ctx => {
+        //currentMovement = ctx.ReadValue<Vector2>();
+        //currentMovement.Normalize();
         //Debug.Log(ctx.ReadValueAsObject());
         
         
@@ -64,6 +65,21 @@ public class PlayerMovement2 : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (Respawner.currentScene.name == "SampleScene")
+        {
+
+            speed = 10f;
+
+
+
+
+        } else
+        {
+            speed = 20f;
+        }
+        
+
+        currentMovement = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
         transform.position += Vector3.up;
         transform.position -= Vector3.up;
         //Debug.Log(RagdollActivater.sabanamogolico);
@@ -80,9 +96,53 @@ public class PlayerMovement2 : MonoBehaviour
             //transform.position = transform.position + new Vector3(0, -3f, 0) * Time.deltaTime;
          if (RagdollActivater2.quase == false) 
          {
-             OnTeclado();
-             handleRotation();
-         }
+                float h = Input.GetAxisRaw("Horizontal");
+                float v = Input.GetAxisRaw("Vertical");
+                transform.position += new Vector3(h, 0, v).normalized * Time.deltaTime * speed;
+                //OnMovement();
+                handleRotation();
+
+                if (Input.GetKey(KeyCode.Joystick1Button0))
+                {
+                    Debug.Log("entrada 1");
+                    if (Jumping == 1 && timer <= 0)
+                    {
+                        animator.SetBool("IsJumping", true);
+                        //transform.Translate(new Vector3(0, 150f, 0) * Time.deltaTime);
+                        m_Rigidbody.AddForce(Vector3.up * 500f);
+                        Jumping = 2;
+                        timer = 1.15f;
+                        Debug.Log("salto");
+
+
+                    }
+                }
+
+
+                if (Input.GetKey(KeyCode.Joystick1Button2))
+                {
+
+                    if (Punching == 1)
+                    {
+                        Punching = 2;
+
+                        animator.SetBool("PunchRight", true);
+                        Invoke("desactivator", 0.5f);
+
+                    }
+                }
+                else if (Input.GetKey(KeyCode.Joystick1Button3))
+                {
+                    if (Punching == 1)
+                    {
+                        Punching = 2;
+
+                        animator.SetBool("PunchLeft", true);
+                        Invoke("desactivator", 0.5f);
+
+                    }
+                }
+            }
             
         
         
@@ -133,7 +193,7 @@ public class PlayerMovement2 : MonoBehaviour
         transform.LookAt(positionToLookAt);
     }
 
-    void OnTeclado() 
+    void OnMovement() 
     {
         //m_Rigidbody.AddForce(currentMovement * m_Speed); 
         //transform.position + currentMovement;

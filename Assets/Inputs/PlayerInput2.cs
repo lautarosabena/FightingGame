@@ -24,7 +24,7 @@ public partial class @PlayerInput2 : IInputActionCollection2, IDisposable
     ""name"": ""PlayerInput2"",
     ""maps"": [
         {
-            ""name"": ""CharacterControls1"",
+            ""name"": ""CharacterControls2"",
             ""id"": ""49e69fa5-fda1-4300-a82a-a0a34e32dfb5"",
             ""actions"": [
                 {
@@ -94,19 +94,8 @@ public partial class @PlayerInput2 : IInputActionCollection2, IDisposable
             ""bindings"": [
                 {
                     ""name"": """",
-                    ""id"": ""817b2d4a-f70f-43da-9fe9-60663ab8b930"",
-                    ""path"": ""<DualShockGamepad>/leftStick"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement2"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""3dda7fda-bb72-4914-b68f-c1fe83422f70"",
-                    ""path"": """",
+                    ""path"": ""<Gamepad>/leftStick"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -240,15 +229,15 @@ public partial class @PlayerInput2 : IInputActionCollection2, IDisposable
     ],
     ""controlSchemes"": []
 }");
-        // CharacterControls1
-        m_CharacterControls1 = asset.FindActionMap("CharacterControls1", throwIfNotFound: true);
-        m_CharacterControls1_Movement2 = m_CharacterControls1.FindAction("Movement2", throwIfNotFound: true);
-        m_CharacterControls1_Teclado = m_CharacterControls1.FindAction("Teclado", throwIfNotFound: true);
-        m_CharacterControls1_Salto = m_CharacterControls1.FindAction("Salto", throwIfNotFound: true);
-        m_CharacterControls1_PunchLeft = m_CharacterControls1.FindAction("PunchLeft", throwIfNotFound: true);
-        m_CharacterControls1_PunchRight = m_CharacterControls1.FindAction("PunchRight", throwIfNotFound: true);
-        m_CharacterControls1_TEST = m_CharacterControls1.FindAction("TEST", throwIfNotFound: true);
-        m_CharacterControls1_TEST2 = m_CharacterControls1.FindAction("TEST2", throwIfNotFound: true);
+        // CharacterControls2
+        m_CharacterControls2 = asset.FindActionMap("CharacterControls2", throwIfNotFound: true);
+        m_CharacterControls2_Movement2 = m_CharacterControls2.FindAction("Movement2", throwIfNotFound: true);
+        m_CharacterControls2_Teclado = m_CharacterControls2.FindAction("Teclado", throwIfNotFound: true);
+        m_CharacterControls2_Salto = m_CharacterControls2.FindAction("Salto", throwIfNotFound: true);
+        m_CharacterControls2_PunchLeft = m_CharacterControls2.FindAction("PunchLeft", throwIfNotFound: true);
+        m_CharacterControls2_PunchRight = m_CharacterControls2.FindAction("PunchRight", throwIfNotFound: true);
+        m_CharacterControls2_TEST = m_CharacterControls2.FindAction("TEST", throwIfNotFound: true);
+        m_CharacterControls2_TEST2 = m_CharacterControls2.FindAction("TEST2", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -305,59 +294,59 @@ public partial class @PlayerInput2 : IInputActionCollection2, IDisposable
         return asset.FindBinding(bindingMask, out action);
     }
 
-    // CharacterControls1
-    private readonly InputActionMap m_CharacterControls1;
-    private ICharacterControls1Actions m_CharacterControls1ActionsCallbackInterface;
-    private readonly InputAction m_CharacterControls1_Movement2;
-    private readonly InputAction m_CharacterControls1_Teclado;
-    private readonly InputAction m_CharacterControls1_Salto;
-    private readonly InputAction m_CharacterControls1_PunchLeft;
-    private readonly InputAction m_CharacterControls1_PunchRight;
-    private readonly InputAction m_CharacterControls1_TEST;
-    private readonly InputAction m_CharacterControls1_TEST2;
-    public struct CharacterControls1Actions
+    // CharacterControls2
+    private readonly InputActionMap m_CharacterControls2;
+    private ICharacterControls2Actions m_CharacterControls2ActionsCallbackInterface;
+    private readonly InputAction m_CharacterControls2_Movement2;
+    private readonly InputAction m_CharacterControls2_Teclado;
+    private readonly InputAction m_CharacterControls2_Salto;
+    private readonly InputAction m_CharacterControls2_PunchLeft;
+    private readonly InputAction m_CharacterControls2_PunchRight;
+    private readonly InputAction m_CharacterControls2_TEST;
+    private readonly InputAction m_CharacterControls2_TEST2;
+    public struct CharacterControls2Actions
     {
         private @PlayerInput2 m_Wrapper;
-        public CharacterControls1Actions(@PlayerInput2 wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Movement2 => m_Wrapper.m_CharacterControls1_Movement2;
-        public InputAction @Teclado => m_Wrapper.m_CharacterControls1_Teclado;
-        public InputAction @Salto => m_Wrapper.m_CharacterControls1_Salto;
-        public InputAction @PunchLeft => m_Wrapper.m_CharacterControls1_PunchLeft;
-        public InputAction @PunchRight => m_Wrapper.m_CharacterControls1_PunchRight;
-        public InputAction @TEST => m_Wrapper.m_CharacterControls1_TEST;
-        public InputAction @TEST2 => m_Wrapper.m_CharacterControls1_TEST2;
-        public InputActionMap Get() { return m_Wrapper.m_CharacterControls1; }
+        public CharacterControls2Actions(@PlayerInput2 wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Movement2 => m_Wrapper.m_CharacterControls2_Movement2;
+        public InputAction @Teclado => m_Wrapper.m_CharacterControls2_Teclado;
+        public InputAction @Salto => m_Wrapper.m_CharacterControls2_Salto;
+        public InputAction @PunchLeft => m_Wrapper.m_CharacterControls2_PunchLeft;
+        public InputAction @PunchRight => m_Wrapper.m_CharacterControls2_PunchRight;
+        public InputAction @TEST => m_Wrapper.m_CharacterControls2_TEST;
+        public InputAction @TEST2 => m_Wrapper.m_CharacterControls2_TEST2;
+        public InputActionMap Get() { return m_Wrapper.m_CharacterControls2; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
         public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(CharacterControls1Actions set) { return set.Get(); }
-        public void SetCallbacks(ICharacterControls1Actions instance)
+        public static implicit operator InputActionMap(CharacterControls2Actions set) { return set.Get(); }
+        public void SetCallbacks(ICharacterControls2Actions instance)
         {
-            if (m_Wrapper.m_CharacterControls1ActionsCallbackInterface != null)
+            if (m_Wrapper.m_CharacterControls2ActionsCallbackInterface != null)
             {
-                @Movement2.started -= m_Wrapper.m_CharacterControls1ActionsCallbackInterface.OnMovement2;
-                @Movement2.performed -= m_Wrapper.m_CharacterControls1ActionsCallbackInterface.OnMovement2;
-                @Movement2.canceled -= m_Wrapper.m_CharacterControls1ActionsCallbackInterface.OnMovement2;
-                @Teclado.started -= m_Wrapper.m_CharacterControls1ActionsCallbackInterface.OnTeclado;
-                @Teclado.performed -= m_Wrapper.m_CharacterControls1ActionsCallbackInterface.OnTeclado;
-                @Teclado.canceled -= m_Wrapper.m_CharacterControls1ActionsCallbackInterface.OnTeclado;
-                @Salto.started -= m_Wrapper.m_CharacterControls1ActionsCallbackInterface.OnSalto;
-                @Salto.performed -= m_Wrapper.m_CharacterControls1ActionsCallbackInterface.OnSalto;
-                @Salto.canceled -= m_Wrapper.m_CharacterControls1ActionsCallbackInterface.OnSalto;
-                @PunchLeft.started -= m_Wrapper.m_CharacterControls1ActionsCallbackInterface.OnPunchLeft;
-                @PunchLeft.performed -= m_Wrapper.m_CharacterControls1ActionsCallbackInterface.OnPunchLeft;
-                @PunchLeft.canceled -= m_Wrapper.m_CharacterControls1ActionsCallbackInterface.OnPunchLeft;
-                @PunchRight.started -= m_Wrapper.m_CharacterControls1ActionsCallbackInterface.OnPunchRight;
-                @PunchRight.performed -= m_Wrapper.m_CharacterControls1ActionsCallbackInterface.OnPunchRight;
-                @PunchRight.canceled -= m_Wrapper.m_CharacterControls1ActionsCallbackInterface.OnPunchRight;
-                @TEST.started -= m_Wrapper.m_CharacterControls1ActionsCallbackInterface.OnTEST;
-                @TEST.performed -= m_Wrapper.m_CharacterControls1ActionsCallbackInterface.OnTEST;
-                @TEST.canceled -= m_Wrapper.m_CharacterControls1ActionsCallbackInterface.OnTEST;
-                @TEST2.started -= m_Wrapper.m_CharacterControls1ActionsCallbackInterface.OnTEST2;
-                @TEST2.performed -= m_Wrapper.m_CharacterControls1ActionsCallbackInterface.OnTEST2;
-                @TEST2.canceled -= m_Wrapper.m_CharacterControls1ActionsCallbackInterface.OnTEST2;
+                @Movement2.started -= m_Wrapper.m_CharacterControls2ActionsCallbackInterface.OnMovement2;
+                @Movement2.performed -= m_Wrapper.m_CharacterControls2ActionsCallbackInterface.OnMovement2;
+                @Movement2.canceled -= m_Wrapper.m_CharacterControls2ActionsCallbackInterface.OnMovement2;
+                @Teclado.started -= m_Wrapper.m_CharacterControls2ActionsCallbackInterface.OnTeclado;
+                @Teclado.performed -= m_Wrapper.m_CharacterControls2ActionsCallbackInterface.OnTeclado;
+                @Teclado.canceled -= m_Wrapper.m_CharacterControls2ActionsCallbackInterface.OnTeclado;
+                @Salto.started -= m_Wrapper.m_CharacterControls2ActionsCallbackInterface.OnSalto;
+                @Salto.performed -= m_Wrapper.m_CharacterControls2ActionsCallbackInterface.OnSalto;
+                @Salto.canceled -= m_Wrapper.m_CharacterControls2ActionsCallbackInterface.OnSalto;
+                @PunchLeft.started -= m_Wrapper.m_CharacterControls2ActionsCallbackInterface.OnPunchLeft;
+                @PunchLeft.performed -= m_Wrapper.m_CharacterControls2ActionsCallbackInterface.OnPunchLeft;
+                @PunchLeft.canceled -= m_Wrapper.m_CharacterControls2ActionsCallbackInterface.OnPunchLeft;
+                @PunchRight.started -= m_Wrapper.m_CharacterControls2ActionsCallbackInterface.OnPunchRight;
+                @PunchRight.performed -= m_Wrapper.m_CharacterControls2ActionsCallbackInterface.OnPunchRight;
+                @PunchRight.canceled -= m_Wrapper.m_CharacterControls2ActionsCallbackInterface.OnPunchRight;
+                @TEST.started -= m_Wrapper.m_CharacterControls2ActionsCallbackInterface.OnTEST;
+                @TEST.performed -= m_Wrapper.m_CharacterControls2ActionsCallbackInterface.OnTEST;
+                @TEST.canceled -= m_Wrapper.m_CharacterControls2ActionsCallbackInterface.OnTEST;
+                @TEST2.started -= m_Wrapper.m_CharacterControls2ActionsCallbackInterface.OnTEST2;
+                @TEST2.performed -= m_Wrapper.m_CharacterControls2ActionsCallbackInterface.OnTEST2;
+                @TEST2.canceled -= m_Wrapper.m_CharacterControls2ActionsCallbackInterface.OnTEST2;
             }
-            m_Wrapper.m_CharacterControls1ActionsCallbackInterface = instance;
+            m_Wrapper.m_CharacterControls2ActionsCallbackInterface = instance;
             if (instance != null)
             {
                 @Movement2.started += instance.OnMovement2;
@@ -384,8 +373,8 @@ public partial class @PlayerInput2 : IInputActionCollection2, IDisposable
             }
         }
     }
-    public CharacterControls1Actions @CharacterControls1 => new CharacterControls1Actions(this);
-    public interface ICharacterControls1Actions
+    public CharacterControls2Actions @CharacterControls2 => new CharacterControls2Actions(this);
+    public interface ICharacterControls2Actions
     {
         void OnMovement2(InputAction.CallbackContext context);
         void OnTeclado(InputAction.CallbackContext context);

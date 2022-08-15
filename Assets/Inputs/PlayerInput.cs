@@ -1082,6 +1082,10 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         }
     }
     public CharacterControls1Actions @CharacterControls1 => new CharacterControls1Actions(this);
+
+    public object CharacterControls2 { get; internal set; }
+    public object asd { get; internal set; }
+
     public interface ICharacterControlsActions
     {
         void OnMovement(InputAction.CallbackContext context);

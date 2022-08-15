@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.05673268, g: 0.28804293, b: 0.97181314, a: 1}
+  m_IndirectSpecularColor: {r: 0.05683432, g: 0.2880699, b: 0.97097, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1319,6 +1319,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 561714015948046424, guid: ffd4c1d0e6b280a42a7254eb1a2b49f4, type: 3}
+      propertyPath: m_DefaultActionMap
+      value: cfd73428-0272-487e-b7f4-c8677bf3e3ce
+      objectReference: {fileID: 0}
     - target: {fileID: 795714616742083134, guid: ffd4c1d0e6b280a42a7254eb1a2b49f4, type: 3}
       propertyPath: m_Name
       value: PjRojo
@@ -1861,7 +1865,7 @@ MonoBehaviour:
   PJROJOBody: {fileID: 1107990356}
   respawn: {fileID: 1114154554}
   isRagdoll: 0
-  timerr: 5
+  timerr: 100
   escena: 0
   one: 0
   two: 0

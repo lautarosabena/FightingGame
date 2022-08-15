@@ -2,7 +2,7 @@
     "name": "PlayerInput2",
     "maps": [
         {
-            "name": "CharacterControls1",
+            "name": "CharacterControls2",
             "id": "49e69fa5-fda1-4300-a82a-a0a34e32dfb5",
             "actions": [
                 {
@@ -72,19 +72,8 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "817b2d4a-f70f-43da-9fe9-60663ab8b930",
-                    "path": "<DualShockGamepad>/leftStick",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Movement2",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "3dda7fda-bb72-4914-b68f-c1fe83422f70",
-                    "path": "",
+                    "path": "<Gamepad>/leftStick",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

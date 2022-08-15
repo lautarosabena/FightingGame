@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using Photon.Pun;
 public class PlayerMovement : MonoBehaviour
 {
@@ -25,13 +26,15 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody[] rigidbodies;
     public int condition4 = 0;
     private Vector3 movimiento2;
+    public float speed;
+
     
     [SerializeField] private PlayerInput PlayerInput;
     void Awake() 
     {
         input = new PlayerInput();
-        input.CharacterControls.Teclado1.performed += ctx => {
-        currentMovement = ctx.ReadValue<Vector2>();
+        input.CharacterControls.Movement.performed += ctx => {
+        //currentMovement = ctx.ReadValue<Vector2>();
         //Debug.Log(ctx.ReadValueAsObject());
         
         
@@ -63,6 +66,19 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
 
+        if (Respawner.currentScene.name == "SampleScene")
+        {
+
+            speed = 10f;
+
+
+
+
+        } else
+        {
+            speed = 20f;
+        }
+        currentMovement = new Vector2(Input.GetAxisRaw("Joystick2Horizontal"), Input.GetAxisRaw("Joystick2Vertical")).normalized;
         transform.position += Vector3.up;
         transform.position -= Vector3.up;
         //condition4 = PunchPush2.knock2;
@@ -80,18 +96,62 @@ public class PlayerMovement : MonoBehaviour
             
             if (RagdollActivater.sabanamogolico2 == false)
             {
-            OnTeclado1();
-            handleRotation();
+
+                float h = Input.GetAxisRaw("Joystick2Horizontal");
+                float v = Input.GetAxisRaw("Joystick2Vertical");
+                transform.position += new Vector3(h, 0, v).normalized * Time.deltaTime * speed;
+                //OnMovimiento();
+                handleRotation();
+
+                if (Input.GetKey(KeyCode.Joystick2Button0))
+                {
+                    Debug.Log("entrada 1");
+                    if (Jumping == 1 && timer <= 0)
+                    {
+                        animator.SetBool("IsJumping", true);
+                        //transform.Translate(new Vector3(0, 150f, 0) * Time.deltaTime);
+                        m_Rigidbody.AddForce(Vector3.up * 500f);
+                        Jumping = 2;
+                        timer = 1.15f;
+                        Debug.Log("salto");
+
+
+                    }
+                }
+
+                if (Input.GetKey(KeyCode.Joystick2Button2))
+                {
+
+                        if (Punching == 1)
+                    {
+                        Punching = 2;
+
+                        animator.SetBool("PunchRight", true);
+                        Invoke("desactivator", 0.5f);
+
+                    }
+                } else if (Input.GetKey(KeyCode.Joystick2Button3))
+                    {
+                        if (Punching == 1)
+                        {
+                            Punching = 2;
+
+                            animator.SetBool("PunchLeft", true);
+                            Invoke("desactivator", 0.5f);
+
+                        }
+                    }
+
             }
-            
-        
 
-        
-        //transform.rotation = Quaternion.Lerp(transform.rotation, target.rotation, speed * Time.deltaTime);
 
-        //transform.rotation = obj.transform.rotation;
 
-        if (currentMovement.x != 0 || currentMovement.y != 0) {
+
+            //transform.rotation = Quaternion.Lerp(transform.rotation, target.rotation, speed * Time.deltaTime);
+
+            //transform.rotation = obj.transform.rotation;
+
+            if (currentMovement.x != 0 || currentMovement.y != 0) {
             //Debug.Log("test");
             animator.SetBool("IsRunning", true);
 
@@ -132,7 +192,7 @@ public class PlayerMovement : MonoBehaviour
         transform.LookAt(positionToLookAt);
     }
 
-    void OnTeclado1() 
+    void OnMovimiento() 
     {
         //m_Rigidbody.AddForce(currentMovement * m_Speed); 
         //transform.position + currentMovement;

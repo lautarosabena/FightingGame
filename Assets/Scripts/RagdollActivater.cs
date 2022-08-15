@@ -37,6 +37,11 @@ public class RagdollActivater : MonoBehaviour
         GetComponent<Animator>().enabled = !isRagdoll;
     }
 
+    private void Start()
+    {
+        sabanamogolico2 = false;
+    }
+
     void Update() 
     {
         //Debug.Log(timerr);
