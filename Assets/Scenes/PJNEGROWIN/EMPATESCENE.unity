@@ -194,7 +194,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "\xA1EMPATE!"
+  m_Text: EMPATE
 --- !u!222 &93659869
 CanvasRenderer:
   m_ObjectHideFlags: 0

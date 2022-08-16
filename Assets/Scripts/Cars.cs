@@ -14,6 +14,9 @@ public class Cars : MonoBehaviour
     private int aut2 = 0;
     private float cont = 5;
     public Rigidbody carrr;
+    public Rigidbody carr2;
+    public Rigidbody carr3;
+    public Rigidbody carr4;
     [SerializeField] private GameObject[] cars;
     public AudioSource MusicLvl2;
 
@@ -45,6 +48,7 @@ public class Cars : MonoBehaviour
                 case 2:
                     car2.transform.position = car2.transform.position + Vector3.right * 40f * Time.deltaTime;
                     //Debug.Log("asd");
+                    carr2.isKinematic = false;
                     break;
                
                 
@@ -58,10 +62,12 @@ public class Cars : MonoBehaviour
                 
                 case 1:
                     car3.transform.position = car3.transform.position + Vector3.left * 40f * Time.deltaTime;
+                    carr3.isKinematic = false;
                     //Debug.Log("asd");
                     break;
                 case 2:
                     car4.transform.position = car4.transform.position + Vector3.left * 40f * Time.deltaTime;
+                    carr4.isKinematic = false;
                     //Debug.Log("asd");
                     break;
 
@@ -79,22 +85,25 @@ public class Cars : MonoBehaviour
 
         if (car2.transform.position.x >= 35)
         {
-            car2.transform.position = new Vector3(-60, car2.transform.position.y, car2.transform.position.z);
+            car2.transform.position = new Vector3(-60, 1, -12);
             car2.transform.rotation = Quaternion.Euler(0, 90, 0);
+            carr2.isKinematic = true;
             started = false;
         }
 
         if (car3.transform.position.x <= -60)
         {
-            car3.transform.position = new Vector3(35, car3.transform.position.y, car3.transform.position.z);
+            car3.transform.position = new Vector3(35, 1, -7);
             car3.transform.rotation = Quaternion.Euler(0, -90, 0);
+            carr3.isKinematic = true;
             started2 = false;
         }
 
         if (car4.transform.position.x <= -60)
         {
-            car4.transform.position = new Vector3(35, car4.transform.position.y, car4.transform.position.z);
+            car4.transform.position = new Vector3(35, 1, 5);
             car4.transform.rotation = Quaternion.Euler(0, -90, 0);
+            carr4.isKinematic = true;
             started2 = false;
         }
 

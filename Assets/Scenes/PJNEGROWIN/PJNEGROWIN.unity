@@ -1057,7 +1057,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "\xA1BLACKELIN GANA!"
+  m_Text: BLACKELIN GANA
 --- !u!222 &1298545673
 CanvasRenderer:
   m_ObjectHideFlags: 0
