@@ -291,6 +291,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PJNEGRO: {fileID: 1979124438}
+  PJNEGROCH: {fileID: 1979124439}
   PJNEGROBody: {fileID: 1628571007}
   PJROJO: {fileID: 638949944}
   PJROJOBody: {fileID: 654953377}
@@ -1056,6 +1057,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4910a004464ca4efa808af20d2eb1e15, type: 3}
+--- !u!1 &371687946 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2953233691270142438, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
+  m_PrefabInstance: {fileID: 1948092569}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &374734234
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5461,6 +5467,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 615791549601894490, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
+      propertyPath: m_Height
+      value: 0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 615791549601894490, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
+      propertyPath: m_Radius
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 615791549601894490, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
+      propertyPath: m_Center.y
+      value: 0.02
+      objectReference: {fileID: 0}
     - target: {fileID: 2571606830877705052, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -5596,6 +5614,27 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2571606830877705052, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
   m_PrefabInstance: {fileID: 1948092569}
   m_PrefabAsset: {fileID: 0}
+--- !u!143 &1979124439 stripped
+CharacterController:
+  m_CorrespondingSourceObject: {fileID: 615791549601894490, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
+  m_PrefabInstance: {fileID: 1948092569}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &1979124450
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 371687946}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &1980524750
 PrefabInstance:
   m_ObjectHideFlags: 0

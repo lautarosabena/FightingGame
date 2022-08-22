@@ -7,6 +7,7 @@ using TMPro;
 public class Respawner : MonoBehaviour
 {
     public Transform PJNEGRO;
+    public CharacterController PJNEGROCH;
     public Transform PJNEGROBody;
     public Transform PJROJO;
     public Transform PJROJOBody;
@@ -52,8 +53,13 @@ public class Respawner : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
+        if (Input.GetKeyDown("space"))
+        {
+            print("space key was pressed");
+            
+        }
         //Debug.Log(niveles);
         currentScene = SceneManager.GetActiveScene();
         scene.text = currentScene.name.ToString();
@@ -133,8 +139,18 @@ public class Respawner : MonoBehaviour
             one = true;
             if (PJNEGRO.position.z >= 14 || PJNEGRO.position.z <= -18 || PJNEGRO.position.x <= -40 || PJNEGRO.position.x >= -4)
                     {
-                        PJNEGRO.position = respawn.position;
-                        pointsRojo = pointsRojo + 1;             
+                        
+ 
+                PJNEGROCH.enabled = false;
+                PJNEGROCH.transform.position = respawn.position;
+                PJNEGROCH.enabled = true;
+                if (PJNEGROCH.transform.position == respawn.position)
+                {
+                    pointsRojo ++;
+                    Debug.Log("ASD");
+                }
+                
+               
                     }
             
             /*if (PJNEGROBody.position.z >= 14 || PJNEGROBody.position.z <= -18 || PJNEGROBody.position.x <= -40 || PJNEGROBody.position.x >= -4)

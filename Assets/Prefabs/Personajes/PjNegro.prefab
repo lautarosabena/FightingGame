@@ -122,7 +122,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2571606830877705052}
-  - component: {fileID: 2610565736356193158}
   - component: {fileID: 2610565736356193159}
   - component: {fileID: 2610565736356193157}
   - component: {fileID: 2610565736356193152}
@@ -137,6 +136,7 @@ GameObject:
   - component: {fileID: 3272688303711218409}
   - component: {fileID: 3272688303711218408}
   - component: {fileID: 3272688303711218411}
+  - component: {fileID: 615791549601894490}
   m_Layer: 6
   m_Name: PjNegro
   m_TagString: car
@@ -162,22 +162,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!54 &2610565736356193158
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2953233691270142438}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0.05
-  m_AngularDrag: 0
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 122
-  m_CollisionDetection: 1
 --- !u!65 &2610565736356193159
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -365,6 +349,9 @@ MonoBehaviour:
   condition2: 0
   timerr: 5
   p: {fileID: 9015016991564861839}
+  morision: 1
+  SonidoChoque: {fileID: 0}
+  SonidoChoque2: {fileID: 0}
 --- !u!114 &7368320236270648113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -378,7 +365,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  m_Rigidbody: {fileID: 2610565736356193158}
+  m_Rigidbody: {fileID: 0}
   m_Speed: 15
   asd: 1
   Jumping: 2
@@ -388,6 +375,8 @@ MonoBehaviour:
   maxdist: 0.95
   animator: {fileID: 2610565736356193157}
   condition3: 0
+  speed: 0
+  Player: {fileID: 615791549601894490}
 --- !u!114 &9015016991564861839
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -525,9 +514,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be26ce63512acdf48b87089aa96825ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  body: {fileID: 8061579694239212488}
-  pj: {fileID: 2571606830877705052}
+  PJNEGRO: {fileID: 0}
+  PJNEGROCH: {fileID: 0}
+  PJNEGROBody: {fileID: 0}
+  PJROJO: {fileID: 0}
+  PJROJOBody: {fileID: 0}
   respawn: {fileID: 0}
+  isRagdoll: 0
+  timerr: 10
+  escena: 0
+  one: 0
+  two: 0
+  three: 0
+  PuntosRojoText: {fileID: 0}
+  PuntosNegroText: {fileID: 0}
+  scene: {fileID: 0}
+  TimerText: {fileID: 0}
+  PjNegroTimer: 0
+  PjRojoTimer: 0
 --- !u!114 &3272688303711218411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -541,6 +545,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj: {fileID: 0}
+--- !u!143 &615791549601894490
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2953233691270142438}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 0.06
+  m_Radius: 0.01
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0.02, z: 0}
 --- !u!1 &9015016992158476468
 GameObject:
   m_ObjectHideFlags: 0

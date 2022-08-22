@@ -25,6 +25,7 @@ public class PlayerMovement2 : MonoBehaviour
     public int condition3 = 0;
     private Vector3 movimiento;
     public float speed;
+    [SerializeField] private CharacterController Player;
     
     
     [SerializeField] private PlayerInput PlayerInput;
@@ -32,7 +33,7 @@ public class PlayerMovement2 : MonoBehaviour
     {
         
         input = new PlayerInput();
-        input.CharacterControls.Movement.performed += ctx => {
+        input.CharacterControls.Teclado.performed += ctx => {
         //currentMovement = ctx.ReadValue<Vector2>();
         //currentMovement.Normalize();
         //Debug.Log(ctx.ReadValueAsObject());
@@ -98,8 +99,12 @@ public class PlayerMovement2 : MonoBehaviour
          {
                 float h = Input.GetAxisRaw("Horizontal");
                 float v = Input.GetAxisRaw("Vertical");
-                transform.position += new Vector3(h, 0, v).normalized * Time.deltaTime * speed;
+                //Player.Move(Vector3.forward * Time.deltaTime * 10f);
+                Player.Move(new Vector3(h, 0, v).normalized * Time.deltaTime * 30f);
+                Player.Move(-Vector3.up.normalized * Time.deltaTime * 10f);
+                //transform.position = transform.position + (new Vector3(h, 0, v).normalized * Time.deltaTime * 10f);
                 //OnMovement();
+                //OnTeclado();
                 handleRotation();
 
                 if (Input.GetKey(KeyCode.Joystick1Button0))
@@ -193,7 +198,7 @@ public class PlayerMovement2 : MonoBehaviour
         transform.LookAt(positionToLookAt);
     }
 
-    void OnMovement() 
+    void OnTeclado() 
     {
         //m_Rigidbody.AddForce(currentMovement * m_Speed); 
         //transform.position + currentMovement;
@@ -202,6 +207,7 @@ public class PlayerMovement2 : MonoBehaviour
         //movimiento.Normalize();
         //transform.Translate (movimiento *  m_Speed * Time.deltaTime);
         //m_Rigidbody.MovePosition(transform.position + movimiento *  10f * Time.deltaTime);
+        Player.Move(movimiento * 10f * Time.deltaTime);
         transform.position = transform.position + movimiento *  10f * Time.deltaTime;
         //transform.Translate(Vector3.left * Time.deltaTime * m_Speed);
         Vector2 inputMovimiento = currentMovement;
