@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.05683432, g: 0.2880699, b: 0.97097, a: 1}
+  m_IndirectSpecularColor: {r: 0.056808695, g: 0.28804883, b: 0.9709884, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -414,6 +414,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PJNEGRO: {fileID: 0}
+  PJNEGROCH: {fileID: 0}
+  PJROJOCH: {fileID: 0}
   PJNEGROBody: {fileID: 0}
   PJROJO: {fileID: 0}
   PJROJOBody: {fileID: 0}
@@ -1323,6 +1325,30 @@ PrefabInstance:
       propertyPath: m_DefaultActionMap
       value: cfd73428-0272-487e-b7f4-c8677bf3e3ce
       objectReference: {fileID: 0}
+    - target: {fileID: 561714015948046430, guid: ffd4c1d0e6b280a42a7254eb1a2b49f4, type: 3}
+      propertyPath: m_Drag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 561714015948046430, guid: ffd4c1d0e6b280a42a7254eb1a2b49f4, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 561714015948046430, guid: ffd4c1d0e6b280a42a7254eb1a2b49f4, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 561714015948046430, guid: ffd4c1d0e6b280a42a7254eb1a2b49f4, type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 561714015948046430, guid: ffd4c1d0e6b280a42a7254eb1a2b49f4, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 561714015948046430, guid: ffd4c1d0e6b280a42a7254eb1a2b49f4, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 795714616742083134, guid: ffd4c1d0e6b280a42a7254eb1a2b49f4, type: 3}
       propertyPath: m_Name
       value: PjRojo
@@ -1350,6 +1376,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 18333905351286916, guid: ffd4c1d0e6b280a42a7254eb1a2b49f4, type: 3}
   m_PrefabInstance: {fileID: 694515889}
   m_PrefabAsset: {fileID: 0}
+--- !u!143 &694515891
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 174072072}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 0.06
+  m_Radius: 0.01
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0.02, z: 0}
 --- !u!1 &805978808
 GameObject:
   m_ObjectHideFlags: 0
@@ -1811,6 +1855,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2571606830877705052, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
   m_PrefabInstance: {fileID: 1045325837}
   m_PrefabAsset: {fileID: 0}
+--- !u!143 &1045325839 stripped
+CharacterController:
+  m_CorrespondingSourceObject: {fileID: 615791549601894490, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
+  m_PrefabInstance: {fileID: 1045325837}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1107990356 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5481285754409795600, guid: ffd4c1d0e6b280a42a7254eb1a2b49f4, type: 3}
@@ -1861,6 +1910,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PJNEGRO: {fileID: 1045325838}
+  PJNEGROCH: {fileID: 1045325839}
+  PJROJOCH: {fileID: 694515891}
   PJNEGROBody: {fileID: 1686955307}
   PJROJO: {fileID: 694515890}
   PJROJOBody: {fileID: 1107990356}

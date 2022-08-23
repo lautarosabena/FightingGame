@@ -8,6 +8,7 @@ public class Respawner : MonoBehaviour
 {
     public Transform PJNEGRO;
     public CharacterController PJNEGROCH;
+    public CharacterController PJROJOCH;
     public Transform PJNEGROBody;
     public Transform PJROJO;
     public Transform PJROJOBody;
@@ -139,16 +140,12 @@ public class Respawner : MonoBehaviour
             one = true;
             if (PJNEGRO.position.z >= 14 || PJNEGRO.position.z <= -18 || PJNEGRO.position.x <= -40 || PJNEGRO.position.x >= -4)
                     {
-                        
- 
                 PJNEGROCH.enabled = false;
                 PJNEGROCH.transform.position = respawn.position;
                 PJNEGROCH.enabled = true;
-                if (PJNEGROCH.transform.position == respawn.position)
-                {
-                    pointsRojo ++;
-                    Debug.Log("ASD");
-                }
+                pointsRojo ++;
+                Debug.Log("ASD");
+                
                 
                
                     }
@@ -163,21 +160,30 @@ public class Respawner : MonoBehaviour
             */
             if(RagdollActivater2.quase == true && PJNEGROBody.position.z >= 14 || PJNEGROBody.position.z <= -18 || PJNEGROBody.position.x <= -40 || PJNEGROBody.position.x >= -4)
             {
-                PJNEGROBody.position = respawn.position;
-                pointsRojo = pointsRojo + 1;
+                //PJNEGROBody.position = respawn.position;
+                //pointsRojo = pointsRojo + 1;
+                PJNEGROCH.enabled = false;
+                PJNEGROCH.transform.position = respawn.position;
+                PJNEGROCH.enabled = true;
+                pointsRojo ++;
                                 
             }      
 
             if (PJROJO.position.z >= 14 || PJROJO.position.z <= -18 || PJROJO.position.x <= -40 || PJROJO.position.x >= -4)
                     {
-                        PJROJO.position = respawn.position;
-                        pointsNegro = pointsNegro + 1;
+                        PJROJOCH.enabled = false;
+                        PJROJOCH.transform.position = respawn.position;
+                        PJROJOCH.enabled = true;
+                        pointsNegro ++;
+                                               
                     }
             
             if(RagdollActivater.sabanamogolico2 == true && PJROJOBody.position.z >= 14 || PJROJOBody.position.z <= -18 || PJROJOBody.position.x <= -40 || PJROJOBody.position.x >= -4)
             {
-                PJROJOBody.position = respawn.position;
-                pointsNegro = pointsNegro + 1;
+                PJROJOCH.enabled = false;
+                PJROJOCH.transform.position = respawn.position;
+                PJROJOCH.enabled = true;
+                pointsNegro ++;
                                 
             }    
              
@@ -192,29 +198,37 @@ public class Respawner : MonoBehaviour
             two = true;
             if (PJNEGRO.position.y <= -10)
             {
-                PJNEGRO.position = respawn.position;
-                pointsRojo = pointsRojo + 1;
+                PJNEGROCH.enabled = false;
+                PJNEGROCH.transform.position = respawn.position;
+                PJNEGROCH.enabled = true;
+                pointsRojo ++;
 
             }
 
             if(RagdollActivater2.quase == true && PJNEGROBody.position.y <= -10)
             {
-                PJNEGROBody.position = respawn.position;
-                pointsRojo = pointsRojo + 1;
+                PJNEGROCH.enabled = false;
+                PJNEGROCH.transform.position = respawn.position;
+                PJNEGROCH.enabled = true;
+                pointsRojo ++;
                                 
             }
                
         
             if (PJROJO.position.y <= -10)
             {
-                PJROJO.position = respawn.position;
-                pointsNegro = pointsNegro + 1;
+                PJROJOCH.enabled = false;
+                PJROJOCH.transform.position = respawn.position;
+                PJROJOCH.enabled = true;
+                pointsNegro ++;
             }
 
             if(RagdollActivater.sabanamogolico2 == true && PJROJOBody.position.y <= -10)
             {
-                PJROJOBody.position = respawn.position;
-                pointsNegro = pointsNegro + 1;
+                PJROJOCH.enabled = false;
+                PJROJOCH.transform.position = respawn.position;
+                PJROJOCH.enabled = true;
+                pointsNegro ++;
                                 
             }
 
@@ -228,26 +242,34 @@ public class Respawner : MonoBehaviour
             three = true;
             if (PJNEGRO.position.y <= -0)
             {
-                PJNEGRO.position = respawn.position;
-                pointsRojo = pointsRojo + 1;
+                PJNEGROCH.enabled = false;
+                PJNEGROCH.transform.position = respawn.position;
+                PJNEGROCH.enabled = true;
+                pointsRojo ++;
 
             }
             if(RagdollActivater2.quase == true && PJNEGROBody.position.y <= -0)
             {
-                PJNEGROBody.position = respawn.position;
-                pointsRojo = pointsRojo + 1;
+                PJNEGROCH.enabled = false;
+                PJNEGROCH.transform.position = respawn.position;
+                PJNEGROCH.enabled = true;
+                pointsRojo ++;
                                 
             }
             if (PJROJO.position.y <= -0)
             {
-                PJROJO.position = respawn.position;
-                pointsNegro = pointsNegro + 1;
+                PJROJOCH.enabled = false;
+                PJROJOCH.transform.position = respawn.position;
+                PJROJOCH.enabled = true;
+                pointsNegro ++;
                 
             }
             if(RagdollActivater.sabanamogolico2 == true && PJROJOBody.position.y <= -0)
             {
-                PJROJOBody.position = respawn.position;
-                pointsNegro = pointsNegro + 1;
+                PJROJOCH.enabled = false;
+                PJROJOCH.transform.position = respawn.position;
+                PJROJOCH.enabled = true;
+                pointsNegro ++;
                                 
             }
         }

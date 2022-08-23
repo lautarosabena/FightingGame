@@ -1867,6 +1867,7 @@ GameObject:
   - component: {fileID: 4405009243468086179}
   - component: {fileID: 8687787800378350951}
   - component: {fileID: 8687787800378350940}
+  - component: {fileID: 6902553189020315791}
   m_Layer: 3
   m_Name: PjRojo
   m_TagString: car
@@ -1900,13 +1901,13 @@ Rigidbody:
   m_GameObject: {fileID: 8330474876169463208}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0.05
-  m_AngularDrag: 0
-  m_UseGravity: 1
-  m_IsKinematic: 0
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 122
-  m_CollisionDetection: 3
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &9176826492131991497
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1963,6 +1964,8 @@ MonoBehaviour:
   maxdist: 0.95
   animator: {fileID: 9176826492131991499}
   condition4: 0
+  speed: 0
+  Player2: {fileID: 0}
 --- !u!114 &9176826492131991502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2101,9 +2104,12 @@ MonoBehaviour:
   - {fileID: 9176826490799521182}
   player: {fileID: 8705487147086774034}
   isRagdoll: 0
+  SonidoChoque: {fileID: 0}
+  SonidoChoque2: {fileID: 0}
   condition: 0
   timerr: 5
   a: {fileID: 0}
+  morision: 1
 --- !u!114 &4405009243468086179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2227,9 +2233,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be26ce63512acdf48b87089aa96825ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  body: {fileID: 3783103554007048070}
-  pj: {fileID: 8705487147086774034}
+  PJNEGRO: {fileID: 0}
+  PJNEGROCH: {fileID: 0}
+  PJROJOCH: {fileID: 0}
+  PJNEGROBody: {fileID: 0}
+  PJROJO: {fileID: 0}
+  PJROJOBody: {fileID: 0}
   respawn: {fileID: 0}
+  isRagdoll: 0
+  timerr: 10
+  escena: 0
+  one: 0
+  two: 0
+  three: 0
+  PuntosRojoText: {fileID: 0}
+  PuntosNegroText: {fileID: 0}
+  scene: {fileID: 0}
+  TimerText: {fileID: 0}
+  PjNegroTimer: 0
+  PjRojoTimer: 0
+--- !u!143 &6902553189020315791
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8330474876169463208}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 0.06
+  m_Radius: 0.01
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0.02, z: 0}
 --- !u!1 &9026763316524079807
 GameObject:
   m_ObjectHideFlags: 0

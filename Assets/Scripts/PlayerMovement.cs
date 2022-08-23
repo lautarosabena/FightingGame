@@ -27,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
     public int condition4 = 0;
     private Vector3 movimiento2;
     public float speed;
+    [SerializeField] private CharacterController Player2;
 
     
     [SerializeField] private PlayerInput PlayerInput;
@@ -99,7 +100,8 @@ public class PlayerMovement : MonoBehaviour
 
                 float h = Input.GetAxisRaw("Joystick2Horizontal");
                 float v = Input.GetAxisRaw("Joystick2Vertical");
-                transform.position += new Vector3(h, 0, v).normalized * Time.deltaTime * speed;
+                Player2.Move(new Vector3(h, 0, v).normalized * Time.deltaTime * 30f);
+                Player2.Move(-Vector3.up.normalized * Time.deltaTime * 10f);
                 //OnMovimiento();
                 handleRotation();
 

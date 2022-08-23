@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.08036642, g: 0.0997477, b: 0.30097166, a: 1}
+  m_IndirectSpecularColor: {r: 0.080301754, g: 0.09968352, b: 0.30091095, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -362,6 +362,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PJNEGRO: {fileID: 946356095}
+  PJNEGROCH: {fileID: 946356096}
+  PJROJOCH: {fileID: 1942292168}
   PJNEGROBody: {fileID: 1655252528}
   PJROJO: {fileID: 1942292167}
   PJROJOBody: {fileID: 1460587327}
@@ -1131,6 +1133,11 @@ Transform:
 --- !u!4 &946356095 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2571606830877705052, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
+  m_PrefabInstance: {fileID: 3272688304532308308}
+  m_PrefabAsset: {fileID: 0}
+--- !u!143 &946356096 stripped
+CharacterController:
+  m_CorrespondingSourceObject: {fileID: 615791549601894490, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
   m_PrefabInstance: {fileID: 3272688304532308308}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &963194225
@@ -2229,6 +2236,11 @@ Transform:
 --- !u!4 &1942292167 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8705487147086774034, guid: 5672996eb87a0b94bae19a9931b3f363, type: 3}
+  m_PrefabInstance: {fileID: 8687787799862125632}
+  m_PrefabAsset: {fileID: 0}
+--- !u!143 &1942292168 stripped
+CharacterController:
+  m_CorrespondingSourceObject: {fileID: 6902553189020315791, guid: 5672996eb87a0b94bae19a9931b3f363, type: 3}
   m_PrefabInstance: {fileID: 8687787799862125632}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1945274259
