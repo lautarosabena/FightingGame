@@ -66,7 +66,7 @@ public class PlayerMovement2 : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (Respawner.currentScene.name == "SampleScene")
+        if (Respawner.currentScene.name == "PlataformaLoca")
         {
 
             speed = 10f;

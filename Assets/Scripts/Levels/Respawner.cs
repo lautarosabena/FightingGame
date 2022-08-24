@@ -110,7 +110,7 @@ public class Respawner : MonoBehaviour
         if (sceneName == "PilarGiratorio" && timerr <= 0 && two == true)
         {
             
-            SceneManager.LoadScene("SampleScene");
+            SceneManager.LoadScene("PlataformaLoca");
             timerr = 10;
             Debug.Log("cambianod nivel uno");
             niveles = niveles + 1;
@@ -118,7 +118,7 @@ public class Respawner : MonoBehaviour
             
         }
 
-        if (sceneName == "SampleScene" && timerr <= 0 && three == true)
+        if (sceneName == "PlataformaLoca" && timerr <= 0 && three == true)
         {
             
             SceneManager.LoadScene("CalleLevel");
@@ -237,7 +237,7 @@ public class Respawner : MonoBehaviour
             two = false;
         }
 
-        if (sceneName == "SampleScene")
+        if (sceneName == "PlataformaLoca")
         {
             three = true;
             if (PJNEGRO.position.y <= -0)

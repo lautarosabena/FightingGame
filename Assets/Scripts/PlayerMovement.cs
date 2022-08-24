@@ -67,7 +67,7 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
 
-        if (Respawner.currentScene.name == "SampleScene")
+        if (Respawner.currentScene.name == "PlataformaLoca")
         {
 
             speed = 10f;
