@@ -87,15 +87,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Reset",
-                    "type": "Button",
-                    "id": "0ebafebf-e81c-499f-9664-52c093f97015",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "PunchLeftKeyboard",
                     "type": "Button",
                     "id": "2b8c92ec-a7d6-4084-a459-c8c165968783",
@@ -379,28 +370,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "Movement1",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "e58d36a1-b948-4c4f-bcca-48264020b8d1",
-                    "path": "<DualShockGamepad>/leftTrigger",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Reset",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "0c4965f5-40ea-4ff2-ab4c-cca2c56b02c3",
-                    "path": "<XInputController>/leftTrigger",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Reset",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

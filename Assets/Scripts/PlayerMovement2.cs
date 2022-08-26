@@ -6,7 +6,6 @@ using UnityEngine.UI;
 using Photon.Pun;
 public class PlayerMovement2 : MonoBehaviour
 {
-    public Transform target;
     PlayerInput input;
     Vector3 currentMovement;
     public Rigidbody m_Rigidbody;
@@ -15,7 +14,6 @@ public class PlayerMovement2 : MonoBehaviour
     public int Jumping = 2;
     public int Punching = 1;
     private Vector3 inputVector;
-    private Vector2 asdd;
     //private Animator animator;
     public float timer = 0;
     public GameObject obj;
@@ -25,6 +23,8 @@ public class PlayerMovement2 : MonoBehaviour
     public int condition3 = 0;
     private Vector3 movimiento;
     public float speed;
+    int actualtaunt;
+    private bool cantaunt = false;
     [SerializeField] private CharacterController Player;
     
     
@@ -64,8 +64,60 @@ public class PlayerMovement2 : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
+        if (currentMovement.x != 0 || currentMovement.y != 0)
+        {
+            Debug.Log("test");
+            animator.ResetTrigger("Taunt1");
+            animator.ResetTrigger("Taunt2");
+            animator.ResetTrigger("Taunt3");
+            animator.ResetTrigger("Taunt4");
+            animator.SetBool("IsRunning", true);
+            //cantaunt = false;
+
+
+        }
+        else
+        {
+
+            animator.SetBool("IsRunning", false);
+        }
+        Debug.Log(cantaunt);
+        if(currentMovement.x == 0 && currentMovement.y == 0)
+        {
+            if (Input.GetKeyUp(KeyCode.Joystick1Button4))
+            {
+                cantaunt = true;
+                int actualtaunt;
+                actualtaunt = Random.Range(0, 4);
+                switch (actualtaunt)
+                {
+                    case 0:
+                        animator.SetTrigger("Taunt1");
+                        break;
+                    case 1:
+                        animator.SetTrigger("Taunt2");
+                        break;
+                    case 2:
+                        animator.SetTrigger("Taunt3");
+                        break;
+                    case 3:
+                        animator.SetTrigger("Taunt4");
+                        break;
+                }
+                Debug.Log(actualtaunt);
+            }
+        }
+        if (cantaunt == false)
+        {
+            animator.ResetTrigger("Taunt1");
+            animator.ResetTrigger("Taunt2");
+            animator.ResetTrigger("Taunt3");
+            animator.ResetTrigger("Taunt4");
+        }
+        
+
         if (Respawner.currentScene.name == "PlataformaLoca")
         {
 
@@ -97,8 +149,10 @@ public class PlayerMovement2 : MonoBehaviour
             //transform.position = transform.position + new Vector3(0, -3f, 0) * Time.deltaTime;
          if (RagdollActivater2.quase == false) 
          {
+                
                 float h = Input.GetAxisRaw("Horizontal");
                 float v = Input.GetAxisRaw("Vertical");
+                
                 //Player.Move(Vector3.forward * Time.deltaTime * 10f);
                 Player.Move(new Vector3(h, 0, v).normalized * Time.deltaTime * 30f);
                 Player.Move(-Vector3.up.normalized * Time.deltaTime * 10f);
@@ -157,15 +211,7 @@ public class PlayerMovement2 : MonoBehaviour
 
         //transform.rotation = obj.transform.rotation;
 
-        if (currentMovement.x != 0 || currentMovement.y != 0) {
-            //Debug.Log("test");
-            animator.SetBool("IsRunning", true);
-
-            
-        } else {
-
-            animator.SetBool("IsRunning", false);
-        }
+        
 
 
         RaycastHit hit;
@@ -235,6 +281,19 @@ public class PlayerMovement2 : MonoBehaviour
  
     }
 
+    void Tauntss()
+    {
+        
+        
+      if(Input.GetKeyUp(KeyCode.Joystick1Button4))
+        {
+            actualtaunt = Random.Range(0, 4);
+            Debug.Log(actualtaunt);
+        }
+                
+        
+
+    }
 
     void OnPunchRightKeyboard() {
         if (Punching == 1) 

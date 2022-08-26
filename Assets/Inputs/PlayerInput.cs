@@ -109,15 +109,6 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Reset"",
-                    ""type"": ""Button"",
-                    ""id"": ""0ebafebf-e81c-499f-9664-52c093f97015"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
                     ""name"": ""PunchLeftKeyboard"",
                     ""type"": ""Button"",
                     ""id"": ""2b8c92ec-a7d6-4084-a459-c8c165968783"",
@@ -401,28 +392,6 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Movement1"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""e58d36a1-b948-4c4f-bcca-48264020b8d1"",
-                    ""path"": ""<DualShockGamepad>/leftTrigger"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Reset"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""0c4965f5-40ea-4ff2-ab4c-cca2c56b02c3"",
-                    ""path"": ""<XInputController>/leftTrigger"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Reset"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -777,7 +746,6 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         m_CharacterControls_PunchRight = m_CharacterControls.FindAction("PunchRight", throwIfNotFound: true);
         m_CharacterControls_TEST = m_CharacterControls.FindAction("TEST", throwIfNotFound: true);
         m_CharacterControls_TEST2 = m_CharacterControls.FindAction("TEST2", throwIfNotFound: true);
-        m_CharacterControls_Reset = m_CharacterControls.FindAction("Reset", throwIfNotFound: true);
         m_CharacterControls_PunchLeftKeyboard = m_CharacterControls.FindAction("PunchLeftKeyboard", throwIfNotFound: true);
         m_CharacterControls_PunchLeftKeyboard1 = m_CharacterControls.FindAction("PunchLeftKeyboard1", throwIfNotFound: true);
         m_CharacterControls_PunchRightKeyboard = m_CharacterControls.FindAction("PunchRightKeyboard", throwIfNotFound: true);
@@ -861,7 +829,6 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
     private readonly InputAction m_CharacterControls_PunchRight;
     private readonly InputAction m_CharacterControls_TEST;
     private readonly InputAction m_CharacterControls_TEST2;
-    private readonly InputAction m_CharacterControls_Reset;
     private readonly InputAction m_CharacterControls_PunchLeftKeyboard;
     private readonly InputAction m_CharacterControls_PunchLeftKeyboard1;
     private readonly InputAction m_CharacterControls_PunchRightKeyboard;
@@ -881,7 +848,6 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         public InputAction @PunchRight => m_Wrapper.m_CharacterControls_PunchRight;
         public InputAction @TEST => m_Wrapper.m_CharacterControls_TEST;
         public InputAction @TEST2 => m_Wrapper.m_CharacterControls_TEST2;
-        public InputAction @Reset => m_Wrapper.m_CharacterControls_Reset;
         public InputAction @PunchLeftKeyboard => m_Wrapper.m_CharacterControls_PunchLeftKeyboard;
         public InputAction @PunchLeftKeyboard1 => m_Wrapper.m_CharacterControls_PunchLeftKeyboard1;
         public InputAction @PunchRightKeyboard => m_Wrapper.m_CharacterControls_PunchRightKeyboard;
@@ -924,9 +890,6 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 @TEST2.started -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnTEST2;
                 @TEST2.performed -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnTEST2;
                 @TEST2.canceled -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnTEST2;
-                @Reset.started -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnReset;
-                @Reset.performed -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnReset;
-                @Reset.canceled -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnReset;
                 @PunchLeftKeyboard.started -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnPunchLeftKeyboard;
                 @PunchLeftKeyboard.performed -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnPunchLeftKeyboard;
                 @PunchLeftKeyboard.canceled -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnPunchLeftKeyboard;
@@ -976,9 +939,6 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 @TEST2.started += instance.OnTEST2;
                 @TEST2.performed += instance.OnTEST2;
                 @TEST2.canceled += instance.OnTEST2;
-                @Reset.started += instance.OnReset;
-                @Reset.performed += instance.OnReset;
-                @Reset.canceled += instance.OnReset;
                 @PunchLeftKeyboard.started += instance.OnPunchLeftKeyboard;
                 @PunchLeftKeyboard.performed += instance.OnPunchLeftKeyboard;
                 @PunchLeftKeyboard.canceled += instance.OnPunchLeftKeyboard;
@@ -1082,10 +1042,6 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         }
     }
     public CharacterControls1Actions @CharacterControls1 => new CharacterControls1Actions(this);
-
-    public object CharacterControls2 { get; internal set; }
-    public object asd { get; internal set; }
-
     public interface ICharacterControlsActions
     {
         void OnMovement(InputAction.CallbackContext context);
@@ -1097,7 +1053,6 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         void OnPunchRight(InputAction.CallbackContext context);
         void OnTEST(InputAction.CallbackContext context);
         void OnTEST2(InputAction.CallbackContext context);
-        void OnReset(InputAction.CallbackContext context);
         void OnPunchLeftKeyboard(InputAction.CallbackContext context);
         void OnPunchLeftKeyboard1(InputAction.CallbackContext context);
         void OnPunchRightKeyboard(InputAction.CallbackContext context);

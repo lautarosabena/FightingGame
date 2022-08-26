@@ -1346,6 +1346,10 @@ PrefabInstance:
       propertyPath: m_DefaultActionMap
       value: cfd73428-0272-487e-b7f4-c8677bf3e3ce
       objectReference: {fileID: 0}
+    - target: {fileID: 561714015948046425, guid: ffd4c1d0e6b280a42a7254eb1a2b49f4, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 694515891}
     - target: {fileID: 561714015948046430, guid: ffd4c1d0e6b280a42a7254eb1a2b49f4, type: 3}
       propertyPath: m_Drag
       value: 0

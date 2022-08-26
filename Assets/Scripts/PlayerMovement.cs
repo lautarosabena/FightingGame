@@ -7,8 +7,6 @@ using UnityEngine.SceneManagement;
 using Photon.Pun;
 public class PlayerMovement : MonoBehaviour
 {
-    public Transform target;
-    
     PlayerInput input;
     Vector2 currentMovement;
     public Rigidbody m_Rigidbody;
@@ -17,8 +15,6 @@ public class PlayerMovement : MonoBehaviour
     public int Jumping = 2;
     public int Punching = 1;
     private Vector3 inputVector;
-    private Vector2 asdd;
-    //private Animator animator;
     public float timer = 0;
     public GameObject obj;
     public float maxdist = 0;
@@ -27,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
     public int condition4 = 0;
     private Vector3 movimiento2;
     public float speed;
-    [SerializeField] private CharacterController Player2;
+    [SerializeField] private CharacterController Player;
 
     
     [SerializeField] private PlayerInput PlayerInput;
@@ -100,8 +96,8 @@ public class PlayerMovement : MonoBehaviour
 
                 float h = Input.GetAxisRaw("Joystick2Horizontal");
                 float v = Input.GetAxisRaw("Joystick2Vertical");
-                Player2.Move(new Vector3(h, 0, v).normalized * Time.deltaTime * 30f);
-                Player2.Move(-Vector3.up.normalized * Time.deltaTime * 10f);
+                Player.Move(new Vector3(h, 0, v).normalized * Time.deltaTime * 30f);
+                Player.Move(-Vector3.up.normalized * Time.deltaTime * 10f);
                 //OnMovimiento();
                 handleRotation();
 
@@ -204,6 +200,7 @@ public class PlayerMovement : MonoBehaviour
         //m_Rigidbody.MovePosition(transform.position + movimiento2 *  10f * Time.deltaTime);
         //transform.Translate(Vector3.left * Time.deltaTime * m_Speed);
         Vector2 inputMovimiento = currentMovement;
+        Player.Move(movimiento2 * 10f * Time.deltaTime);
         inputVector = new Vector3(inputMovimiento.x, 0, inputMovimiento.y);
         
     }
