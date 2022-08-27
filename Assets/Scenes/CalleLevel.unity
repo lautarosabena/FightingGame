@@ -3880,7 +3880,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1226232890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4670,6 +4670,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4405009243468086186, guid: 5672996eb87a0b94bae19a9931b3f363, type: 3}
+      propertyPath: a
+      value: 
+      objectReference: {fileID: 1979124453}
     - target: {fileID: 7074965294715535692, guid: 5672996eb87a0b94bae19a9931b3f363, type: 3}
       propertyPath: sceneViewId
       value: 2
@@ -4684,7 +4688,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8330474876169463208, guid: 5672996eb87a0b94bae19a9931b3f363, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 8687787800378350940, guid: 5672996eb87a0b94bae19a9931b3f363, type: 3}
       propertyPath: respawn
@@ -5627,6 +5631,14 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7368320236270648113, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
+      propertyPath: p
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7368320236270648118, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
+      propertyPath: p
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7368320236270648118, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
       propertyPath: SonidoChoque
       value: 
@@ -5687,6 +5699,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1979124453 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7368320236270648113, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
+  m_PrefabInstance: {fileID: 1948092569}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 371687946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6e30e85436bda94988c4577417bb799, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1980524750
 PrefabInstance:
   m_ObjectHideFlags: 0

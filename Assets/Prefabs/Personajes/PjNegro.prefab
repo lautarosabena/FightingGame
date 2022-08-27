@@ -128,14 +128,12 @@ GameObject:
   - component: {fileID: 4129633548032703746}
   - component: {fileID: 3280870825586511617}
   - component: {fileID: 7703620167501437259}
-  - component: {fileID: 7368320236270648127}
   - component: {fileID: 7368320236270648118}
   - component: {fileID: 7368320236270648113}
   - component: {fileID: 9015016991564861839}
   - component: {fileID: 3272688303711218410}
   - component: {fileID: 3272688303711218409}
   - component: {fileID: 3272688303711218408}
-  - component: {fileID: 3272688303711218411}
   - component: {fileID: 615791549601894490}
   m_Layer: 6
   m_Name: PjNegro
@@ -159,6 +157,7 @@ Transform:
   - {fileID: 8061579694239212488}
   - {fileID: 8504553520770243065}
   - {fileID: 9015016992653460827}
+  - {fileID: 2258189548735573015}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
@@ -312,22 +311,21 @@ MonoBehaviour:
   - Type: 4
     SynchronizeType: 1
     Name: PunchLeft
+  - Type: 9
+    SynchronizeType: 0
+    Name: Taunt1
+  - Type: 9
+    SynchronizeType: 0
+    Name: Taunt2
+  - Type: 9
+    SynchronizeType: 0
+    Name: Taunt3
+  - Type: 9
+    SynchronizeType: 0
+    Name: Taunt4
   m_SynchronizeLayers:
   - SynchronizeType: 1
     LayerIndex: 0
---- !u!114 &7368320236270648127
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2953233691270142438}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3824efade9ca1ae479afbcc5a4036c38, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  obj: {fileID: 0}
 --- !u!114 &7368320236270648118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -364,7 +362,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6e30e85436bda94988c4577417bb799, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
   m_Rigidbody: {fileID: 0}
   m_Speed: 15
   asd: 1
@@ -377,6 +374,7 @@ MonoBehaviour:
   condition3: 0
   speed: 0
   Player: {fileID: 615791549601894490}
+  Punchs: {fileID: 2258189548735573015}
 --- !u!114 &9015016991564861839
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -516,6 +514,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PJNEGRO: {fileID: 0}
   PJNEGROCH: {fileID: 0}
+  PJROJOCH: {fileID: 0}
   PJNEGROBody: {fileID: 0}
   PJROJO: {fileID: 0}
   PJROJOBody: {fileID: 0}
@@ -532,19 +531,6 @@ MonoBehaviour:
   TimerText: {fileID: 0}
   PjNegroTimer: 0
   PjRojoTimer: 0
---- !u!114 &3272688303711218411
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2953233691270142438}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3824efade9ca1ae479afbcc5a4036c38, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  obj: {fileID: 0}
 --- !u!143 &615791549601894490
 CharacterController:
   m_ObjectHideFlags: 0
@@ -563,6 +549,37 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.02, z: 0}
+--- !u!1 &7471207800399066254
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2258189548735573015}
+  m_Layer: 0
+  m_Name: Punchs
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2258189548735573015
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7471207800399066254}
+  m_LocalRotation: {x: -0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0.0001, y: 0.0313, z: 0.0348}
+  m_LocalScale: {x: 0.008333313, y: 0.008333333, z: 0.008333313}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2571606830877705052}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9015016992158476468
 GameObject:
   m_ObjectHideFlags: 0
@@ -573,7 +590,6 @@ GameObject:
   m_Component:
   - component: {fileID: 9015016992158476471}
   - component: {fileID: 9015016992158476470}
-  - component: {fileID: 9015016992158476425}
   m_Layer: 6
   m_Name: trompada
   m_TagString: Untagged
@@ -608,19 +624,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 791b976a2fbaadb48bd2c465b34c29ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &9015016992158476425
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9015016992158476468}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3824efade9ca1ae479afbcc5a4036c38, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  obj: {fileID: 2953233691270142438}
 --- !u!1 &9015016992653460824
 GameObject:
   m_ObjectHideFlags: 0

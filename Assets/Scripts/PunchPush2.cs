@@ -7,7 +7,7 @@ public class PunchPush2 : MonoBehaviour
     public Vector3 poss;
     
     public ParticleSystem trompada2;
-    public int knock2 = 0;
+    //public int knock2 = 0;
     private AudioSource audio;
     
     // Start is called before the first frame update
@@ -38,7 +38,7 @@ public class PunchPush2 : MonoBehaviour
         if (collision.collider.tag == "punio2")
         {
             audio.Play();
-            knock2 = knock2 + 1;
+            //knock2 = knock2 + 1;
             hit2();
             Debug.Log("golpe2");
             //Vector3 dir = collision.contacts[0].point - transform.position;

@@ -12,7 +12,7 @@ public class RagdollActivater2 : MonoBehaviour
     //public Transform follower;
     ///public static int colliderfollow = 0;
     public float timerr = 5f;
-    public PunchPush2 p;
+    //public PlayerMovement2 p;
     public static bool quase = false;
     public bool morision = true;
     // Start is called before the first frame update
@@ -60,12 +60,12 @@ public class RagdollActivater2 : MonoBehaviour
         }
 
         //Debug.Log(timerr);
-        p = FindObjectOfType<PunchPush2>();
+        //p = FindObjectOfType<PlayerMovement2>();
         //Debug.Log(PunchPush2.knock2);
          //Debug.Log(p.knock2);
         
 
-        if (p.knock2 >= 15) 
+        /*if (p.knock >= 15) 
         {
             quase = true;
             DoRagdoll2(true);
@@ -79,7 +79,7 @@ public class RagdollActivater2 : MonoBehaviour
                 //colliderfollow = 1;
             } 
             
-        }
+        } */
 
         /*if (Input.GetKeyDown(KeyCode.Q))
         {
@@ -142,7 +142,7 @@ public class RagdollActivater2 : MonoBehaviour
 
     void Levantarse() {
             quase = false;
-            p.knock2 = 0;
+            //p.knock = 0;
             DoRagdoll2(true);
             DoRagdoll2(false);
             morision = true;

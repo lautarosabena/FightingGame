@@ -12,7 +12,7 @@ public class RagdollActivater : MonoBehaviour
     public AudioSource SonidoChoque2;
     public int condition = 0;
     public float timerr = 5f;
-    public PunchPush a;
+    public PlayerMovement2 a;
     public static bool quase = false;
     public static bool sabanamogolico2 = false;
     public bool morision = true;
@@ -56,7 +56,7 @@ public class RagdollActivater : MonoBehaviour
                 //colliderfollow = 1;
             }
         }
-        a = FindObjectOfType<PunchPush>();
+        a = FindObjectOfType<PlayerMovement2>();
 
         if (a.knock >= 15) 
         {

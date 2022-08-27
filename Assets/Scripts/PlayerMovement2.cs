@@ -26,8 +26,11 @@ public class PlayerMovement2 : MonoBehaviour
     int actualtaunt;
     private bool cantaunt = false;
     [SerializeField] private CharacterController Player;
-    
-    
+    [SerializeField] private Transform Punchs;
+    //public PlayerMovement2 p;
+    public int knock;
+
+
     [SerializeField] private PlayerInput PlayerInput;
     void Awake() 
     {
@@ -63,9 +66,67 @@ public class PlayerMovement2 : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
+        
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.white;
+        Gizmos.DrawWireSphere(Punchs.transform.position, 2.5f);
+    }
     void Update()
     {
+
+
+        //Sistema de golpes
+        Debug.Log(knock);
+        Collider[] hitColliders = Physics.OverlapSphere(Punchs.transform.position, 2.5f);
+
+
+
+        if (Input.GetKey(KeyCode.Joystick1Button2))
+        {
+
+            if (Punching == 1)
+            {
+                Punching = 2;
+
+                animator.SetBool("PunchRight", true);
+                for (int i = 0; i < hitColliders.Length; i++)
+                {
+                    GameObject hitCollider = hitColliders[i].gameObject;
+                    if (hitCollider.CompareTag("Player"))
+                    {
+                        Debug.Log("ASD");
+                        knock++;
+                    }
+                }
+                Invoke("desactivator", 0.5f);
+
+            }
+        }
+        else if (Input.GetKey(KeyCode.Joystick1Button3))
+        {
+            if (Punching == 1)
+            {
+                Punching = 2;
+
+                animator.SetBool("PunchLeft", true);
+                for (int i = 0; i < hitColliders.Length; i++)
+                {
+                    GameObject hitCollider = hitColliders[i].gameObject;
+                    if (hitCollider.CompareTag("Player"))
+                    {
+                        Debug.Log("ASD");
+                        knock++;
+                    }
+                }
+                Invoke("desactivator", 0.5f);
+
+            }
+        }
+
+
+        
+
         if (currentMovement.x != 0 || currentMovement.y != 0)
         {
             Debug.Log("test");
@@ -178,29 +239,7 @@ public class PlayerMovement2 : MonoBehaviour
                 }
 
 
-                if (Input.GetKey(KeyCode.Joystick1Button2))
-                {
-
-                    if (Punching == 1)
-                    {
-                        Punching = 2;
-
-                        animator.SetBool("PunchRight", true);
-                        Invoke("desactivator", 0.5f);
-
-                    }
-                }
-                else if (Input.GetKey(KeyCode.Joystick1Button3))
-                {
-                    if (Punching == 1)
-                    {
-                        Punching = 2;
-
-                        animator.SetBool("PunchLeft", true);
-                        Invoke("desactivator", 0.5f);
-
-                    }
-                }
+                
             }
             
         
