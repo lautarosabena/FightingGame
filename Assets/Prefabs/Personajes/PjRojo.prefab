@@ -1953,7 +1953,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a15cf23514d1581438a5261fc0b0ea32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
   m_Rigidbody: {fileID: 9176826492131991496}
   m_Speed: 15
   asd: 1
@@ -1965,7 +1964,7 @@ MonoBehaviour:
   animator: {fileID: 9176826492131991499}
   condition4: 0
   speed: 0
-  Player2: {fileID: 0}
+  Player: {fileID: 0}
 --- !u!114 &9176826492131991502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2083,6 +2082,18 @@ MonoBehaviour:
   - Type: 4
     SynchronizeType: 1
     Name: PunchLeft
+  - Type: 9
+    SynchronizeType: 0
+    Name: Taunt1
+  - Type: 9
+    SynchronizeType: 0
+    Name: Taunt2
+  - Type: 9
+    SynchronizeType: 0
+    Name: Taunt3
+  - Type: 9
+    SynchronizeType: 0
+    Name: Taunt4
   m_SynchronizeLayers:
   - SynchronizeType: 1
     LayerIndex: 0
@@ -2397,7 +2408,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &9176826490799521183
 Transform:
   m_ObjectHideFlags: 0
@@ -2442,7 +2453,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &9176826492382944995
 Transform:
   m_ObjectHideFlags: 0

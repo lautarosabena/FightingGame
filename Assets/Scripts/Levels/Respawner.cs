@@ -208,6 +208,7 @@ public class Respawner : MonoBehaviour
             if(RagdollActivater2.quase == true && PJNEGROBody.position.y <= -10)
             {
                 PJNEGROCH.enabled = false;
+                RagdollActivater2.quase = false;
                 PJNEGROCH.transform.position = respawn.position;
                 PJNEGROCH.enabled = true;
                 pointsRojo ++;
@@ -250,6 +251,7 @@ public class Respawner : MonoBehaviour
             }
             if(RagdollActivater2.quase == true && PJNEGROBody.position.y <= -0)
             {
+                RagdollActivater2.quase = false;
                 PJNEGROCH.enabled = false;
                 PJNEGROCH.transform.position = respawn.position;
                 PJNEGROCH.enabled = true;
