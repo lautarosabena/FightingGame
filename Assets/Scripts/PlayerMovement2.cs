@@ -7,7 +7,7 @@ using Photon.Pun;
 public class PlayerMovement2 : MonoBehaviour
 {
     PlayerInput input;
-    Vector3 currentMovement;
+    public static Vector3 currentMovement;
     public Rigidbody m_Rigidbody;
     public float m_Speed;
     public int asd = 1;
@@ -107,7 +107,6 @@ public class PlayerMovement2 : MonoBehaviour
                     }
                 }
                 Invoke("desactivator", 0.5f);
-
             }
         }
         else if (Input.GetKey(KeyCode.Joystick1Button3))
