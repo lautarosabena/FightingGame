@@ -8,7 +8,7 @@ public class PunchPush2 : MonoBehaviour
     
     public ParticleSystem trompada2;
     //public int knock2 = 0;
-    private AudioSource audio;
+    [SerializeField] private AudioSource audio;
     
     // Start is called before the first frame update
     void Start()

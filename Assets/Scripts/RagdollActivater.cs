@@ -6,6 +6,7 @@ public class RagdollActivater : MonoBehaviour
 {
     public Collider MainCollider;
     public Collider[] AllColliders;
+    public CharacterController PJ;
     public Transform player;
     public bool isRagdoll;
     public AudioSource SonidoChoque;
@@ -32,6 +33,7 @@ public class RagdollActivater : MonoBehaviour
     {
         foreach (var col in AllColliders)
         col.enabled = true;
+        PJ.enabled = false;
         //MainCollider.enabled = !isRagdoll;
         GetComponent<Rigidbody>().useGravity = !isRagdoll;
         GetComponent<Animator>().enabled = !isRagdoll;
@@ -132,6 +134,8 @@ public class RagdollActivater : MonoBehaviour
             DoRagdoll(false);
             sabanamogolico2 = false;
             morision = true;
+            PJ.transform.position = player.transform.position + new Vector3(0, 5, 0);
+            PJ.enabled = true;
             gameObject.layer = LayerMask.NameToLayer("RAGDOLL");
             //colliderfollow = 0;
         }
@@ -140,5 +144,6 @@ public class RagdollActivater : MonoBehaviour
     void reiniciartiempo() 
         {
             timerr = 5f;
+            PJ.enabled = true;
         }
 }

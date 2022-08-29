@@ -29,7 +29,9 @@ public class PlayerMovement2 : MonoBehaviour
     [SerializeField] private Transform Punchs;
     //public PlayerMovement2 p;
     public int knock;
-
+    public Vector3 poss;
+    public ParticleSystem trompada2;
+    [SerializeField] private AudioSource audio;
 
     [SerializeField] private PlayerInput PlayerInput;
     void Awake() 
@@ -37,11 +39,11 @@ public class PlayerMovement2 : MonoBehaviour
         
         input = new PlayerInput();
         input.CharacterControls.Teclado.performed += ctx => {
-        //currentMovement = ctx.ReadValue<Vector2>();
-        //currentMovement.Normalize();
-        //Debug.Log(ctx.ReadValueAsObject());
-        
-        
+            //currentMovement = ctx.ReadValue<Vector2>();
+            //currentMovement.Normalize();
+            //Debug.Log(ctx.ReadValueAsObject());
+            audio = GetComponent<AudioSource>();
+
         };
         
     }
@@ -64,6 +66,7 @@ public class PlayerMovement2 : MonoBehaviour
         //SetEnabled(false);
         view = GetComponent<PhotonView>();
         animator = GetComponent<Animator>();
+        Player.enabled = true;
     }
 
         
@@ -95,6 +98,10 @@ public class PlayerMovement2 : MonoBehaviour
                     GameObject hitCollider = hitColliders[i].gameObject;
                     if (hitCollider.CompareTag("Player"))
                     {
+                        poss = hitCollider.transform.position;
+                        Instantiate(trompada2, poss, Quaternion.identity);
+                        trompada2.Play();
+                        audio.Play();
                         Debug.Log("ASD");
                         knock++;
                     }

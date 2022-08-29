@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class RagdollActivater2 : MonoBehaviour
 {
     public Collider MainCollider;
+    public CharacterController PJ;
     public Collider[] AllColliders;
     public Transform player;
     public bool isRagdoll;
@@ -39,7 +40,7 @@ public class RagdollActivater2 : MonoBehaviour
         
         foreach (var col in AllColliders)
         col.enabled = true;
-        
+        PJ.enabled = false;
         //MainCollider.enabled = !isRagdoll;
         GetComponent<Rigidbody>().useGravity = !isRagdoll;
         GetComponent<Animator>().enabled = !isRagdoll;
@@ -122,6 +123,7 @@ public class RagdollActivater2 : MonoBehaviour
             SonidoChoque2.Play();
 
 
+
         }
 
         if (collision.gameObject.tag == "GAMEOVER")
@@ -143,9 +145,12 @@ public class RagdollActivater2 : MonoBehaviour
     void Levantarse() {
             quase = false;
             //p.knock = 0;
-            DoRagdoll2(true);
+            //DoRagdoll2(true);
             DoRagdoll2(false);
             morision = true;
+            //player.transform.position = PJ.transform.position;
+            PJ.transform.position = player.transform.position + new Vector3(0, 5, 0);
+            PJ.enabled = true;
             gameObject.layer = LayerMask.NameToLayer("RAGDOLL2");
             //colliderfollow = 0;
         }
@@ -153,5 +158,6 @@ public class RagdollActivater2 : MonoBehaviour
 
     void reiniciartiempo() {
             timerr = 5f;
-        }
+            PJ.enabled = true;
+    }
 }
