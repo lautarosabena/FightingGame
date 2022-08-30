@@ -18,6 +18,7 @@ TagManager:
   - reset
   - spawner
   - PJNEGRO
+  - Coins
   layers:
   - Default
   - TransparentFX

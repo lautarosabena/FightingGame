@@ -8,6 +8,8 @@ public class CoinAndBomb : MonoBehaviour
     [SerializeField] private GameObject Coin;
     [SerializeField] private GameObject Bomb;
     [SerializeField] private Transform spawnTrigger;
+    private int PointsPJN = 0;
+    private int PointsPJR = 0;
     //[SerializeField] private Vector3 test;
     // Start is called before the first frame update
     void Start()
@@ -18,6 +20,20 @@ public class CoinAndBomb : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        GameObject[] Coins = GameObject.FindGameObjectsWithTag("Coins");
+        foreach (GameObject coin in Coins)
+        {
+             void OnTriggerEnter(Collider other)
+            {
+                if (other.gameObject.name == "PjNegro")
+                {
+                    PointsPJN++;
+                    Debug.Log(PointsPJN);
+                    Debug.Log("ASD");
+                }
+            }
+        }
+
         timer -= Time.deltaTime;
         if (timer <= 0)
         {
@@ -30,7 +46,7 @@ public class CoinAndBomb : MonoBehaviour
     {
         int randomizer;
         randomizer = Random.Range(1, 10);
-        Debug.Log(randomizer);
+        //Debug.Log(randomizer);
         bool isbomb = false;
         if (randomizer > 4)
         {
@@ -50,4 +66,6 @@ public class CoinAndBomb : MonoBehaviour
             Instantiate(Bomb, spawnPosition, Quaternion.identity);
         }
     }
+
+    
 }

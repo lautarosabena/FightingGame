@@ -78,7 +78,7 @@ public class PlayerMovement : MonoBehaviour
     {
 
         //Sistema de golpes
-        Debug.Log(knock);
+        //Debug.Log(knock);
         Collider[] hitColliders = Physics.OverlapSphere(Punchs.transform.position, 2.5f);
 
 
