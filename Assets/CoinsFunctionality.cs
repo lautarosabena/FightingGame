@@ -5,7 +5,9 @@ using UnityEngine;
 public class CoinsFunctionality : MonoBehaviour
 {
     public static int PointsPJN = 0;
+    public static int PointsPJR = 0;
     [SerializeField] private GameObject Explosion;
+    public static bool Explotadisimo;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +26,17 @@ public class CoinsFunctionality : MonoBehaviour
         {
             PointsPJN++;
             Debug.Log(PointsPJN);
-            Debug.Log("ASD");
+            Debug.Log("MONEDA NEGRO");
+            Instantiate(Explosion, this.transform.position, Quaternion.identity);
+            Explotadisimo = true;
+            Destroy(gameObject);
+        }
+
+        if (other.gameObject.name == "PjRojo")
+        {
+            PointsPJR++;
+            Debug.Log(PointsPJN);
+            Debug.Log("MONEDA ROJO");
             Instantiate(Explosion, this.transform.position, Quaternion.identity);
             Destroy(gameObject);
         }

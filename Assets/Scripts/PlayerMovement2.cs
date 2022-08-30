@@ -93,10 +93,7 @@ public class PlayerMovement2 : MonoBehaviour
                 Punching = 2;
 
                 animator.SetBool("PunchRight", true);
-                animator.ResetTrigger("Taunt1");
-                animator.ResetTrigger("Taunt2");
-                animator.ResetTrigger("Taunt3");
-                animator.ResetTrigger("Taunt4");
+                
                 for (int i = 0; i < hitColliders.Length; i++)
                 {
                     GameObject hitCollider = hitColliders[i].gameObject;
@@ -120,10 +117,7 @@ public class PlayerMovement2 : MonoBehaviour
                 Punching = 2;
 
                 animator.SetBool("PunchLeft", true);
-                animator.ResetTrigger("Taunt1");
-                animator.ResetTrigger("Taunt2");
-                animator.ResetTrigger("Taunt3");
-                animator.ResetTrigger("Taunt4");
+                
                 for (int i = 0; i < hitColliders.Length; i++)
                 {
                     GameObject hitCollider = hitColliders[i].gameObject;
@@ -142,17 +136,21 @@ public class PlayerMovement2 : MonoBehaviour
         }
 
 
-        
-
-        if (currentMovement.x != 0 || currentMovement.y != 0)
+        if (cantaunt == false)
         {
-            Debug.Log("test");
+            
             animator.ResetTrigger("Taunt1");
             animator.ResetTrigger("Taunt2");
             animator.ResetTrigger("Taunt3");
             animator.ResetTrigger("Taunt4");
+            Debug.Log("Desactivando");
+        }
+
+        if (currentMovement.x != 0 || currentMovement.y != 0)
+        {
+            
             animator.SetBool("IsRunning", true);
-            //cantaunt = false;
+            cantaunt = false;
 
 
         }
@@ -187,13 +185,7 @@ public class PlayerMovement2 : MonoBehaviour
                 Debug.Log(actualtaunt);
             }
         }
-        if (cantaunt == false)
-        {
-            animator.ResetTrigger("Taunt1");
-            animator.ResetTrigger("Taunt2");
-            animator.ResetTrigger("Taunt3");
-            animator.ResetTrigger("Taunt4");
-        }
+        
         
 
         if (Respawner.currentScene.name == "PlataformaLoca")

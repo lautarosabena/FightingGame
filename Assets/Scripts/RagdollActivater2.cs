@@ -58,6 +58,8 @@ public class RagdollActivater2 : MonoBehaviour
                 reiniciartiempo();
                 //colliderfollow = 1;
             }
+
+            
         }
 
         //Debug.Log(timerr);
@@ -108,6 +110,17 @@ public class RagdollActivater2 : MonoBehaviour
         
     }
 
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Coins")
+        {
+            DoRagdoll2(true);
+            morision = false;
+            quase = true;
+        }
+
+            
+    }
     private void OnCollisionEnter(Collision collision)
     {
 
@@ -126,11 +139,11 @@ public class RagdollActivater2 : MonoBehaviour
 
         }
 
-        if (collision.gameObject.tag == "GAMEOVER")
+        if (collision.gameObject.tag == "Coins")
         {
-            //Debug.Log("sapoooooooooooo");
-           
-            // PUT HERE THE POINT AND CHANGE LEVEL FUNCTIONS
+            DoRagdoll2(true);
+            morision = false;
+            quase = true;
 
 
         }

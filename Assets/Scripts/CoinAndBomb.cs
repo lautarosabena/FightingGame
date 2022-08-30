@@ -44,27 +44,27 @@ public class CoinAndBomb : MonoBehaviour
 
     private void SpawnBombOrCoin()
     {
-        int randomizer;
-        randomizer = Random.Range(1, 10);
+        //int randomizer;
+        //randomizer = Random.Range(1, 10);
         //Debug.Log(randomizer);
-        bool isbomb = false;
-        if (randomizer > 4)
-        {
-            isbomb = false;
-        }
-        else if (randomizer < 4)
-        {
-            isbomb = true;
-        }
+        //bool isbomb = false;
+        //if (randomizer > 4)
+        //{
+            //isbomb = false;
+        //}
+        //else if (randomizer < 4)
+        //{
+            //isbomb = true;
+        //}
         Vector3 spawnPosition = new Vector3(-27 + Random.insideUnitSphere.x * 30,
                  5, 0 + Random.insideUnitSphere.z * 30);
-        if (!isbomb)
-        {
-            Instantiate(Coin, spawnPosition, Quaternion.identity);
-        } else if (isbomb)
-        {
+        //if (!isbomb)
+        //{
+           // Instantiate(Coin, spawnPosition, Quaternion.identity);
+        //} else if (isbomb)
+        //{
             Instantiate(Bomb, spawnPosition, Quaternion.identity);
-        }
+        //}
     }
 
     
