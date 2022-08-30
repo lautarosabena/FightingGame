@@ -26,7 +26,7 @@ public class TutorialScript : MonoBehaviour
     void Update()
     {
         if(Input.GetKey(KeyCode.Joystick1Button1) || Input.GetKey(KeyCode.Joystick2Button1)){
-            SceneManager.LoadScene("TutorialScene");
+            SceneManager.LoadScene("PlataformaLoca");
         }
         switch (ningunTutoHecho)
         {

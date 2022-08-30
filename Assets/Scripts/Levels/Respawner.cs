@@ -47,6 +47,8 @@ public class Respawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        PJNEGROCH.enabled = true;
+        PJROJOCH.enabled = true;
         //LoadData();
         one = true;
         two = true;
