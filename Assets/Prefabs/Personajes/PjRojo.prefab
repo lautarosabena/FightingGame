@@ -32,6 +32,37 @@ Transform:
   m_Father: {fileID: 3524261821879020565}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &312100653244040613
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1844184336091462518}
+  m_Layer: 0
+  m_Name: Punchs
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1844184336091462518
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 312100653244040613}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.0043, y: 0.027633335, z: 0.0348}
+  m_LocalScale: {x: 0.008333331, y: 0.008333334, z: 0.008333331}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8705487147086774034}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &337118030822303494
 GameObject:
   m_ObjectHideFlags: 0
@@ -1889,6 +1920,7 @@ Transform:
   m_Children:
   - {fileID: 3783103554007048070}
   - {fileID: 3271314241016309175}
+  - {fileID: 1844184336091462518}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
@@ -1965,6 +1997,11 @@ MonoBehaviour:
   condition4: 0
   speed: 0
   Player: {fileID: 0}
+  Punchs: {fileID: 0}
+  knock: 0
+  poss: {x: 0, y: 0, z: 0}
+  trompada2: {fileID: 0}
+  audio: {fileID: 0}
 --- !u!114 &9176826492131991502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2113,6 +2150,7 @@ MonoBehaviour:
   AllColliders:
   - {fileID: 9176826492382944994}
   - {fileID: 9176826490799521182}
+  PJ: {fileID: 0}
   player: {fileID: 8705487147086774034}
   isRagdoll: 0
   SonidoChoque: {fileID: 0}

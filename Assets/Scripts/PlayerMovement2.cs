@@ -93,6 +93,10 @@ public class PlayerMovement2 : MonoBehaviour
                 Punching = 2;
 
                 animator.SetBool("PunchRight", true);
+                animator.ResetTrigger("Taunt1");
+                animator.ResetTrigger("Taunt2");
+                animator.ResetTrigger("Taunt3");
+                animator.ResetTrigger("Taunt4");
                 for (int i = 0; i < hitColliders.Length; i++)
                 {
                     GameObject hitCollider = hitColliders[i].gameObject;
@@ -116,11 +120,18 @@ public class PlayerMovement2 : MonoBehaviour
                 Punching = 2;
 
                 animator.SetBool("PunchLeft", true);
+                animator.ResetTrigger("Taunt1");
+                animator.ResetTrigger("Taunt2");
+                animator.ResetTrigger("Taunt3");
+                animator.ResetTrigger("Taunt4");
                 for (int i = 0; i < hitColliders.Length; i++)
                 {
                     GameObject hitCollider = hitColliders[i].gameObject;
                     if (hitCollider.CompareTag("Player"))
                     {
+                        Instantiate(trompada2, poss, Quaternion.identity);
+                        trompada2.Play();
+                        audio.Play();
                         Debug.Log("ASD");
                         knock++;
                     }
@@ -267,7 +278,7 @@ public class PlayerMovement2 : MonoBehaviour
             
         }
 
-        OnDrawGizmos();
+        //OnDrawGizmos();
         }
 
         
@@ -276,10 +287,10 @@ public class PlayerMovement2 : MonoBehaviour
     }
 
 
-    void OnDrawGizmos() {
+    /*void OnDrawGizmos() {
         Gizmos.color = Color.red;
         Gizmos.DrawRay(transform.position, Vector3.down * maxdist);
-    }
+    }*/
 
 
     void handleRotation() {

@@ -23,18 +23,25 @@ public class PlayerMovement : MonoBehaviour
     public int condition4 = 0;
     private Vector3 movimiento2;
     public float speed;
+    int actualtaunt;
+    private bool cantaunt = false;
     [SerializeField] private CharacterController Player;
+    [SerializeField] private Transform Punchs;
+    //public PlayerMovement2 p;
+    public int knock;
+    public Vector3 poss;
+    public ParticleSystem trompada2;
+    [SerializeField] private AudioSource audio;
 
-    
     [SerializeField] private PlayerInput PlayerInput;
     void Awake() 
     {
         input = new PlayerInput();
         input.CharacterControls.Movement.performed += ctx => {
-        //currentMovement = ctx.ReadValue<Vector2>();
-        //Debug.Log(ctx.ReadValueAsObject());
-        
-        
+            //currentMovement = ctx.ReadValue<Vector2>();
+            //Debug.Log(ctx.ReadValueAsObject());
+            audio = GetComponent<AudioSource>();
+
         };
         
     }
@@ -57,11 +64,134 @@ public class PlayerMovement : MonoBehaviour
         //SetEnabled(false);
         view = GetComponent<PhotonView>();
         animator = GetComponent<Animator>();
+        Player.enabled = true;
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.white;
+        Gizmos.DrawWireSphere(Punchs.transform.position, 2.5f);
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
+
+        //Sistema de golpes
+        Debug.Log(knock);
+        Collider[] hitColliders = Physics.OverlapSphere(Punchs.transform.position, 2.5f);
+
+
+
+        if (Input.GetKey(KeyCode.Joystick2Button2))
+        {
+
+            if (Punching == 1)
+            {
+                Punching = 2;
+
+                animator.SetBool("PunchRight", true);
+                animator.ResetTrigger("Taunt1");
+                animator.ResetTrigger("Taunt2");
+                animator.ResetTrigger("Taunt3");
+                animator.ResetTrigger("Taunt4");
+                for (int i = 0; i < hitColliders.Length; i++)
+                {
+                    GameObject hitCollider = hitColliders[i].gameObject;
+                    if (hitCollider.CompareTag("Player"))
+                    {
+                        poss = hitCollider.transform.position;
+                        Instantiate(trompada2, poss, Quaternion.identity);
+                        trompada2.Play();
+                        audio.Play();
+                        Debug.Log("ASD");
+                        knock++;
+                    }
+                }
+                Invoke("desactivator", 0.5f);
+            }
+        }
+        else if (Input.GetKey(KeyCode.Joystick2Button3))
+        {
+            if (Punching == 1)
+            {
+                Punching = 2;
+
+                animator.SetBool("PunchLeft", true);
+                animator.ResetTrigger("Taunt1");
+                animator.ResetTrigger("Taunt2");
+                animator.ResetTrigger("Taunt3");
+                animator.ResetTrigger("Taunt4");
+                for (int i = 0; i < hitColliders.Length; i++)
+                {
+                    GameObject hitCollider = hitColliders[i].gameObject;
+                    if (hitCollider.CompareTag("Player"))
+                    {
+                        Instantiate(trompada2, poss, Quaternion.identity);
+                        trompada2.Play();
+                        audio.Play();
+                        Debug.Log("ASD");
+                        knock++;
+                    }
+                }
+                Invoke("desactivator", 0.5f);
+
+            }
+        }
+
+
+
+
+        if (currentMovement.x != 0 || currentMovement.y != 0)
+        {
+            Debug.Log("test");
+            animator.ResetTrigger("Taunt1");
+            animator.ResetTrigger("Taunt2");
+            animator.ResetTrigger("Taunt3");
+            animator.ResetTrigger("Taunt4");
+            animator.SetBool("IsRunning", true);
+            //cantaunt = false;
+
+
+        }
+        else
+        {
+
+            animator.SetBool("IsRunning", false);
+        }
+        Debug.Log(cantaunt);
+        if (currentMovement.x == 0 && currentMovement.y == 0)
+        {
+            if (Input.GetKeyUp(KeyCode.Joystick2Button4))
+            {
+                cantaunt = true;
+                int actualtaunt;
+                actualtaunt = Random.Range(0, 4);
+                switch (actualtaunt)
+                {
+                    case 0:
+                        animator.SetTrigger("Taunt1");
+                        break;
+                    case 1:
+                        animator.SetTrigger("Taunt2");
+                        break;
+                    case 2:
+                        animator.SetTrigger("Taunt3");
+                        break;
+                    case 3:
+                        animator.SetTrigger("Taunt4");
+                        break;
+                }
+                Debug.Log(actualtaunt);
+            }
+        }
+        if (cantaunt == false)
+        {
+            animator.ResetTrigger("Taunt1");
+            animator.ResetTrigger("Taunt2");
+            animator.ResetTrigger("Taunt3");
+            animator.ResetTrigger("Taunt4");
+        }
 
         if (Respawner.currentScene.name == "PlataformaLoca")
         {
@@ -168,7 +298,7 @@ public class PlayerMovement : MonoBehaviour
             
         }
 
-        OnDrawGizmos();
+        //OnDrawGizmos();
         }
 
         
@@ -177,10 +307,10 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
-    void OnDrawGizmos() {
+    /*void OnDrawGizmos() {
         Gizmos.color = Color.red;
         Gizmos.DrawRay(transform.position, Vector3.down * maxdist);
-    }
+    }*/
 
 
     void handleRotation() {

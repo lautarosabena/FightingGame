@@ -339,6 +339,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MainCollider: {fileID: 2610565736356193159}
+  PJ: {fileID: 0}
   AllColliders:
   - {fileID: 2610565735601922732}
   - {fileID: 2610565737185870288}
@@ -375,6 +376,9 @@ MonoBehaviour:
   Player: {fileID: 615791549601894490}
   Punchs: {fileID: 2258189548735573015}
   knock: 0
+  poss: {x: 0, y: 0, z: 0}
+  trompada2: {fileID: 0}
+  audio: {fileID: 0}
 --- !u!114 &9015016991564861839
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -389,6 +393,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   poss: {x: 0, y: 0, z: 0}
   trompada2: {fileID: 5024009746357069192, guid: ec3f674830402cc45bce805cf6493db7, type: 3}
+  audio: {fileID: 0}
 --- !u!136 &3272688303711218410
 CapsuleCollider:
   m_ObjectHideFlags: 0
