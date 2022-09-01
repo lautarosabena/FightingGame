@@ -7,6 +7,7 @@ public class RagdollActivater2 : MonoBehaviour
     public Collider MainCollider;
     public CharacterController PJ;
     public Collider[] AllColliders;
+    public Rigidbody[] AllRigidbodies;
     public Transform player;
     public bool isRagdoll;
     public int condition2 = 0;
@@ -19,6 +20,8 @@ public class RagdollActivater2 : MonoBehaviour
     // Start is called before the first frame update
     public AudioSource SonidoChoque;
     public AudioSource SonidoChoque2;
+    public bool fixer = false;
+    public PlayerMovement b;
     void Awake()
     {
         MainCollider = GetComponent<BoxCollider>();
@@ -32,22 +35,44 @@ public class RagdollActivater2 : MonoBehaviour
     private void Start()
     {
         quase = false;
+        fixer = true;
     }
 
     // Update is called once per frame
     public void DoRagdoll2(bool isRagdoll)
     {
-        
+        fixer = false;
         foreach (var col in AllColliders)
+        {
         col.enabled = true;
         PJ.enabled = false;
         //MainCollider.enabled = !isRagdoll;
         GetComponent<Rigidbody>().useGravity = !isRagdoll;
         GetComponent<Animator>().enabled = !isRagdoll;
+        }
+
+        foreach (var rig in AllRigidbodies)
+        {
+            rig.isKinematic = false;
+            //rig.AddForce(transform.up * 500f);
+        }
+
+        
+
     }
 
     void Update() 
     {
+        b = FindObjectOfType<PlayerMovement>();
+        if (fixer == true)
+        {
+            
+            foreach (var rig in AllRigidbodies)
+            {
+                rig.isKinematic = true;
+            }
+            
+        }
         MainCollider.enabled = true;
         if (morision == false)
         {
@@ -68,7 +93,7 @@ public class RagdollActivater2 : MonoBehaviour
          //Debug.Log(p.knock2);
         
 
-        /*if (p.knock >= 15) 
+        if (b.knock >= 15) 
         {
             quase = true;
             DoRagdoll2(true);
@@ -82,7 +107,7 @@ public class RagdollActivater2 : MonoBehaviour
                 //colliderfollow = 1;
             } 
             
-        } */
+        } 
 
         /*if (Input.GetKeyDown(KeyCode.Q))
         {
@@ -157,7 +182,7 @@ public class RagdollActivater2 : MonoBehaviour
 
     void Levantarse() {
             quase = false;
-            //p.knock = 0;
+            b.knock = 0;
             //DoRagdoll2(true);
             DoRagdoll2(false);
             morision = true;
@@ -165,8 +190,9 @@ public class RagdollActivater2 : MonoBehaviour
             PJ.transform.position = player.transform.position + new Vector3(0, 5, 0);
             PJ.enabled = true;
             gameObject.layer = LayerMask.NameToLayer("RAGDOLL2");
-            //colliderfollow = 0;
-        }
+            fixer = true;
+        //colliderfollow = 0;
+    }
 
 
     void reiniciartiempo() {

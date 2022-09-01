@@ -19,6 +19,8 @@ TagManager:
   - spawner
   - PJNEGRO
   - Coins
+  - RAGDOLLROJO
+  - RAGDOLLNEGRO
   layers:
   - Default
   - TransparentFX

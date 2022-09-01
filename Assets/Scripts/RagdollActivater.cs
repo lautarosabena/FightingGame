@@ -109,6 +109,17 @@ public class RagdollActivater : MonoBehaviour
         
     }
 
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Coins")
+        {
+            DoRagdoll(true);
+            gameObject.layer = LayerMask.NameToLayer("RAGDOLLOFF");
+            morision = false;
+            sabanamogolico2 = true;
+        }
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
 
@@ -125,6 +136,8 @@ public class RagdollActivater : MonoBehaviour
 
 
         }
+
+        
     }
 
     void Levantarse() {
