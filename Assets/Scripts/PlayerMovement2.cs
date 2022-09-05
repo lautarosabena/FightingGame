@@ -32,6 +32,9 @@ public class PlayerMovement2 : MonoBehaviour
     public Vector3 poss;
     public ParticleSystem trompada2;
     [SerializeField] private AudioSource audio;
+    private Vector3 playerVelocity;
+    private bool Grounded = false;
+    private Vector3 moveDirection = Vector3.zero;
 
     [SerializeField] private PlayerInput PlayerInput;
     void Awake() 
@@ -77,12 +80,30 @@ public class PlayerMovement2 : MonoBehaviour
     }
     void Update()
     {
-
+        
 
         //Sistema de golpes
         Debug.Log(knock);
         Collider[] hitColliders = Physics.OverlapSphere(Punchs.transform.position, 2.5f);
 
+        if (Input.GetKey(KeyCode.Joystick1Button0) && Grounded == true)
+        {
+
+            animator.SetBool("IsJumping", true);
+            moveDirection.y = 10f;
+            //transform.Translate(new Vector3(0, 150f, 0) * Time.deltaTime);
+            //playerVelocity.y += Mathf.Sqrt(1f * -3.0f * -10);
+            //playerVelocity.y += -10f * Time.deltaTime;
+
+            //m_Rigidbody.AddForce(Vector3.up * 100f);
+            //Jumping = 2;
+            timer = 2f;
+            Debug.Log("salto");
+            Grounded = false;
+        }
+        moveDirection.y -= 10f * Time.deltaTime;
+        Player.Move(moveDirection * Time.deltaTime);
+        //Player.Move(playerVelocity * Time.deltaTime);
 
 
         if (Input.GetKey(KeyCode.Joystick1Button2))
@@ -210,8 +231,13 @@ public class PlayerMovement2 : MonoBehaviour
         //transform.position = transform.position + new Vector3(0, -10, 0) * Time.deltaTime;
         timer -= Time.deltaTime;
         if (timer <= 0) {
-                animator.SetBool("IsJumping", false); 
-            }
+            Grounded = true;
+            animator.SetBool("IsJumping", false);
+            
+            Player.Move(new Vector3 (0, -10f, 0 * Time.deltaTime));
+            //animator.SetBool("IsJumping", true);
+
+        }
 
         //Debug.Log(timer);
 
@@ -225,27 +251,14 @@ public class PlayerMovement2 : MonoBehaviour
                 
                 //Player.Move(Vector3.forward * Time.deltaTime * 10f);
                 Player.Move(new Vector3(h, 0, v).normalized * Time.deltaTime * 30f);
-                Player.Move(-Vector3.up.normalized * Time.deltaTime * 10f);
+                //Player.Move(-Vector3.up.normalized * Time.deltaTime * 10f);
+                //playerVelocity.y += -10f * Time.deltaTime;
                 //transform.position = transform.position + (new Vector3(h, 0, v).normalized * Time.deltaTime * 10f);
                 //OnMovement();
                 //OnTeclado();
                 handleRotation();
 
-                if (Input.GetKey(KeyCode.Joystick1Button0))
-                {
-                    Debug.Log("entrada 1");
-                    if (Jumping == 1 && timer <= 0)
-                    {
-                        animator.SetBool("IsJumping", true);
-                        //transform.Translate(new Vector3(0, 150f, 0) * Time.deltaTime);
-                        m_Rigidbody.AddForce(Vector3.up * 500f);
-                        Jumping = 2;
-                        timer = 1.15f;
-                        Debug.Log("salto");
-
-
-                    }
-                }
+                
 
 
                 
@@ -264,11 +277,14 @@ public class PlayerMovement2 : MonoBehaviour
 
         RaycastHit hit;
         if (Physics.Raycast(transform.position, Vector3.down, out hit, maxdist)) {
-            //Debug.Log(Jumping);
-            
-            Jumping = 1;
-            
-        }
+                Debug.Log("PISOO");
+                playerVelocity.y = 0f;
+                //Grounded = true; 
+
+            } else
+            {
+                
+            }
 
         //OnDrawGizmos();
         }
@@ -279,10 +295,10 @@ public class PlayerMovement2 : MonoBehaviour
     }
 
 
-    /*void OnDrawGizmos() {
+    void OnDrawGizmos() {
         Gizmos.color = Color.red;
         Gizmos.DrawRay(transform.position, Vector3.down * maxdist);
-    }*/
+    }
 
 
     void handleRotation() {
@@ -319,7 +335,7 @@ public class PlayerMovement2 : MonoBehaviour
         {
             animator.SetBool("IsJumping", true); 
             //transform.Translate(new Vector3(0, 150f, 0) * Time.deltaTime);
-            m_Rigidbody.AddForce(Vector3.up * 500f);
+            m_Rigidbody.AddForce(Vector3.up * 1000f);
             Jumping = 2;
             timer = 1.15f;
             Debug.Log("salto");

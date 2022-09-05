@@ -131,7 +131,6 @@ GameObject:
   - component: {fileID: 7368320236270648118}
   - component: {fileID: 7368320236270648113}
   - component: {fileID: 9015016991564861839}
-  - component: {fileID: 3272688303711218410}
   - component: {fileID: 3272688303711218409}
   - component: {fileID: 3272688303711218408}
   - component: {fileID: 615791549601894490}
@@ -172,8 +171,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.05, z: 0.02}
-  m_Center: {x: 0, y: 0.02, z: 0}
+  m_Size: {x: 0.02, y: 0.045, z: 0.02}
+  m_Center: {x: 0, y: 0.023, z: 0}
 --- !u!95 &2610565736356193157
 Animator:
   serializedVersion: 4
@@ -343,6 +342,7 @@ MonoBehaviour:
   AllColliders:
   - {fileID: 2610565735601922732}
   - {fileID: 2610565737185870288}
+  AllRigidbodies: []
   player: {fileID: 2571606830877705052}
   isRagdoll: 0
   condition2: 0
@@ -350,6 +350,8 @@ MonoBehaviour:
   morision: 1
   SonidoChoque: {fileID: 0}
   SonidoChoque2: {fileID: 0}
+  fixer: 0
+  b: {fileID: 0}
 --- !u!114 &7368320236270648113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -394,20 +396,6 @@ MonoBehaviour:
   poss: {x: 0, y: 0, z: 0}
   trompada2: {fileID: 5024009746357069192, guid: ec3f674830402cc45bce805cf6493db7, type: 3}
   audio: {fileID: 0}
---- !u!136 &3272688303711218410
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2953233691270142438}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  m_Radius: 0.01
-  m_Height: 0.07
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.03, z: 0}
 --- !u!82 &3272688303711218409
 AudioSource:
   m_ObjectHideFlags: 0
@@ -428,7 +416,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 0.09522247
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -552,7 +540,7 @@ CharacterController:
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0.02, z: 0}
+  m_Center: {x: 0, y: 0.03, z: 0}
 --- !u!1 &7471207800399066254
 GameObject:
   m_ObjectHideFlags: 0

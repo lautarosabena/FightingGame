@@ -21,6 +21,7 @@ TagManager:
   - Coins
   - RAGDOLLROJO
   - RAGDOLLNEGRO
+  - PJROJO
   layers:
   - Default
   - TransparentFX
