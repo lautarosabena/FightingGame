@@ -27,6 +27,9 @@ public class Respawner : MonoBehaviour
     public float PjNegroTimer;
     public float PjRojoTimer;
 
+    int NewLvl;
+    int CurrentLvl;
+
     public static int pointsRojo;
     public static int pointsNegro;
     public static int levelsplayed;
@@ -55,14 +58,75 @@ public class Respawner : MonoBehaviour
         three = true;
     }
 
+    void ChangeLevel()
+    {
+        
+
+        NewLvl = Random.Range(1, 6);
+      
+       
+      
+            switch (NewLvl)
+            {
+                case 1:
+                    SceneManager.LoadScene("PilarGiratorio");
+                    CurrentLvl = 1;
+                    break;
+                case 2:
+                    SceneManager.LoadScene("PlataformaLoca");
+                    CurrentLvl = 2;
+                    break;
+                case 3:
+                    SceneManager.LoadScene("CalleLevel");
+                    CurrentLvl = 3;
+                    break;
+                case 4:
+                    SceneManager.LoadScene("AutitosChocadores");
+                    CurrentLvl = 4;
+                    break;
+                case 5:
+                    SceneManager.LoadScene("Monedacas");
+                    CurrentLvl = 5;
+                    break;
+                
+
+            }
+        
+        
+    }
+
+    void Update()
+    {
+        if (timerr <= 0)
+        {
+            ChangeLevel();
+        }
+
+        if (Input.GetKeyDown("space"))
+        {
+            ChangeLevel();
+            Debug.Log("CAMBIASODELEVEL");
+        }
+    }
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (Input.GetKeyDown("space"))
+        
+
+
+
+
+
+        if (pointsRojo < 0)
         {
-            print("space key was pressed");
-            
+            pointsRojo = 0;
         }
+
+        if (pointsNegro < 0)
+        {
+            pointsNegro = 0;
+        }
+       
         //Debug.Log(niveles);
         currentScene = SceneManager.GetActiveScene();
         scene.text = currentScene.name.ToString();
@@ -77,15 +141,6 @@ public class Respawner : MonoBehaviour
         string sceneName = currentScene.name;
         //Debug.Log(sceneName);
         //PJNEGRO = GameObject.FindGameObjectWithTag("PJNEGRO").transform;
-
-        if (sceneName == "CalleLevel" && timerr <= 0 && one == true)
-        {
-            SceneManager.LoadScene("PilarGiratorio");
-            timerr = 10;
-            Debug.Log("cambianod nivel pilar");
-            niveles = niveles +1;
-            
-        }
 
         if (niveles == 3 && pointsNegro > pointsRojo)
         {
@@ -109,27 +164,9 @@ public class Respawner : MonoBehaviour
             pointsRojo = 0;
         }
 
-        if (sceneName == "PilarGiratorio" && timerr <= 0 && two == true)
-        {
-            
-            SceneManager.LoadScene("PlataformaLoca");
-            timerr = 10;
-            Debug.Log("cambianod nivel uno");
-            niveles = niveles + 1;
         
-            
-        }
 
-        if (sceneName == "PlataformaLoca" && timerr <= 0 && three == true)
-        {
-            
-            SceneManager.LoadScene("CalleLevel");
-            timerr = 10;
-            Debug.Log("cambianod nivel calle");
-            niveles = niveles + 1;
-            
-
-        }
+        
 
         /*if (niveles == 3)
         {
@@ -239,6 +276,34 @@ public class Respawner : MonoBehaviour
         {
             two = false;
         }
+
+        if (sceneName == "AutitosChocadores")
+        {
+            two = true;
+            if (PJNEGRO.position.y <= -10)
+            {
+                //PJNEGROCH.enabled = false;
+                PJNEGRO.transform.position = respawn.position;
+                //PJNEGROCH.enabled = true;
+                pointsRojo++;
+
+            }
+
+            
+
+
+            if (PJROJO.position.y <= -10)
+            {
+                //PJROJOCH.enabled = false;
+                PJROJO.transform.position = respawn.position;
+                //PJROJOCH.enabled = true;
+                pointsNegro++;
+            }
+
+            
+
+        }
+        
 
         if (sceneName == "PlataformaLoca")
         {

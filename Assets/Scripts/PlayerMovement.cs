@@ -32,6 +32,9 @@ public class PlayerMovement : MonoBehaviour
     public Vector3 poss;
     public ParticleSystem trompada2;
     [SerializeField] private AudioSource audio;
+    private Vector3 moveDirection = Vector3.zero;
+    private bool Grounded = false;
+    private Vector3 playerVelocity;
 
     [SerializeField] private PlayerInput PlayerInput;
     void Awake() 
@@ -80,7 +83,23 @@ public class PlayerMovement : MonoBehaviour
         //Sistema de golpes
         //Debug.Log(knock);
         Collider[] hitColliders = Physics.OverlapSphere(Punchs.transform.position, 2.5f);
+        if (Input.GetKey(KeyCode.Joystick2Button0) && Grounded == true)
+        {
 
+            animator.SetBool("IsJumping", true);
+            moveDirection.y = 10f;
+            //transform.Translate(new Vector3(0, 150f, 0) * Time.deltaTime);
+            //playerVelocity.y += Mathf.Sqrt(1f * -3.0f * -10);
+            //playerVelocity.y += -10f * Time.deltaTime;
+
+            //m_Rigidbody.AddForce(Vector3.up * 100f);
+            //Jumping = 2;
+            timer = 2f;
+            Debug.Log("salto");
+            Grounded = false;
+        }
+        moveDirection.y -= 10f * Time.deltaTime;
+        Player.Move(moveDirection * Time.deltaTime);
 
 
         if (Input.GetKey(KeyCode.Joystick2Button2))
@@ -212,8 +231,10 @@ public class PlayerMovement : MonoBehaviour
         //transform.position = transform.position + new Vector3(0, -10, 0) * Time.deltaTime;
         timer -= Time.deltaTime;
         if (timer <= 0) {
-                animator.SetBool("IsJumping", false); 
-            }
+            Grounded = true;
+            animator.SetBool("IsJumping", false);
+                Player.Move(new Vector3(0, -10f, 0 * Time.deltaTime));
+        }
 
         //Debug.Log(timer);
 
@@ -227,25 +248,10 @@ public class PlayerMovement : MonoBehaviour
                 float h = Input.GetAxisRaw("Joystick2Horizontal");
                 float v = Input.GetAxisRaw("Joystick2Vertical");
                 Player.Move(new Vector3(h, 0, v).normalized * Time.deltaTime * 30f);
-                Player.Move(-Vector3.up.normalized * Time.deltaTime * 10f);
+                //Player.Move(-Vector3.up.normalized * Time.deltaTime * 10f);
                 //OnMovimiento();
                 handleRotation();
 
-                if (Input.GetKey(KeyCode.Joystick2Button0))
-                {
-                    Debug.Log("entrada 1");
-                    if (Jumping == 1 && timer <= 0)
-                    {
-                        animator.SetBool("IsJumping", true);
-                        //transform.Translate(new Vector3(0, 150f, 0) * Time.deltaTime);
-                        m_Rigidbody.AddForce(Vector3.up * 500f);
-                        Jumping = 2;
-                        timer = 1.15f;
-                        Debug.Log("salto");
-
-
-                    }
-                }
 
                 if (Input.GetKey(KeyCode.Joystick2Button2))
                 {
@@ -292,9 +298,9 @@ public class PlayerMovement : MonoBehaviour
 
         RaycastHit hit;
         if (Physics.Raycast(transform.position, Vector3.down, out hit, maxdist)) {
-            //Debug.Log(Jumping);
-            
-            Jumping = 1;
+                //Debug.Log(Jumping);
+                playerVelocity.y = 0f;
+                //Jumping = 1;
             
         }
 

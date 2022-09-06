@@ -6,11 +6,13 @@ public class RagdollActivater : MonoBehaviour
 {
     public Collider MainCollider;
     public Collider[] AllColliders;
+    public Rigidbody[] AllRigidbodies;
     public CharacterController PJ;
     public Transform player;
     public bool isRagdoll;
     public AudioSource SonidoChoque;
     public AudioSource SonidoChoque2;
+    public bool fixer = false;
     public int condition = 0;
     public float timerr = 5f;
     public PlayerMovement2 a;
@@ -31,21 +33,41 @@ public class RagdollActivater : MonoBehaviour
     // Update is called once per frame
     public void DoRagdoll(bool isRagdoll)
     {
+        fixer = false;
         foreach (var col in AllColliders)
-        col.enabled = true;
-        PJ.enabled = false;
-        //MainCollider.enabled = !isRagdoll;
-        GetComponent<Rigidbody>().useGravity = !isRagdoll;
-        GetComponent<Animator>().enabled = !isRagdoll;
+        {
+            col.enabled = true;
+            PJ.enabled = false;
+            //MainCollider.enabled = !isRagdoll;
+            GetComponent<Rigidbody>().useGravity = !isRagdoll;
+            GetComponent<Animator>().enabled = !isRagdoll;
+        }
+
+        foreach (var rig in AllRigidbodies)
+        {
+            rig.isKinematic = false;
+            //rig.AddForce(transform.up * 500f);
+        }
     }
 
     private void Start()
     {
         sabanamogolico2 = false;
+        fixer = true;
     }
 
     void Update() 
     {
+
+        if (fixer == true)
+        {
+
+            foreach (var rig in AllRigidbodies)
+            {
+                rig.isKinematic = true;
+            }
+
+        }
         //Debug.Log(timerr);
 
         if (morision == false)
@@ -150,8 +172,9 @@ public class RagdollActivater : MonoBehaviour
             PJ.transform.position = player.transform.position + new Vector3(0, 5, 0);
             PJ.enabled = true;
             gameObject.layer = LayerMask.NameToLayer("RAGDOLL");
-            //colliderfollow = 0;
-        }
+            fixer = true;
+        //colliderfollow = 0;
+    }
 
 
     void reiniciartiempo() 

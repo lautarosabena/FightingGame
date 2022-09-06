@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Lobby.unity
     guid: f7e175d001d7706468cd0aa747d59395
   - enabled: 1
+    path: Assets/Scenes/Monedacas.unity
+    guid: 409ffa28ec26e4d4e9a189951d451e84
+  - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: a67db7dc040ba3540bd21ec495a096d8
   - enabled: 1
@@ -29,6 +32,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PilarGiratorio.unity
     guid: 9f0e75c0bd8c5d442ac192912c6d8102
+  - enabled: 1
+    path: Assets/Scenes/AutitosChocadores.unity
+    guid: 249f19921edd7964f95b94f4f924d22b
   - enabled: 1
     path: Assets/Scenes/PJNEGROWIN/PJNEGROWIN.unity
     guid: 440427979db3b6545ac61d7f2983fd1d

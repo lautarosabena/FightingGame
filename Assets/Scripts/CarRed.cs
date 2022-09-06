@@ -8,9 +8,13 @@ public class CarRed : MonoBehaviour
     public Rigidbody rigidbody;
     public Rigidbody ExternalForce;
     private Vector3 currentMovement;
+    public ParticleSystem trompada2;
+    [SerializeField] private AudioSource audio;
+    public Vector3 poss;
     void Start()
     {
         //Player.enabled = true;
+        audio = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -18,8 +22,8 @@ public class CarRed : MonoBehaviour
         float h = Input.GetAxisRaw("Joystick2Horizontal");
         float v = Input.GetAxisRaw("Joystick2Vertical");
         currentMovement = new Vector2(Input.GetAxisRaw("Joystick2Horizontal"), Input.GetAxisRaw("Joystick2Vertical")).normalized;
-        rigidbody.AddForce(new Vector3(h, 0, v).normalized * Time.deltaTime * 30f);
-        rigidbody.AddForce(-Vector3.up.normalized * Time.deltaTime * 10f);
+        rigidbody.AddForce(new Vector3(h, 0, v).normalized * Time.deltaTime * 3000f);
+        rigidbody.AddForce(-Vector3.up.normalized * Time.deltaTime * 1000f);
         
         handleRotation();
 
@@ -37,7 +41,10 @@ public class CarRed : MonoBehaviour
     {
         if (collision.collider.tag == "PJNEGRO")
         {
-            rigidbody.AddForce(ExternalForce.transform.forward * 300f);
+            rigidbody.AddForce(ExternalForce.transform.forward * 1000f);
+            poss = collision.transform.position;
+            Instantiate(trompada2, poss, Quaternion.identity);
+            trompada2.Play();
             Debug.Log("asdasdadsa");
         }
     }

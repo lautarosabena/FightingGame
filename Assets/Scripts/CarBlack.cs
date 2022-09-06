@@ -8,10 +8,14 @@ public class CarBlack : MonoBehaviour
     public Rigidbody rigidbody;
     public Rigidbody ExternalForce;
     private Vector3 currentMovement;
+    public ParticleSystem trompada2;
+    [SerializeField] private AudioSource audio;
+    public Vector3 poss;
 
     void Start()
     {
         //Player.enabled = true;
+        audio = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -38,7 +42,10 @@ public class CarBlack : MonoBehaviour
     {
         if (collision.collider.tag == "PJROJO")
         {
-            rigidbody.AddForce(ExternalForce.transform.forward * 300f);
+            rigidbody.AddForce(ExternalForce.transform.forward * 1000f);
+            poss = collision.transform.position;
+            Instantiate(trompada2, poss, Quaternion.identity);
+            trompada2.Play();
             Debug.Log("asdasdadsa");
         }
     }
