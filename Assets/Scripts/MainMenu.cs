@@ -34,10 +34,14 @@ public class MainMenu : MonoBehaviour
         
     }
 
+    public void TutoScene(){
+        SceneManager.LoadScene("TutorialScene");
+    }
+
     public void LoadTheLevel()
     {
         
-        levelGenerate = Random.Range(1, 3);
+        levelGenerate = Random.Range(3, 7);
         SceneManager.LoadScene(levelGenerate);
     }
 
@@ -91,7 +95,7 @@ public class MainMenu : MonoBehaviour
         }
         if (timeRemaining <= 0)
         {
-            LoadTheLevel();
+            TutoScene();
         }
     }
     

@@ -25,7 +25,7 @@ public class CoinsFunctionality : MonoBehaviour
     {
         if (other.gameObject.name == "PjNegro")
         {
-            Explosiondamage = Random.Range(1, 5);
+            Explosiondamage = Random.Range(1, 3);
             PointsPJN++;
             Debug.Log(PointsPJN);
             Debug.Log("MONEDA NEGRO");
@@ -37,7 +37,7 @@ public class CoinsFunctionality : MonoBehaviour
 
         if (other.gameObject.name == "PjRojo")
         {
-            Explosiondamage = Random.Range(1, 5);
+            Explosiondamage = Random.Range(1, 3);
             PointsPJR++;
             Debug.Log(PointsPJN);
             Debug.Log("MONEDA ROJO");

@@ -101,8 +101,8 @@ public class PlayerMovement2 : MonoBehaviour
             Debug.Log("salto");
             Grounded = false;
         }
-        moveDirection.y -= 10f * Time.deltaTime;
-        Player.Move(moveDirection * Time.deltaTime);
+        moveDirection.y -= 10f;
+        Player.Move(moveDirection);
         //Player.Move(playerVelocity * Time.deltaTime);
 
 
@@ -234,7 +234,7 @@ public class PlayerMovement2 : MonoBehaviour
             Grounded = true;
             animator.SetBool("IsJumping", false);
             
-            Player.Move(new Vector3 (0, -10f, 0 * Time.deltaTime));
+            Player.Move(new Vector3 (0, -10f, 0));
             //animator.SetBool("IsJumping", true);
 
         }

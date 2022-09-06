@@ -27,8 +27,8 @@ public class Respawner : MonoBehaviour
     public float PjNegroTimer;
     public float PjRojoTimer;
 
-    int NewLvl;
-    int CurrentLvl;
+    public static int NewLvl = 1;
+    int CurrentLvl = 0;
 
     public static int pointsRojo;
     public static int pointsNegro;
@@ -61,34 +61,66 @@ public class Respawner : MonoBehaviour
     void ChangeLevel()
     {
         
-
-        NewLvl = Random.Range(1, 6);
+        NewLvl ++;
+        
       
        
       
             switch (NewLvl)
             {
                 case 1:
-                    SceneManager.LoadScene("PilarGiratorio");
+                    SceneManager.LoadScene("PlataformaLoca");
                     CurrentLvl = 1;
+                    niveles++;
+                    
                     break;
                 case 2:
-                    SceneManager.LoadScene("PlataformaLoca");
+                    SceneManager.LoadScene("PilarGiratorio");
                     CurrentLvl = 2;
+                    niveles++;
                     break;
                 case 3:
                     SceneManager.LoadScene("CalleLevel");
                     CurrentLvl = 3;
+                    niveles++;
                     break;
                 case 4:
                     SceneManager.LoadScene("AutitosChocadores");
                     CurrentLvl = 4;
+                    niveles++;
                     break;
                 case 5:
                     SceneManager.LoadScene("Monedacas");
                     CurrentLvl = 5;
+                    niveles++;
                     break;
+                case 6:
+                    if (NewLvl == 6 && pointsNegro > pointsRojo)
+                    {
+                        SceneManager.LoadScene("PJNEGROWIN");
+                        niveles = 0;
+                        pointsNegro = 0;
+                        pointsRojo = 0;
+                        NewLvl = 1;
+                    } 
+                    if(NewLvl == 6 && pointsNegro < pointsRojo)
+                    {
+                        SceneManager.LoadScene("PJROJOWIN");
+                        niveles = 0;
+                        pointsNegro = 0;
+                        pointsRojo = 0;
+                        NewLvl = 1;
                 
+                    } 
+                    if (NewLvl == 6 && pointsNegro == pointsRojo)
+                    {
+                        SceneManager.LoadScene("EMPATESCENE");
+                        niveles = 0;
+                        pointsNegro = 0;
+                        pointsRojo = 0;
+                        NewLvl = 1;
+                    }
+                    break;
 
             }
         
@@ -105,7 +137,7 @@ public class Respawner : MonoBehaviour
         if (Input.GetKeyDown("space"))
         {
             ChangeLevel();
-            Debug.Log("CAMBIASODELEVEL");
+            Debug.Log("CAMBIASODELEVEL" + CurrentLvl);
         }
     }
     // Update is called once per frame
@@ -142,21 +174,21 @@ public class Respawner : MonoBehaviour
         //Debug.Log(sceneName);
         //PJNEGRO = GameObject.FindGameObjectWithTag("PJNEGRO").transform;
 
-        if (niveles == 3 && pointsNegro > pointsRojo)
+        if (NewLvl == 6 && pointsNegro > pointsRojo)
         {
             SceneManager.LoadScene("PJNEGROWIN");
             niveles = 0;
             pointsNegro = 0;
             pointsRojo = 0;
         } 
-        if(niveles == 3 && pointsNegro < pointsRojo)
+        if(NewLvl == 6 && pointsNegro < pointsRojo)
         {
             SceneManager.LoadScene("PJROJOWIN");
             niveles = 0;
             pointsNegro = 0;
             pointsRojo = 0;
         } 
-        if (niveles == 3 && pointsNegro == pointsRojo)
+        if (NewLvl == 6 && pointsNegro == pointsRojo)
         {
             SceneManager.LoadScene("EMPATESCENE");
             niveles = 0;
