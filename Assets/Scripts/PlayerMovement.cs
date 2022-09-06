@@ -79,7 +79,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
         //Sistema de golpes
         //Debug.Log(knock);
         Collider[] hitColliders = Physics.OverlapSphere(Punchs.transform.position, 2.5f);
@@ -98,8 +98,8 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log("salto");
             Grounded = false;
         }
-        moveDirection.y -= 10f * Time.deltaTime;
-        Player.Move(moveDirection * Time.deltaTime);
+        moveDirection.y = -20f * Time.deltaTime;
+        Player.Move(moveDirection);
 
 
         if (Input.GetKey(KeyCode.Joystick2Button2))
@@ -233,7 +233,7 @@ public class PlayerMovement : MonoBehaviour
         if (timer <= 0) {
             Grounded = true;
             animator.SetBool("IsJumping", false);
-                Player.Move(new Vector3(0, -10f, 0 * Time.deltaTime));
+                //Player.Move(new Vector3(0, -10f, 0 * Time.deltaTime));
         }
 
         //Debug.Log(timer);

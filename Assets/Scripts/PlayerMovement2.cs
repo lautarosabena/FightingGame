@@ -101,7 +101,7 @@ public class PlayerMovement2 : MonoBehaviour
             Debug.Log("salto");
             Grounded = false;
         }
-        moveDirection.y -= 10f;
+        moveDirection.y = -20f * Time.deltaTime;
         Player.Move(moveDirection);
         //Player.Move(playerVelocity * Time.deltaTime);
 
@@ -234,14 +234,14 @@ public class PlayerMovement2 : MonoBehaviour
             Grounded = true;
             animator.SetBool("IsJumping", false);
             
-            Player.Move(new Vector3 (0, -10f, 0));
+            //Player.Move(new Vector3 (0, -10f, 0));
             //animator.SetBool("IsJumping", true);
 
         }
 
         //Debug.Log(timer);
 
-        if (view.IsMine) {
+        
             //transform.position = transform.position + new Vector3(0, -3f, 0) * Time.deltaTime;
          if (RagdollActivater2.quase == false) 
          {
@@ -292,7 +292,7 @@ public class PlayerMovement2 : MonoBehaviour
         
 
        
-    }
+    
 
 
     void OnDrawGizmos() {

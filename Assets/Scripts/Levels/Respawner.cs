@@ -26,7 +26,8 @@ public class Respawner : MonoBehaviour
     public TextMeshProUGUI TimerText;
     public float PjNegroTimer;
     public float PjRojoTimer;
-
+    public static bool reseter = false;
+    public static bool reseter2 = false;
     public static int NewLvl = 1;
     int CurrentLvl = 0;
 
@@ -127,8 +128,11 @@ public class Respawner : MonoBehaviour
         
     }
 
+    
+    // Update is called once per frame
     void Update()
     {
+
         if (timerr <= 0)
         {
             ChangeLevel();
@@ -139,12 +143,6 @@ public class Respawner : MonoBehaviour
             ChangeLevel();
             Debug.Log("CAMBIASODELEVEL" + CurrentLvl);
         }
-    }
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        
-
 
 
 
@@ -237,7 +235,7 @@ public class Respawner : MonoBehaviour
                 PJNEGROCH.transform.position = respawn.position;
                 PJNEGROCH.enabled = true;
                 pointsRojo ++;
-                                
+                reseter = true;
             }      
 
             if (PJROJO.position.z >= 14 || PJROJO.position.z <= -18 || PJROJO.position.x <= -40 || PJROJO.position.x >= -4)
@@ -255,7 +253,7 @@ public class Respawner : MonoBehaviour
                 PJROJOCH.transform.position = respawn.position;
                 PJROJOCH.enabled = true;
                 pointsNegro ++;
-                                
+                reseter2 = true;
             }    
              
 
@@ -270,7 +268,7 @@ public class Respawner : MonoBehaviour
             if (PJNEGRO.position.y <= -10)
             {
                 PJNEGROCH.enabled = false;
-                PJNEGROCH.transform.position = respawn.position;
+                PJNEGRO.transform.position = respawn.position;
                 PJNEGROCH.enabled = true;
                 pointsRojo ++;
 
@@ -279,11 +277,14 @@ public class Respawner : MonoBehaviour
             if(RagdollActivater2.quase == true && PJNEGROBody.position.y <= -10)
             {
                 PJNEGROCH.enabled = false;
-                RagdollActivater2.quase = false;
+                
                 PJNEGROCH.transform.position = respawn.position;
+                PJNEGROBody.transform.position = respawn.position;
                 PJNEGROCH.enabled = true;
-                pointsRojo ++;
-                                
+                
+                RagdollActivater2.quase = false;
+                pointsRojo++;
+                reseter = true;
             }
                
         
@@ -298,10 +299,10 @@ public class Respawner : MonoBehaviour
             if(RagdollActivater.sabanamogolico2 == true && PJROJOBody.position.y <= -10)
             {
                 PJROJOCH.enabled = false;
-                PJROJOCH.transform.position = respawn.position;
+                //PJROJOCH.transform.position = respawn.position + new Vector3(0, 30, 0);
                 PJROJOCH.enabled = true;
                 pointsNegro ++;
-                                
+                reseter2 = true;
             }
 
         } else
@@ -343,20 +344,12 @@ public class Respawner : MonoBehaviour
             if (PJNEGRO.position.y <= -0)
             {
                 PJNEGROCH.enabled = false;
-                PJNEGROCH.transform.position = respawn.position;
+                PJNEGRO.transform.position = respawn.position;
                 PJNEGROCH.enabled = true;
                 pointsRojo ++;
 
             }
-            if(RagdollActivater2.quase == true && PJNEGROBody.position.y <= -0)
-            {
-                RagdollActivater2.quase = false;
-                PJNEGROCH.enabled = false;
-                PJNEGROCH.transform.position = respawn.position;
-                PJNEGROCH.enabled = true;
-                pointsRojo ++;
-                                
-            }
+            
             if (PJROJO.position.y <= -0)
             {
                 PJROJOCH.enabled = false;
@@ -371,7 +364,7 @@ public class Respawner : MonoBehaviour
                 PJROJOCH.transform.position = respawn.position;
                 PJROJOCH.enabled = true;
                 pointsNegro ++;
-                                
+                reseter2 = true;
             }
         }
         else

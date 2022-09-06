@@ -19,6 +19,9 @@ public class RagdollActivater : MonoBehaviour
     public static bool quase = false;
     public static bool sabanamogolico2 = false;
     public bool morision = true;
+    private Vector3 poss;
+    public bool chan2;
+
     //Rigidbody rigidbodii;
     // Start is called before the first frame update
     void Awake()
@@ -58,6 +61,26 @@ public class RagdollActivater : MonoBehaviour
 
     void Update() 
     {
+        chan2 = Respawner.reseter2;
+        if (chan2 == true)
+        {
+            Levantarse();
+            reiniciartiempo();
+            chan2 = false;
+            Debug.Log("CAMBIASOOOOOOOOOOOOOOOOOOOOOOO");
+        }
+        if (Input.GetKeyDown("space"))
+        {
+            DoRagdoll(true);
+        }
+        Debug.Log(Respawner.reseter);
+        if (Respawner.reseter == true)
+        {
+            Levantarse();
+            reiniciartiempo();
+            Respawner.reseter = false;
+            Debug.Log("CAMBIASOOOOOOOOOOOOOOOOOOOOOOO");
+        }
 
         if (fixer == true)
         {
@@ -135,10 +158,19 @@ public class RagdollActivater : MonoBehaviour
     {
         if (other.gameObject.tag == "Coins")
         {
+            Respawner.pointsNegro = Respawner.pointsNegro + 1;
             DoRagdoll(true);
+            poss = other.transform.position;
+            foreach (var rig in AllRigidbodies)
+            {
+                rig.AddForce(poss * 150f);
+                Debug.Log("FUERZFUERZ");
+                //rig.AddForce(transform.up * 500f);
+            }
             gameObject.layer = LayerMask.NameToLayer("RAGDOLLOFF");
             morision = false;
             sabanamogolico2 = true;
+            //Respawner.pointsRojo = Respawner.pointsRojo + 1;
         }
     }
 
@@ -147,15 +179,23 @@ public class RagdollActivater : MonoBehaviour
 
         if (collision.gameObject.tag == "car")
         {
+            Respawner.pointsNegro = Respawner.pointsNegro + 1;
             //Debug.Log("Do something");
             DoRagdoll(true);
+            poss = collision.transform.position;
+            foreach (var rig in AllRigidbodies)
+            {
+                rig.AddForce(poss * 150f);
+                Debug.Log("FUERZFUERZ");
+                //rig.AddForce(transform.up * 500f);
+            }
             //Debug.Log(timerr);
             gameObject.layer = LayerMask.NameToLayer("RAGDOLLOFF");
             morision = false;
             sabanamogolico2 = true;
             SonidoChoque.Play();
             SonidoChoque2.Play();
-
+            
 
         }
 
@@ -169,7 +209,7 @@ public class RagdollActivater : MonoBehaviour
             DoRagdoll(false);
             sabanamogolico2 = false;
             morision = true;
-            PJ.transform.position = player.transform.position + new Vector3(0, 5, 0);
+            //PJ.transform.position = player.transform.position + new Vector3(0, 5, 0);
             PJ.enabled = true;
             gameObject.layer = LayerMask.NameToLayer("RAGDOLL");
             fixer = true;

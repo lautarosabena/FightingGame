@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.013041237, g: 0.08490247, b: 0.14522639, a: 1}
+  m_IndirectSpecularColor: {r: 0.012907048, g: 0.08476836, b: 0.14509267, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -253,6 +253,11 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!4 &108974303 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ab6c5f9aee7e9ba4ea0d82b3327afc06, type: 3}
+  m_PrefabInstance: {fileID: 933540754}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &153759264 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c017a108f482b324eb1c6326fda138ee, type: 3}
@@ -1523,7 +1528,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1114154553}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.59, y: 12.086826, z: -7.67}
+  m_LocalPosition: {x: 2.59, y: 2.7, z: -7.67}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1546,7 +1551,7 @@ MonoBehaviour:
   PJNEGROCH: {fileID: 0}
   PJROJOCH: {fileID: 0}
   PJNEGROBody: {fileID: 0}
-  PJROJO: {fileID: 0}
+  PJROJO: {fileID: 108974303}
   PJROJOBody: {fileID: 0}
   respawn: {fileID: 1114154554}
   isRagdoll: 0

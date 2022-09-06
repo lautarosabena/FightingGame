@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.056808695, g: 0.28804883, b: 0.9709884, a: 1}
+  m_IndirectSpecularColor: {r: 0.05683432, g: 0.2880699, b: 0.97097, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -133,7 +133,7 @@ PrefabInstance:
     - target: {fileID: 4405009243468086186, guid: 5672996eb87a0b94bae19a9931b3f363, type: 3}
       propertyPath: a
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 562332599}
     - target: {fileID: 4405009243468086186, guid: 5672996eb87a0b94bae19a9931b3f363, type: 3}
       propertyPath: PJ
       value: 
@@ -220,7 +220,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8705487147086774034, guid: 5672996eb87a0b94bae19a9931b3f363, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.99
+      value: 2.8
       objectReference: {fileID: 0}
     - target: {fileID: 8705487147086774034, guid: 5672996eb87a0b94bae19a9931b3f363, type: 3}
       propertyPath: m_LocalPosition.z
@@ -272,7 +272,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9176826492131991496, guid: 5672996eb87a0b94bae19a9931b3f363, type: 3}
       propertyPath: m_Constraints
-      value: 0
+      value: 126
       objectReference: {fileID: 0}
     - target: {fileID: 9176826492131991496, guid: 5672996eb87a0b94bae19a9931b3f363, type: 3}
       propertyPath: m_IsKinematic
@@ -1383,9 +1383,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 562332575}
     - target: {fileID: 7368320236270648113, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
+      propertyPath: PJNEGRO
+      value: 
+      objectReference: {fileID: 562332573}
+    - target: {fileID: 7368320236270648113, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
       propertyPath: maxdist
       value: 1.37
       objectReference: {fileID: 0}
+    - target: {fileID: 7368320236270648113, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
+      propertyPath: Teleport
+      value: 
+      objectReference: {fileID: 1114154554}
     - target: {fileID: 7368320236270648113, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
       propertyPath: trompada2
       value: 
@@ -1486,6 +1494,9 @@ PrefabInstance:
     - {fileID: 3272688303711218410, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
     - {fileID: 3272688303711218408, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
     - {fileID: 2610565736356193152, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
+    - {fileID: 4129633548032703746, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
+    - {fileID: 3280870825586511617, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
+    - {fileID: 7703620167501437259, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
 --- !u!1 &562332573 stripped
 GameObject:
@@ -1579,15 +1590,26 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 122
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!4 &562332597 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2571606830877705052, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
   m_PrefabInstance: {fileID: 562332572}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &562332599 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7368320236270648113, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
+  m_PrefabInstance: {fileID: 562332572}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 562332573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6e30e85436bda94988c4577417bb799, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &607733552 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 9fe0e51fb3ac2d84fafcd84e2b8ce656, type: 3}
@@ -2923,6 +2945,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 9fe0e51fb3ac2d84fafcd84e2b8ce656, type: 3}
       propertyPath: m_Name
       value: plataforma (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9fe0e51fb3ac2d84fafcd84e2b8ce656, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9fe0e51fb3ac2d84fafcd84e2b8ce656, type: 3}

@@ -22,6 +22,8 @@ public class RagdollActivater2 : MonoBehaviour
     public AudioSource SonidoChoque2;
     public bool fixer = false;
     public PlayerMovement b;
+    public Vector3 poss;
+    public bool chan;
     void Awake()
     {
         MainCollider = GetComponent<BoxCollider>();
@@ -63,6 +65,16 @@ public class RagdollActivater2 : MonoBehaviour
 
     void Update() 
     {
+
+        
+        chan = Respawner.reseter;
+        if (chan == true)
+        {
+            Levantarse();
+            reiniciartiempo();
+            chan = false;
+            Debug.Log("CAMBIASOOOOOOOOOOOOOOOOOOOOOOO");
+        }
         b = FindObjectOfType<PlayerMovement>();
         if (fixer == true)
         {
@@ -151,25 +163,44 @@ public class RagdollActivater2 : MonoBehaviour
 
         if (collision.gameObject.tag == "car")
         {
+            Respawner.pointsRojo++;
+            poss = collision.transform.position;
+            Debug.Log("asddddddddddddddddddd");
+            
             //Debug.Log("Do something");
             DoRagdoll2(true);
+            foreach (var rig in AllRigidbodies)
+            {
+                rig.AddForce(poss * 50f);
+                Debug.Log("FUERZFUERZ");
+                //rig.AddForce(transform.up * 500f);
+            }
             //Debug.Log(timerr);
             gameObject.layer = LayerMask.NameToLayer("RAGDOLLOFF");
             morision = false;
             quase = true;
             SonidoChoque.Play();
             SonidoChoque2.Play();
-
+            
 
 
         }
 
         if (collision.gameObject.tag == "Coins")
         {
+            Respawner.pointsRojo++;
+            poss = collision.transform.position;
+            Debug.Log("asdasdasdasd");
             DoRagdoll2(true);
+            foreach (var rig in AllRigidbodies)
+            {
+                rig.AddForce(poss * 150f);
+                Debug.Log("FUERZFUERZ");
+                //rig.AddForce(transform.up * 500f);
+            }
             morision = false;
             quase = true;
-
+            
 
         }
 
@@ -185,9 +216,10 @@ public class RagdollActivater2 : MonoBehaviour
             b.knock = 0;
             //DoRagdoll2(true);
             DoRagdoll2(false);
+            //sabanamogolico2 = false;
             morision = true;
             //player.transform.position = PJ.transform.position;
-            PJ.transform.position = player.transform.position + new Vector3(0, 5, 0);
+            //PJ.transform.position = player.transform.position + new Vector3(0, 5, 0);
             PJ.enabled = true;
             gameObject.layer = LayerMask.NameToLayer("RAGDOLL2");
             fixer = true;
