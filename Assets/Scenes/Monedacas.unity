@@ -1021,7 +1021,7 @@ PrefabInstance:
       objectReference: {fileID: 369038084}
     - target: {fileID: 9176826492131991503, guid: 5672996eb87a0b94bae19a9931b3f363, type: 3}
       propertyPath: maxdist
-      value: 1.37
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9176826492131991503, guid: 5672996eb87a0b94bae19a9931b3f363, type: 3}
       propertyPath: trompada2
@@ -3429,6 +3429,10 @@ PrefabInstance:
       propertyPath: audio
       value: 
       objectReference: {fileID: 1979124455}
+    - target: {fileID: 7368320236270648113, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
+      propertyPath: maxdist
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7368320236270648113, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
       propertyPath: trompada2
       value: 

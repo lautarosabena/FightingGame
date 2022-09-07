@@ -86,12 +86,7 @@ public class PlayerMovement2 : MonoBehaviour
         Debug.Log(knock);
         Collider[] hitColliders = Physics.OverlapSphere(Punchs.transform.position, 2.5f);
 
-        if (Input.GetKey(KeyCode.Joystick1Button0) || Input.GetKeyDown("space") && Grounded == true)
-        {
-            
-            StartCoroutine(IsGrounded());
-        } 
-        Player.Move(moveDirection);
+        Player.Move(moveDirection * Time.deltaTime);
         //Player.Move(playerVelocity * Time.deltaTime);
 
 
@@ -266,14 +261,34 @@ public class PlayerMovement2 : MonoBehaviour
 
         RaycastHit hit;
         if (Physics.Raycast(transform.position, Vector3.down, out hit, maxdist)) {
-                Debug.Log("PISOO");
-                //playerVelocity.y = 0f;
-                //Grounded = true; 
 
-            } else
+            if (Input.GetKey(KeyCode.Joystick1Button0) || Input.GetKeyDown("space"))
             {
-                
+                Debug.Log("PISOO");
+            //playerVelocity.y = 0f;
+            //Grounded = true; 
+            animator.SetBool("IsJumping", false);
+            moveDirection.y = 20f;
+
+                //m_Rigidbody.AddForce(Vector3.up * 100f);
+                //Jumping = 2;
+                //timer = 2f;
+                //Debug.Log("salto");
+                //Grounded = false;
+                //yield return new WaitForSeconds(0.5f);
+
+                //yield return new WaitForSeconds(0.5f);
+                //Grounded = true;
+
             }
+        } else
+            {
+            moveDirection.y += -20f * Time.deltaTime;
+            animator.SetBool("IsJumping", true);
+
+
+
+        }
 
         //OnDrawGizmos();
         }
@@ -398,23 +413,8 @@ public class PlayerMovement2 : MonoBehaviour
         //animator.enabled = !enabled;
    // }
 
-    IEnumerator IsGrounded()
-    {
-        animator.SetBool("IsJumping", true);
-        moveDirection.y += 10f * Time.deltaTime;
-        
-        //m_Rigidbody.AddForce(Vector3.up * 100f);
-        //Jumping = 2;
-        //timer = 2f;
-        Debug.Log("salto");
-        Grounded = false;
-        yield return new WaitForSeconds(0.5f);
-        moveDirection.y = -20f * Time.deltaTime;
-        yield return new WaitForSeconds(0.5f);
-        Grounded = true;
-        animator.SetBool("IsJumping", false);
-        //StartCoroutine(IsGrounded());
-    }
+
+    
     
     
 }

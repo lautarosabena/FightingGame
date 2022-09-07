@@ -289,18 +289,18 @@ public class PlayerMovement : MonoBehaviour
                 //Jumping = 1;
                 Grounded = true;
 
-                if (Input.GetKey(KeyCode.Joystick2Button0) || Input.GetKeyDown("space") && Grounded == true)
+                if (Input.GetKey(KeyCode.Joystick2Button0) || Input.GetKeyDown("space"))
                 {
 
-                    animator.SetBool("IsJumping", true);
-                    moveDirection.y = 500f;
+                    animator.SetBool("IsJumping", false);
+                    moveDirection.y = 20f;
                     //transform.Translate(new Vector3(0, 150f, 0) * Time.deltaTime);
                     //playerVelocity.y += Mathf.Sqrt(1f * -3.0f * -10);
                     //playerVelocity.y += -10f * Time.deltaTime;
 
                     //m_Rigidbody.AddForce(Vector3.up * 100f);
                     //Jumping = 2;
-                    timer = 2f;
+                    //timer = 2f;
                     Debug.Log("salto");
                     
                 }
@@ -309,8 +309,9 @@ public class PlayerMovement : MonoBehaviour
 
             } else
             {
-                moveDirection.y = -20f * Time.deltaTime;
-                Grounded = false;
+                moveDirection.y += -20f * Time.deltaTime;
+                animator.SetBool("IsJumping", true);
+                //animator.SetBool("IsJumping", false);
             }
 
         //OnDrawGizmos();
