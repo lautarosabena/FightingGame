@@ -10,11 +10,14 @@ public class CoinAndBomb : MonoBehaviour
     [SerializeField] private Transform spawnTrigger;
     private int PointsPJN = 0;
     private int PointsPJR = 0;
+    public AudioSource MusicLvl2;
+    
     //[SerializeField] private Vector3 test;
     // Start is called before the first frame update
     void Start()
     {
         timer = 2f;
+        MusicLvl2.Play();
     }
 
     // Update is called once per frame
@@ -30,6 +33,7 @@ public class CoinAndBomb : MonoBehaviour
                     PointsPJN++;
                     Debug.Log(PointsPJN);
                     Debug.Log("ASD");
+                    
                 }
             }
         }

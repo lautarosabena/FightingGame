@@ -25,6 +25,7 @@ public class RagdollActivater2 : MonoBehaviour
     public PlayerMovement b;
     public Vector3 poss;
     public bool chan;
+    
     void Awake()
     {
         MainCollider = GetComponent<BoxCollider>();
@@ -180,8 +181,7 @@ public class RagdollActivater2 : MonoBehaviour
             gameObject.layer = LayerMask.NameToLayer("RAGDOLLOFF");
             morision = false;
             quase = true;
-            SonidoChoque.Play();
-            SonidoChoque2.Play();
+            
             
 
 
@@ -189,6 +189,7 @@ public class RagdollActivater2 : MonoBehaviour
 
         if (collision.gameObject.tag == "Coins")
         {
+            
             Respawner.pointsRojo++;
             poss = collision.transform.position;
             Debug.Log("asdasdasdasd");
@@ -201,6 +202,7 @@ public class RagdollActivater2 : MonoBehaviour
             }
             morision = false;
             quase = true;
+            
             
 
         }

@@ -9,6 +9,7 @@ public class CarRed : MonoBehaviour
     public Rigidbody ExternalForce;
     private Vector3 currentMovement;
     public ParticleSystem trompada2;
+    public AudioSource SonidoChoque;
     [SerializeField] private AudioSource audio;
     public Vector3 poss;
     void Start()
@@ -45,6 +46,7 @@ public class CarRed : MonoBehaviour
             poss = collision.transform.position;
             Instantiate(trompada2, poss, Quaternion.identity);
             trompada2.Play();
+            SonidoChoque.Play();
             Debug.Log("asdasdadsa");
         }
     }

@@ -1343,7 +1343,7 @@ GameObject:
   - component: {fileID: 873660200}
   - component: {fileID: 873660201}
   m_Layer: 0
-  m_Name: HitSFX
+  m_Name: WilhelmSFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1374,7 +1374,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 36e1d653209a315448f4037e2ee903f6, type: 3}
+  m_audioClip: {fileID: 8300000, guid: bc49774c846d67247a56999cc29d66a2, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1824,7 +1824,7 @@ GameObject:
   - component: {fileID: 1108899831}
   - component: {fileID: 1108899832}
   m_Layer: 0
-  m_Name: CarHornSFX
+  m_Name: BuuumSFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1976,6 +1976,9 @@ MonoBehaviour:
   Coin: {fileID: 7721690615777619236, guid: 16799c4f8c8ddf944bdd88f5ccd6a7ef, type: 3}
   Bomb: {fileID: 8822564965298674439, guid: 15f06912abbc43248b73dbe9bc115762, type: 3}
   spawnTrigger: {fileID: 1979124438}
+  MusicLvl2: {fileID: 1646278251}
+  BuumSFX: {fileID: 1108899832}
+  ScreamSFX: {fileID: 873660201}
 --- !u!135 &1116027306
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2900,7 +2903,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 520c404df975724419086334413676a6, type: 3}
+  m_audioClip: {fileID: 8300000, guid: d4f902cc4eae87c4492e7dce71cdcbb1, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.104
   m_Pitch: 1
@@ -3434,9 +3437,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1628571007}
     - target: {fileID: 7368320236270648118, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
+      propertyPath: BuumSFX
+      value: 
+      objectReference: {fileID: 1108899832}
+    - target: {fileID: 7368320236270648118, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
       propertyPath: Ragdoll
       value: 
       objectReference: {fileID: 1032618501}
+    - target: {fileID: 7368320236270648118, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
+      propertyPath: ScreamSFX
+      value: 
+      objectReference: {fileID: 873660201}
     - target: {fileID: 7368320236270648118, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
       propertyPath: rigidBody
       value: 
