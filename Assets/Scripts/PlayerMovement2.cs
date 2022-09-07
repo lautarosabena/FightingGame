@@ -86,22 +86,11 @@ public class PlayerMovement2 : MonoBehaviour
         Debug.Log(knock);
         Collider[] hitColliders = Physics.OverlapSphere(Punchs.transform.position, 2.5f);
 
-        if (Input.GetKey(KeyCode.Joystick1Button0) && Grounded == true)
+        if (Input.GetKey(KeyCode.Joystick1Button0) || Input.GetKeyDown("space") && Grounded == true)
         {
-
-            animator.SetBool("IsJumping", true);
-            moveDirection.y = 10f;
-            //transform.Translate(new Vector3(0, 150f, 0) * Time.deltaTime);
-            //playerVelocity.y += Mathf.Sqrt(1f * -3.0f * -10);
-            //playerVelocity.y += -10f * Time.deltaTime;
-
-            //m_Rigidbody.AddForce(Vector3.up * 100f);
-            //Jumping = 2;
-            timer = 2f;
-            Debug.Log("salto");
-            Grounded = false;
-        }
-        moveDirection.y = -20f * Time.deltaTime;
+            
+            StartCoroutine(IsGrounded());
+        } 
         Player.Move(moveDirection);
         //Player.Move(playerVelocity * Time.deltaTime);
 
@@ -408,6 +397,25 @@ public class PlayerMovement2 : MonoBehaviour
 
         //animator.enabled = !enabled;
    // }
+
+    IEnumerator IsGrounded()
+    {
+        animator.SetBool("IsJumping", true);
+        moveDirection.y += 10f * Time.deltaTime;
+        
+        //m_Rigidbody.AddForce(Vector3.up * 100f);
+        //Jumping = 2;
+        //timer = 2f;
+        Debug.Log("salto");
+        Grounded = false;
+        yield return new WaitForSeconds(0.5f);
+        moveDirection.y = -20f * Time.deltaTime;
+        yield return new WaitForSeconds(0.5f);
+        Grounded = true;
+        animator.SetBool("IsJumping", false);
+        //StartCoroutine(IsGrounded());
+    }
+    
     
 }
 

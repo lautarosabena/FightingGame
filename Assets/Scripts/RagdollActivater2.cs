@@ -154,8 +154,17 @@ public class RagdollActivater2 : MonoBehaviour
         if (other.gameObject.tag == "Coins")
         {
             DoRagdoll2(true);
+            poss = other.transform.position;
+            foreach (var rig in AllRigidbodies)
+            {
+                rig.AddForce(poss * 150f);
+                Debug.Log("FUERZFUERZ");
+                //rig.AddForce(transform.up * 500f);
+            }
+            gameObject.layer = LayerMask.NameToLayer("RAGDOLLOFF");
             morision = false;
             quase = true;
+
         }
 
             
@@ -181,8 +190,9 @@ public class RagdollActivater2 : MonoBehaviour
             gameObject.layer = LayerMask.NameToLayer("RAGDOLLOFF");
             morision = false;
             quase = true;
-            
-            
+            SonidoChoque.Play();
+            SonidoChoque2.Play();
+
 
 
         }
@@ -196,7 +206,7 @@ public class RagdollActivater2 : MonoBehaviour
             DoRagdoll2(true);
             foreach (var rig in AllRigidbodies)
             {
-                rig.AddForce(poss * 150f);
+                rig.AddForce(poss * 350f);
                 Debug.Log("FUERZFUERZ");
                 //rig.AddForce(transform.up * 500f);
             }

@@ -72,10 +72,7 @@ public class RagdollActivater : MonoBehaviour
             Debug.Log("CAMBIASOOOOOOOOOOOOOOOOOOOOOOOROJO");
             Respawner.tremendo = false;
         }
-        if (Input.GetKeyDown("space"))
-        {
-            DoRagdoll(true);
-        }
+        
         Debug.Log(Respawner.reseter);
         
 
@@ -182,7 +179,7 @@ public class RagdollActivater : MonoBehaviour
             poss = collision.transform.position;
             foreach (var rig in AllRigidbodies)
             {
-                rig.AddForce(poss * 150f);
+                rig.AddForce(poss * 50f);
                 Debug.Log("FUERZFUERZ");
                 //rig.AddForce(transform.up * 500f);
             }

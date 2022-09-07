@@ -83,23 +83,7 @@ public class PlayerMovement : MonoBehaviour
         //Sistema de golpes
         //Debug.Log(knock);
         Collider[] hitColliders = Physics.OverlapSphere(Punchs.transform.position, 2.5f);
-        if (Input.GetKey(KeyCode.Joystick2Button0) && Grounded == true)
-        {
-
-            animator.SetBool("IsJumping", true);
-            moveDirection.y = 10f;
-            //transform.Translate(new Vector3(0, 150f, 0) * Time.deltaTime);
-            //playerVelocity.y += Mathf.Sqrt(1f * -3.0f * -10);
-            //playerVelocity.y += -10f * Time.deltaTime;
-
-            //m_Rigidbody.AddForce(Vector3.up * 100f);
-            //Jumping = 2;
-            timer = 2f;
-            Debug.Log("salto");
-            Grounded = false;
-        }
-        moveDirection.y = -20f * Time.deltaTime;
-        Player.Move(moveDirection);
+        
 
 
         if (Input.GetKey(KeyCode.Joystick2Button2))
@@ -248,6 +232,7 @@ public class PlayerMovement : MonoBehaviour
                 float h = Input.GetAxisRaw("Joystick2Horizontal");
                 float v = Input.GetAxisRaw("Joystick2Vertical");
                 Player.Move(new Vector3(h, 0, v).normalized * Time.deltaTime * 30f);
+                Player.Move(moveDirection * Time.deltaTime);
                 //Player.Move(-Vector3.up.normalized * Time.deltaTime * 10f);
                 //OnMovimiento();
                 handleRotation();
@@ -297,12 +282,36 @@ public class PlayerMovement : MonoBehaviour
 
 
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, Vector3.down, out hit, maxdist)) {
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, maxdist)) 
+            {
                 //Debug.Log(Jumping);
-                playerVelocity.y = 0f;
+                //playerVelocity.y = 0f;
                 //Jumping = 1;
-            
-        }
+                Grounded = true;
+
+                if (Input.GetKey(KeyCode.Joystick2Button0) || Input.GetKeyDown("space") && Grounded == true)
+                {
+
+                    animator.SetBool("IsJumping", true);
+                    moveDirection.y = 500f;
+                    //transform.Translate(new Vector3(0, 150f, 0) * Time.deltaTime);
+                    //playerVelocity.y += Mathf.Sqrt(1f * -3.0f * -10);
+                    //playerVelocity.y += -10f * Time.deltaTime;
+
+                    //m_Rigidbody.AddForce(Vector3.up * 100f);
+                    //Jumping = 2;
+                    timer = 2f;
+                    Debug.Log("salto");
+                    
+                }
+                
+                
+
+            } else
+            {
+                moveDirection.y = -20f * Time.deltaTime;
+                Grounded = false;
+            }
 
         //OnDrawGizmos();
         }
@@ -336,7 +345,7 @@ public class PlayerMovement : MonoBehaviour
         //m_Rigidbody.MovePosition(transform.position + movimiento2 *  10f * Time.deltaTime);
         //transform.Translate(Vector3.left * Time.deltaTime * m_Speed);
         Vector2 inputMovimiento = currentMovement;
-        Player.Move(movimiento2 * 10f * Time.deltaTime);
+        //Player.Move(movimiento2 * 10f * Time.deltaTime);
         inputVector = new Vector3(inputMovimiento.x, 0, inputMovimiento.y);
         
     }

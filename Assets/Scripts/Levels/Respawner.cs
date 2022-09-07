@@ -138,7 +138,7 @@ public class Respawner : MonoBehaviour
             ChangeLevel();
         }
 
-        if (Input.GetKeyDown("space"))
+        if (Input.GetKeyDown("e"))
         {
             ChangeLevel();
             Debug.Log("CAMBIASODELEVEL" + CurrentLvl);
