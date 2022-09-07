@@ -27,7 +27,7 @@ public class Respawner : MonoBehaviour
     public float PjNegroTimer;
     public float PjRojoTimer;
     public static bool reseter = false;
-    public static bool reseter2 = false;
+    public static bool tremendo = false;
     public static int NewLvl = 1;
     int CurrentLvl = 0;
 
@@ -253,7 +253,7 @@ public class Respawner : MonoBehaviour
                 PJROJOCH.transform.position = respawn.position;
                 PJROJOCH.enabled = true;
                 pointsNegro ++;
-                reseter2 = true;
+                tremendo = true;
             }    
              
 
@@ -302,7 +302,7 @@ public class Respawner : MonoBehaviour
                 //PJROJOCH.transform.position = respawn.position + new Vector3(0, 30, 0);
                 PJROJOCH.enabled = true;
                 pointsNegro ++;
-                reseter2 = true;
+                tremendo = true;
             }
 
         } else
@@ -364,7 +364,7 @@ public class Respawner : MonoBehaviour
                 PJROJOCH.transform.position = respawn.position;
                 PJROJOCH.enabled = true;
                 pointsNegro ++;
-                reseter2 = true;
+                tremendo = true;
             }
         }
         else

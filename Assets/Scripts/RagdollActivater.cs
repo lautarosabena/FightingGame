@@ -61,26 +61,23 @@ public class RagdollActivater : MonoBehaviour
 
     void Update() 
     {
-        chan2 = Respawner.reseter2;
+
+
+        chan2 = Respawner.tremendo;
         if (chan2 == true)
         {
             Levantarse();
             reiniciartiempo();
-            chan2 = false;
-            Debug.Log("CAMBIASOOOOOOOOOOOOOOOOOOOOOOO");
+            
+            Debug.Log("CAMBIASOOOOOOOOOOOOOOOOOOOOOOOROJO");
+            Respawner.tremendo = false;
         }
         if (Input.GetKeyDown("space"))
         {
             DoRagdoll(true);
         }
         Debug.Log(Respawner.reseter);
-        if (Respawner.reseter == true)
-        {
-            Levantarse();
-            reiniciartiempo();
-            Respawner.reseter = false;
-            Debug.Log("CAMBIASOOOOOOOOOOOOOOOOOOOOOOO");
-        }
+        
 
         if (fixer == true)
         {

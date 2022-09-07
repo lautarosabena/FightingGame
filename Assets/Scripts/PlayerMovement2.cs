@@ -80,8 +80,8 @@ public class PlayerMovement2 : MonoBehaviour
     }
     void Update()
     {
-        
 
+        Debug.Log("Grounded" + Grounded);
         //Sistema de golpes
         Debug.Log(knock);
         Collider[] hitColliders = Physics.OverlapSphere(Punchs.transform.position, 2.5f);
@@ -278,7 +278,7 @@ public class PlayerMovement2 : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(transform.position, Vector3.down, out hit, maxdist)) {
                 Debug.Log("PISOO");
-                playerVelocity.y = 0f;
+                //playerVelocity.y = 0f;
                 //Grounded = true; 
 
             } else

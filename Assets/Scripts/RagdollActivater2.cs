@@ -16,6 +16,7 @@ public class RagdollActivater2 : MonoBehaviour
     public float timerr = 5f;
     //public PlayerMovement2 p;
     public static bool quase = false;
+    public static bool sabanamogolico2 = false;
     public bool morision = true;
     // Start is called before the first frame update
     public AudioSource SonidoChoque;
@@ -214,9 +215,9 @@ public class RagdollActivater2 : MonoBehaviour
     void Levantarse() {
             quase = false;
             b.knock = 0;
-            //DoRagdoll2(true);
+            DoRagdoll2(true);
             DoRagdoll2(false);
-            //sabanamogolico2 = false;
+            sabanamogolico2 = false;
             morision = true;
             //player.transform.position = PJ.transform.position;
             //PJ.transform.position = player.transform.position + new Vector3(0, 5, 0);
