@@ -24,10 +24,12 @@ public class RagdollActivater2 : MonoBehaviour
     public bool fixer = false;
     public PlayerMovement b;
     public Vector3 poss;
+    public Vector3 respawn;
     public bool chan;
     
     void Awake()
     {
+        chan = false;
         MainCollider = GetComponent<BoxCollider>();
         AllColliders = GetComponentsInChildren<Collider>(true);
         DoRagdoll2(false);
@@ -45,6 +47,7 @@ public class RagdollActivater2 : MonoBehaviour
     // Update is called once per frame
     public void DoRagdoll2(bool isRagdoll)
     {
+        
         fixer = false;
         foreach (var col in AllColliders)
         {
@@ -58,16 +61,18 @@ public class RagdollActivater2 : MonoBehaviour
         foreach (var rig in AllRigidbodies)
         {
             rig.isKinematic = false;
+            respawn = rig.transform.position + Vector3.up * 10;
             //rig.AddForce(transform.up * 500f);
         }
-
+        MainCollider.enabled = false;
+        
         
 
     }
 
     void Update() 
     {
-
+        Debug.Log(chan);
         
         chan = Respawner.reseter;
         if (chan == true)
@@ -75,7 +80,9 @@ public class RagdollActivater2 : MonoBehaviour
             Levantarse();
             reiniciartiempo();
             chan = false;
-            Debug.Log("CAMBIASOOOOOOOOOOOOOOOOOOOOOOO");
+            timerr = 5f;
+            Respawner.reseter = false;
+            //Debug.Log("CAMBIASOOOOOOOOOOOOOOOOOOOOOOO");
         }
         b = FindObjectOfType<PlayerMovement>();
         if (fixer == true)
@@ -84,10 +91,11 @@ public class RagdollActivater2 : MonoBehaviour
             foreach (var rig in AllRigidbodies)
             {
                 rig.isKinematic = true;
+                
             }
             
         }
-        MainCollider.enabled = true;
+        //MainCollider.enabled = true;
         if (morision == false)
         {
             timerr -= Time.deltaTime;
@@ -169,21 +177,23 @@ public class RagdollActivater2 : MonoBehaviour
 
             
     }
-    private void OnCollisionEnter(Collision collision)
+    void OnCollisionEnter(Collision collision)
     {
 
         if (collision.gameObject.tag == "car")
         {
             Respawner.pointsRojo++;
-            poss = collision.transform.position;
-            Debug.Log("asddddddddddddddddddd");
+            
+            
             
             //Debug.Log("Do something");
             DoRagdoll2(true);
+            Debug.Log("entrando ragdoll negro");
+            poss = collision.transform.position;
             foreach (var rig in AllRigidbodies)
             {
-                rig.AddForce(poss * 50f);
-                Debug.Log("FUERZFUERZ");
+                rig.AddForce(poss * 100f);
+                //Debug.Log("FUERZFUERZ");
                 //rig.AddForce(transform.up * 500f);
             }
             //Debug.Log(timerr);
@@ -206,7 +216,7 @@ public class RagdollActivater2 : MonoBehaviour
             DoRagdoll2(true);
             foreach (var rig in AllRigidbodies)
             {
-                rig.AddForce(poss * 350f);
+                rig.AddForce(poss * 150f);
                 Debug.Log("FUERZFUERZ");
                 //rig.AddForce(transform.up * 500f);
             }
@@ -233,9 +243,12 @@ public class RagdollActivater2 : MonoBehaviour
             morision = true;
             //player.transform.position = PJ.transform.position;
             //PJ.transform.position = player.transform.position + new Vector3(0, 5, 0);
+            MainCollider.transform.position = respawn;
             PJ.enabled = true;
             gameObject.layer = LayerMask.NameToLayer("RAGDOLL2");
             fixer = true;
+            MainCollider.enabled = true;
+            
         //colliderfollow = 0;
     }
 

@@ -35,6 +35,7 @@ public class PlayerMovement2 : MonoBehaviour
     private Vector3 playerVelocity;
     private bool Grounded = false;
     private Vector3 moveDirection = Vector3.zero;
+    public float timersalto;
 
     [SerializeField] private PlayerInput PlayerInput;
     void Awake() 
@@ -80,10 +81,11 @@ public class PlayerMovement2 : MonoBehaviour
     }
     void Update()
     {
-
-        Debug.Log("Grounded" + Grounded);
+        timersalto -= Time.deltaTime;
+        Debug.Log(timersalto);
+        //Debug.Log("Grounded" + Grounded);
         //Sistema de golpes
-        Debug.Log(knock);
+        //Debug.Log(knock);
         Collider[] hitColliders = Physics.OverlapSphere(Punchs.transform.position, 2.5f);
 
         Player.Move(moveDirection * Time.deltaTime);
@@ -148,7 +150,7 @@ public class PlayerMovement2 : MonoBehaviour
             animator.ResetTrigger("Taunt2");
             animator.ResetTrigger("Taunt3");
             animator.ResetTrigger("Taunt4");
-            Debug.Log("Desactivando");
+            //Debug.Log("Desactivando");
         }
 
         if (currentMovement.x != 0 || currentMovement.y != 0)
@@ -164,7 +166,7 @@ public class PlayerMovement2 : MonoBehaviour
 
             animator.SetBool("IsRunning", false);
         }
-        Debug.Log(cantaunt);
+        //Debug.Log(cantaunt);
         if(currentMovement.x == 0 && currentMovement.y == 0)
         {
             if (Input.GetKeyUp(KeyCode.Joystick1Button4))
@@ -260,29 +262,22 @@ public class PlayerMovement2 : MonoBehaviour
 
 
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, Vector3.down, out hit, maxdist)) {
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, maxdist)) 
+        {
 
-            if (Input.GetKey(KeyCode.Joystick1Button0) || Input.GetKeyDown("space"))
+            if (Input.GetKey(KeyCode.Joystick1Button0) && timersalto <= 0 || Input.GetKeyDown("space"))
             {
+                timersalto = 3f;
                 Debug.Log("PISOO");
-            //playerVelocity.y = 0f;
-            //Grounded = true; 
-            animator.SetBool("IsJumping", false);
-            moveDirection.y = 20f;
+                animator.SetBool("IsJumping", false);
+                moveDirection.y = 10f;
 
-                //m_Rigidbody.AddForce(Vector3.up * 100f);
-                //Jumping = 2;
-                //timer = 2f;
-                //Debug.Log("salto");
-                //Grounded = false;
-                //yield return new WaitForSeconds(0.5f);
-
-                //yield return new WaitForSeconds(0.5f);
-                //Grounded = true;
+               
 
             }
         } else
-            {
+         {
+            //timersalto = 2f;
             moveDirection.y += -20f * Time.deltaTime;
             animator.SetBool("IsJumping", true);
 

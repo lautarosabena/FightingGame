@@ -26,6 +26,8 @@ public class RagdollActivater : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        chan2 = false;
+
         //rigidbodii = GetComponent<Rigidbody>();
         MainCollider = GetComponent<Collider>();
         AllColliders = GetComponentsInChildren<Collider>(true);
@@ -71,6 +73,7 @@ public class RagdollActivater : MonoBehaviour
             
             Debug.Log("CAMBIASOOOOOOOOOOOOOOOOOOOOOOOROJO");
             Respawner.tremendo = false;
+            chan2 = false;
         }
         
         Debug.Log(Respawner.reseter);
@@ -158,7 +161,7 @@ public class RagdollActivater : MonoBehaviour
             foreach (var rig in AllRigidbodies)
             {
                 rig.AddForce(poss * 150f);
-                Debug.Log("FUERZFUERZ");
+                //Debug.Log("FUERZFUERZ");
                 //rig.AddForce(transform.up * 500f);
             }
             gameObject.layer = LayerMask.NameToLayer("RAGDOLLOFF");
@@ -179,8 +182,8 @@ public class RagdollActivater : MonoBehaviour
             poss = collision.transform.position;
             foreach (var rig in AllRigidbodies)
             {
-                rig.AddForce(poss * 50f);
-                Debug.Log("FUERZFUERZ");
+                rig.AddForce(poss * 100f);
+                //Debug.Log("FUERZFUERZ");
                 //rig.AddForce(transform.up * 500f);
             }
             //Debug.Log(timerr);

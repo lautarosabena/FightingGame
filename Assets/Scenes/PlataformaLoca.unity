@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.08036548, g: 0.09974155, b: 0.3009563, a: 1}
+  m_IndirectSpecularColor: {r: 0.08036642, g: 0.0997477, b: 0.30097166, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -405,7 +405,7 @@ PrefabInstance:
       objectReference: {fileID: 1745064996}
     - target: {fileID: 9176826492131991503, guid: 5672996eb87a0b94bae19a9931b3f363, type: 3}
       propertyPath: maxdist
-      value: 1.37
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9176826492131991503, guid: 5672996eb87a0b94bae19a9931b3f363, type: 3}
       propertyPath: trompada2
@@ -1790,7 +1790,7 @@ PrefabInstance:
       objectReference: {fileID: 1037319803}
     - target: {fileID: 7368320236270648113, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
       propertyPath: maxdist
-      value: 1.37
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7368320236270648113, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
       propertyPath: trompada2

@@ -349,7 +349,20 @@ public class Respawner : MonoBehaviour
                 pointsRojo ++;
 
             }
-            
+
+            if (RagdollActivater2.quase == true && PJNEGROBody.position.y <= -0)
+            {
+                PJNEGROCH.enabled = false;
+
+                PJNEGROCH.transform.position = respawn.position;
+                PJNEGROBody.transform.position = respawn.position;
+                PJNEGROCH.enabled = true;
+
+                RagdollActivater2.quase = false;
+                pointsRojo++;
+                reseter = true;
+            }
+
             if (PJROJO.position.y <= -0)
             {
                 PJROJOCH.enabled = false;

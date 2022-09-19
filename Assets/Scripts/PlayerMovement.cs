@@ -162,7 +162,7 @@ public class PlayerMovement : MonoBehaviour
 
             animator.SetBool("IsRunning", false);
         }
-        Debug.Log(cantaunt);
+        //Debug.Log(cantaunt);
         if (currentMovement.x == 0 && currentMovement.y == 0)
         {
             if (Input.GetKeyUp(KeyCode.Joystick2Button4))
@@ -293,7 +293,7 @@ public class PlayerMovement : MonoBehaviour
                 {
 
                     animator.SetBool("IsJumping", false);
-                    moveDirection.y = 20f;
+                    moveDirection.y = 10f;
                     //transform.Translate(new Vector3(0, 150f, 0) * Time.deltaTime);
                     //playerVelocity.y += Mathf.Sqrt(1f * -3.0f * -10);
                     //playerVelocity.y += -10f * Time.deltaTime;
