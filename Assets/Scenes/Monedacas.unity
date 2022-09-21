@@ -976,6 +976,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9176826492131991496, guid: 5672996eb87a0b94bae19a9931b3f363, type: 3}
+      propertyPath: m_Mass
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 9176826492131991496, guid: 5672996eb87a0b94bae19a9931b3f363, type: 3}
       propertyPath: m_UseGravity
       value: 0
       objectReference: {fileID: 0}
@@ -985,7 +989,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9176826492131991496, guid: 5672996eb87a0b94bae19a9931b3f363, type: 3}
       propertyPath: m_Constraints
-      value: 0
+      value: 112
+      objectReference: {fileID: 0}
+    - target: {fileID: 9176826492131991496, guid: 5672996eb87a0b94bae19a9931b3f363, type: 3}
+      propertyPath: m_Interpolate
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9176826492131991496, guid: 5672996eb87a0b94bae19a9931b3f363, type: 3}
       propertyPath: m_IsKinematic
@@ -1027,6 +1035,10 @@ PrefabInstance:
       propertyPath: trompada2
       value: 
       objectReference: {fileID: 8443315704496310908, guid: 6ef35fa36e3a65043b2d800600204bdd, type: 3}
+    - target: {fileID: 9176826492131991503, guid: 5672996eb87a0b94bae19a9931b3f363, type: 3}
+      propertyPath: m_Rigidbody
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 9176826492382944992, guid: 5672996eb87a0b94bae19a9931b3f363, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -3281,6 +3293,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a15cf23514d1581438a5261fc0b0ea32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!54 &1909916012 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 9176826492131991496, guid: 5672996eb87a0b94bae19a9931b3f363, type: 3}
+  m_PrefabInstance: {fileID: 454752359}
+  m_PrefabAsset: {fileID: 0}
 --- !u!54 &1946995315 stripped
 Rigidbody:
   m_CorrespondingSourceObject: {fileID: 7368320236271539842, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
@@ -3426,6 +3443,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7368320236270648113, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
+      propertyPath: REDRB
+      value: 
+      objectReference: {fileID: 1909916012}
+    - target: {fileID: 7368320236270648113, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
       propertyPath: audio
       value: 
       objectReference: {fileID: 1979124455}
@@ -3437,6 +3458,10 @@ PrefabInstance:
       propertyPath: trompada2
       value: 
       objectReference: {fileID: 5024009746357069192, guid: ec3f674830402cc45bce805cf6493db7, type: 3}
+    - target: {fileID: 7368320236270648113, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
+      propertyPath: m_Rigidbody
+      value: 
+      objectReference: {fileID: 1909916012}
     - target: {fileID: 7368320236270648118, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
       propertyPath: b
       value: 

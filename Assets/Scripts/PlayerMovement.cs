@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     PlayerInput input;
     Vector2 currentMovement;
     public Rigidbody m_Rigidbody;
+    public Rigidbody REDPJ;
     public float m_Speed = 1f;
     public int asd = 1;
     public int Jumping = 2;
@@ -79,7 +80,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        m_Rigidbody.AddForce(-poss * 10050f);
         //Sistema de golpes
         //Debug.Log(knock);
         Collider[] hitColliders = Physics.OverlapSphere(Punchs.transform.position, 2.5f);
@@ -111,6 +112,8 @@ public class PlayerMovement : MonoBehaviour
                         knock++;
                     }
                 }
+
+                
                 Invoke("desactivator", 0.5f);
             }
         }

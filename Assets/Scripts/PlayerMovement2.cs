@@ -9,6 +9,7 @@ public class PlayerMovement2 : MonoBehaviour
     PlayerInput input;
     public static Vector3 currentMovement;
     public Rigidbody m_Rigidbody;
+    public Rigidbody REDRB;
     public float m_Speed;
     public int asd = 1;
     public int Jumping = 2;
@@ -36,6 +37,7 @@ public class PlayerMovement2 : MonoBehaviour
     private bool Grounded = false;
     private Vector3 moveDirection = Vector3.zero;
     public float timersalto;
+    public bool attacking = true;
 
     [SerializeField] private PlayerInput PlayerInput;
     void Awake() 
@@ -81,6 +83,7 @@ public class PlayerMovement2 : MonoBehaviour
     }
     void Update()
     {
+        REDRB.useGravity = false;
         timersalto -= Time.deltaTime;
         Debug.Log(timersalto);
         //Debug.Log("Grounded" + Grounded);
@@ -90,9 +93,9 @@ public class PlayerMovement2 : MonoBehaviour
 
         Player.Move(moveDirection * Time.deltaTime);
         //Player.Move(playerVelocity * Time.deltaTime);
+        //Punching = 2;
 
-
-        if (Input.GetKey(KeyCode.Joystick1Button2))
+        if (Input.GetKey(KeyCode.Joystick1Button2) || Input.GetKeyDown("space"))
         {
 
             if (Punching == 1)
@@ -114,7 +117,12 @@ public class PlayerMovement2 : MonoBehaviour
                         knock++;
                     }
                 }
+                REDRB.isKinematic = false;
+                REDRB.AddForce(-poss * 150f);
+                REDRB.AddForceAtPosition(poss - transform.position * 50f, transform.position, ForceMode.Impulse);
+                //REDRB.isKinematic = true;
                 Invoke("desactivator", 0.5f);
+                Invoke("desactivator2", 1.5f);
             }
         }
         else if (Input.GetKey(KeyCode.Joystick1Button3))
@@ -138,6 +146,7 @@ public class PlayerMovement2 : MonoBehaviour
                     }
                 }
                 Invoke("desactivator", 0.5f);
+                
 
             }
         }
@@ -265,7 +274,7 @@ public class PlayerMovement2 : MonoBehaviour
         if (Physics.Raycast(transform.position, Vector3.down, out hit, maxdist)) 
         {
 
-            if (Input.GetKey(KeyCode.Joystick1Button0) && timersalto <= 0 || Input.GetKeyDown("space"))
+            if (Input.GetKey(KeyCode.Joystick1Button0) && timersalto <= 0)
             {
                 timersalto = 3f;
                 Debug.Log("PISOO");
@@ -387,31 +396,37 @@ public class PlayerMovement2 : MonoBehaviour
     void desactivator() {
         animator.SetBool("PunchRight", false);
         animator.SetBool("PunchLeft", false);
-        Punching = 1;
-        
+        REDRB.isKinematic = true;
+
     }
 
-    
-    
+    void desactivator2()
+    {
+        Punching = 1;
 
-     //void SetEnabled(bool enabled)
+    }
+
+
+
+
+    //void SetEnabled(bool enabled)
     //{
-        //bool isKinematic = !enabled;
-        //bool gravityenable = enabled;
-        //foreach (Rigidbody rigidbody in rigidbodies)
-        //{
-            //Debug.Log(rigidbody);
-           // rigidbody.isKinematic = isKinematic;
-           
-      //  }
+    //bool isKinematic = !enabled;
+    //bool gravityenable = enabled;
+    //foreach (Rigidbody rigidbody in rigidbodies)
+    //{
+    //Debug.Log(rigidbody);
+    // rigidbody.isKinematic = isKinematic;
 
-        //animator.enabled = !enabled;
-   // }
+    //  }
+
+    //animator.enabled = !enabled;
+    // }
 
 
-    
-    
-    
+
+
+
 }
 
 

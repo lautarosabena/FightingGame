@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.05683432, g: 0.2880699, b: 0.97097, a: 1}
+  m_IndirectSpecularColor: {r: 0.05665359, g: 0.28792062, b: 0.9710114, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1393,6 +1393,10 @@ PrefabInstance:
       propertyPath: p
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7368320236270648113, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
+      propertyPath: REDRB
+      value: 
+      objectReference: {fileID: 1482746092}
     - target: {fileID: 7368320236270648113, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
       propertyPath: audio
       value: 
@@ -2893,6 +2897,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8705487147086774034, guid: 5672996eb87a0b94bae19a9931b3f363, type: 3}
   m_PrefabInstance: {fileID: 10079905}
   m_PrefabAsset: {fileID: 0}
+--- !u!54 &1482746092 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 9176826492131991496, guid: 5672996eb87a0b94bae19a9931b3f363, type: 3}
+  m_PrefabInstance: {fileID: 10079905}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1508460765 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 534a079cd2515ce4fbc1bd39b3c5230f, type: 3}
@@ -3790,6 +3799,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1954814865 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: dafea1de2951ed441b66457b341ef17a, type: 3}
+  m_PrefabInstance: {fileID: 976826689}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1954814866
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1954814865}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2426508734089713321, guid: dafea1de2951ed441b66457b341ef17a, type: 3}
 --- !u!54 &2084405161 stripped
 Rigidbody:
   m_CorrespondingSourceObject: {fileID: 4405009242785715827, guid: 5672996eb87a0b94bae19a9931b3f363, type: 3}
