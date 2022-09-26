@@ -9,6 +9,8 @@ public class Dashing : MonoBehaviour
     public Transform playerCam;
     private Rigidbody rb;
     private CarBlack pm;
+    public ParticleSystem BoostVFX;
+    public AudioSource BoostSFX;
 
     [Header("Dashing")]
     public float dashForce;
@@ -38,6 +40,7 @@ public class Dashing : MonoBehaviour
         if (Input.GetKeyDown(dashKey) && dashCdTimer <= 0)
         {
             Dash();
+            
         }
     }
 
@@ -45,8 +48,11 @@ public class Dashing : MonoBehaviour
     {
         Vector3 forceToApply = orientation.forward * dashForce + orientation.up * dashUpwardForce;
         rb.AddForce(forceToApply, ForceMode.Impulse);
+        BoostVFX.Play();
+        BoostSFX.Play();
 
         Invoke(nameof(ResetDash), dashDuration);
+        
     }
 
     private void ResetDash()
