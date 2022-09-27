@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.012883896, g: 0.08474493, b: 0.1450669, a: 1}
+  m_IndirectSpecularColor: {r: 0.013041237, g: 0.08490247, b: 0.14522639, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5144,10 +5144,11 @@ MonoBehaviour:
   orientation: {fileID: 108974303}
   playerCam: {fileID: 108974303}
   BoostVFX: {fileID: 731924540}
-  BoostSFX: {fileID: 0}
+  BoostSFX: {fileID: 1022651018}
   dashForce: 20
   dashUpwardForce: 0
   dashDuration: 0.25
+  isActive: 0
   dashCd: 0
   dashKey: 304
 --- !u!1 &153759264 stripped
@@ -13020,6 +13021,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4150678637802840784, guid: 3e023fde0b411dd4397cc1818fcc47ce, type: 3}
+      propertyPath: rb
+      value: 
+      objectReference: {fileID: 35643818}
+    - target: {fileID: 4150678637802840784, guid: 3e023fde0b411dd4397cc1818fcc47ce, type: 3}
+      propertyPath: rb2
+      value: 
+      objectReference: {fileID: 108974300}
+    - target: {fileID: 4150678637802840784, guid: 3e023fde0b411dd4397cc1818fcc47ce, type: 3}
+      propertyPath: dashKey
+      value: 32
+      objectReference: {fileID: 0}
     - target: {fileID: 4150678637802840784, guid: 3e023fde0b411dd4397cc1818fcc47ce, type: 3}
       propertyPath: BoostSFX
       value: 

@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Dashing : MonoBehaviour
+public class Dashing2 : MonoBehaviour
 {
     [Header("References")]
     public Transform orientation;
     public Transform playerCam;
     private Rigidbody rb;
-    private CarBlack pm;
+    private CarRed pm;
     public ParticleSystem BoostVFX;
     public AudioSource BoostSFX;
 
@@ -23,12 +23,12 @@ public class Dashing : MonoBehaviour
     private float dashCdTimer;
 
     [Header("Input")]
-    public KeyCode dashKey = KeyCode.LeftShift;
+    public KeyCode dashKey = KeyCode.Space;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        pm = GetComponent<CarBlack>();
+        pm = GetComponent<CarRed>();
     }
 
     private void Update()
@@ -38,11 +38,11 @@ public class Dashing : MonoBehaviour
             dashCdTimer -= Time.deltaTime;
         }
 
-        if (Input.GetKeyDown(KeyCode.Joystick1Button2) )
+        if (Input.GetKeyDown(KeyCode.Joystick2Button2) )
         {
             Dash();
             isActive = true;
-        } else if (Input.GetKeyUp(KeyCode.Joystick1Button2))
+        } else if (Input.GetKeyUp(KeyCode.Joystick2Button2))
         {
             isActive = false;
         }
@@ -66,7 +66,7 @@ public class Dashing : MonoBehaviour
         rb.AddForce(forceToApply, ForceMode.Impulse);
         BoostVFX.Play();
         BoostSFX.Play();
-        Debug.Log("Dash Negro");
+        Debug.Log("Dash Rojo");
 
         Invoke(nameof(ResetDash), dashDuration);
         
