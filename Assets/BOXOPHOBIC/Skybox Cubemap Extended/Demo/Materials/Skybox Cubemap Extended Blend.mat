@@ -84,7 +84,7 @@ Material:
     - _Advancedd: 1
     - _BumpScale: 1
     - _CUBEMAPP: 1
-    - _CubemapPosition: 0
+    - _CubemapPosition: -0.33
     - _CubemapTransition: 0.8
     - _Cubemapp: 1
     - _Cutoff: 0.5

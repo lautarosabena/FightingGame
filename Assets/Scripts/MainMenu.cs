@@ -16,6 +16,7 @@ public class MainMenu : MonoBehaviour
     public GameObject quitButton;
     public GameObject optionsFirstButton, optionsClosedButton;
     public GameObject instructionsScreen;
+    public GameObject scenery;
     public TextMeshProUGUI TimerText;
 
     public float timeRemaining = 500;
@@ -24,6 +25,7 @@ public class MainMenu : MonoBehaviour
     public void JugarButton(){
 
         instructionsScreen.SetActive(true);
+        scenery.SetActive(false);
         timeRemaining = 15;
         //TimerText.text = timeRemaining.ToString("00");
         title.SetActive(false);
