@@ -5129,7 +5129,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ab6c5f9aee7e9ba4ea0d82b3327afc06, type: 3}
   m_PrefabInstance: {fileID: 933540754}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &108974306
+--- !u!114 &108974304
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5138,7 +5138,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 108974297}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0402ae3119c315b4bbd47f89e510b8b2, type: 3}
+  m_Script: {fileID: 11500000, guid: 08747e74420936a47b0cd6d88bd35180, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   orientation: {fileID: 108974303}
@@ -5150,7 +5150,7 @@ MonoBehaviour:
   dashDuration: 0.25
   isActive: 0
   dashCd: 0
-  dashKey: 304
+  dashKey: 32
 --- !u!1 &153759264 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c017a108f482b324eb1c6326fda138ee, type: 3}
@@ -13031,7 +13031,7 @@ PrefabInstance:
       objectReference: {fileID: 108974300}
     - target: {fileID: 4150678637802840784, guid: 3e023fde0b411dd4397cc1818fcc47ce, type: 3}
       propertyPath: dashKey
-      value: 32
+      value: 304
       objectReference: {fileID: 0}
     - target: {fileID: 4150678637802840784, guid: 3e023fde0b411dd4397cc1818fcc47ce, type: 3}
       propertyPath: BoostSFX
