@@ -14,6 +14,7 @@ public class PlayerMovement2 : MonoBehaviour
     public int asd = 1;
     public int Jumping = 2;
     public int Punching = 1;
+    public int Punching2 = 3;
     private Vector3 inputVector;
     //private Animator animator;
     public float timer = 0;
@@ -193,7 +194,7 @@ public class PlayerMovement2 : MonoBehaviour
                 if (Punching == 1)
                 {
                     Punching = 2;
-
+                    Punching2 = 4;
                     animator.SetBool("PunchRight", true);
 
                     for (int i = 0; i < hitColliders.Length; i++)
@@ -220,9 +221,9 @@ public class PlayerMovement2 : MonoBehaviour
             }
             else if (Input.GetKey(KeyCode.Joystick1Button3))
             {
-                if (Punching == 1)
+                if (Punching == 3)
                 {
-                    Punching = 2;
+                    Punching = 4;
 
                     animator.SetBool("PunchLeft", true);
 
@@ -386,6 +387,7 @@ public class PlayerMovement2 : MonoBehaviour
     void desactivator() {
         animator.SetBool("PunchRight", false);
         animator.SetBool("PunchLeft", false);
+        Punching2 = 3;
         //REDRB.isKinematic = true;
 
     }
