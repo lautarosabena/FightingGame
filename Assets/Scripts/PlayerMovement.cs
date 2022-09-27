@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     PlayerInput input;
     Vector2 currentMovement;
     public Rigidbody m_Rigidbody;
-    public Rigidbody REDPJ;
+    //public Rigidbody BLACKRB;
     public float m_Speed = 1f;
     public int asd = 1;
     public int Jumping = 2;
@@ -80,70 +80,16 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        m_Rigidbody.AddForce(-poss * 10050f);
+        //BLACKRB.useGravity = false;
+
+        //m_Rigidbody.AddForce(-poss * 10050f);
         //Sistema de golpes
         //Debug.Log(knock);
         Collider[] hitColliders = Physics.OverlapSphere(Punchs.transform.position, 2.5f);
         
 
 
-        if (Input.GetKey(KeyCode.Joystick2Button2))
-        {
-
-            if (Punching == 1)
-            {
-                Punching = 2;
-
-                animator.SetBool("PunchRight", true);
-                animator.ResetTrigger("Taunt1");
-                animator.ResetTrigger("Taunt2");
-                animator.ResetTrigger("Taunt3");
-                animator.ResetTrigger("Taunt4");
-                for (int i = 0; i < hitColliders.Length; i++)
-                {
-                    GameObject hitCollider = hitColliders[i].gameObject;
-                    if (hitCollider.CompareTag("Player"))
-                    {
-                        poss = hitCollider.transform.position;
-                        Instantiate(trompada2, poss, Quaternion.identity);
-                        trompada2.Play();
-                        audio.Play();
-                        Debug.Log("ASD");
-                        knock++;
-                    }
-                }
-
-                
-                Invoke("desactivator", 0.5f);
-            }
-        }
-        else if (Input.GetKey(KeyCode.Joystick2Button3))
-        {
-            if (Punching == 1)
-            {
-                Punching = 2;
-
-                animator.SetBool("PunchLeft", true);
-                animator.ResetTrigger("Taunt1");
-                animator.ResetTrigger("Taunt2");
-                animator.ResetTrigger("Taunt3");
-                animator.ResetTrigger("Taunt4");
-                for (int i = 0; i < hitColliders.Length; i++)
-                {
-                    GameObject hitCollider = hitColliders[i].gameObject;
-                    if (hitCollider.CompareTag("Player"))
-                    {
-                        Instantiate(trompada2, poss, Quaternion.identity);
-                        trompada2.Play();
-                        audio.Play();
-                        Debug.Log("ASD");
-                        knock++;
-                    }
-                }
-                Invoke("desactivator", 0.5f);
-
-            }
-        }
+        
 
 
 
@@ -199,18 +145,7 @@ public class PlayerMovement : MonoBehaviour
             animator.ResetTrigger("Taunt4");
         }
 
-        if (Respawner.currentScene.name == "PlataformaLoca")
-        {
-
-            speed = 10f;
-
-
-
-
-        } else
-        {
-            speed = 20f;
-        }
+        
         currentMovement = new Vector2(Input.GetAxisRaw("Joystick2Horizontal"), Input.GetAxisRaw("Joystick2Vertical")).normalized;
         transform.position += Vector3.up;
         transform.position -= Vector3.up;
@@ -225,7 +160,7 @@ public class PlayerMovement : MonoBehaviour
 
         //Debug.Log(timer);
 
-        if (view.IsMine) {
+        
             //transform.position = transform.position + new Vector3(0, -3f, 0) * Time.deltaTime;
         
             
@@ -240,29 +175,67 @@ public class PlayerMovement : MonoBehaviour
                 //OnMovimiento();
                 handleRotation();
 
-
-                if (Input.GetKey(KeyCode.Joystick2Button2))
+                if (Input.GetKey(KeyCode.Joystick2Button2) || Input.GetKeyDown("space"))
                 {
 
-                        if (Punching == 1)
+                    if (Punching == 1)
                     {
                         Punching = 2;
 
                         animator.SetBool("PunchRight", true);
+                        
+                        for (int i = 0; i < hitColliders.Length; i++)
+                        {
+                            GameObject hitCollider = hitColliders[i].gameObject;
+                            if (hitCollider.CompareTag("Player"))
+                            {
+                                poss = hitCollider.transform.position;
+                                Instantiate(trompada2, poss, Quaternion.identity);
+                                trompada2.Play();
+                                audio.Play();
+                                Debug.Log("ASDddd");
+                                knock++;
+                                //BLACKRB.isKinematic = false;
+                                //BLACKRB.AddForce(-poss * 150f);
+                                //BLACKRB.AddForceAtPosition(poss - transform.position * 50f, transform.position, ForceMode.Impulse);
+                            }
+                        }
+
+                        //REDRB.isKinematic = true;
+                        Invoke("desactivator", 0.5f);
+                        Invoke("desactivator2", 1.5f);
+
+
+                    }
+                }
+                else if (Input.GetKey(KeyCode.Joystick2Button3))
+                {
+                    if (Punching == 1)
+                    {
+                        Punching = 2;
+
+                        animator.SetBool("PunchLeft", true);
+                        animator.ResetTrigger("Taunt1");
+                        animator.ResetTrigger("Taunt2");
+                        animator.ResetTrigger("Taunt3");
+                        animator.ResetTrigger("Taunt4");
+                        for (int i = 0; i < hitColliders.Length; i++)
+                        {
+                            GameObject hitCollider = hitColliders[i].gameObject;
+                            if (hitCollider.CompareTag("Player"))
+                            {
+                                Instantiate(trompada2, poss, Quaternion.identity);
+                                trompada2.Play();
+                                audio.Play();
+                                Debug.Log("ASD");
+                                knock++;
+                            }
+                        }
                         Invoke("desactivator", 0.5f);
 
                     }
-                } else if (Input.GetKey(KeyCode.Joystick2Button3))
-                    {
-                        if (Punching == 1)
-                        {
-                            Punching = 2;
+                }
 
-                            animator.SetBool("PunchLeft", true);
-                            Invoke("desactivator", 0.5f);
-
-                        }
-                    }
 
             }
 
@@ -292,7 +265,7 @@ public class PlayerMovement : MonoBehaviour
                 //Jumping = 1;
                 Grounded = true;
 
-                if (Input.GetKey(KeyCode.Joystick2Button0) || Input.GetKeyDown("space"))
+                if (Input.GetKey(KeyCode.Joystick2Button0))
                 {
 
                     animator.SetBool("IsJumping", false);
@@ -318,7 +291,7 @@ public class PlayerMovement : MonoBehaviour
             }
 
         //OnDrawGizmos();
-        }
+        
 
         
 
@@ -401,26 +374,33 @@ public class PlayerMovement : MonoBehaviour
     void desactivator() {
         animator.SetBool("PunchRight", false);
         animator.SetBool("PunchLeft", false);
-        Punching = 1;
-        
+        //BLACKRB.isKinematic = true;
+        Debug.Log("sabanasapo");
+
     }
 
-    
+    void desactivator2()
+    {
+        Punching = 1;
 
-     //void SetEnabled(bool enabled)
+    }
+
+
+
+    //void SetEnabled(bool enabled)
     //{
-        //bool isKinematic = !enabled;
-        //bool gravityenable = enabled;
-        //foreach (Rigidbody rigidbody in rigidbodies)
-        //{
-            //Debug.Log(rigidbody);
-           // rigidbody.isKinematic = isKinematic;
-           
-      //  }
+    //bool isKinematic = !enabled;
+    //bool gravityenable = enabled;
+    //foreach (Rigidbody rigidbody in rigidbodies)
+    //{
+    //Debug.Log(rigidbody);
+    // rigidbody.isKinematic = isKinematic;
 
-        //animator.enabled = !enabled;
-   // }
-    
+    //  }
+
+    //animator.enabled = !enabled;
+    // }
+
 }
 
 

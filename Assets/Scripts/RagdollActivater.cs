@@ -20,6 +20,7 @@ public class RagdollActivater : MonoBehaviour
     public static bool sabanamogolico2 = false;
     public bool morision = true;
     private Vector3 poss;
+    public Vector3 respawn;
     public bool chan2;
 
     //Rigidbody rigidbodii;
@@ -52,7 +53,9 @@ public class RagdollActivater : MonoBehaviour
         {
             rig.isKinematic = false;
             //rig.AddForce(transform.up * 500f);
+            respawn = rig.transform.position + Vector3.up * 10;
         }
+        MainCollider.enabled = false;
     }
 
     private void Start()
@@ -206,10 +209,12 @@ public class RagdollActivater : MonoBehaviour
             DoRagdoll(false);
             sabanamogolico2 = false;
             morision = true;
+            MainCollider.transform.position = respawn;
             //PJ.transform.position = player.transform.position + new Vector3(0, 5, 0);
             PJ.enabled = true;
             gameObject.layer = LayerMask.NameToLayer("RAGDOLL");
             fixer = true;
+            MainCollider.enabled = true;
         //colliderfollow = 0;
     }
 

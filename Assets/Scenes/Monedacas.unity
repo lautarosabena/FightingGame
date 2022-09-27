@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.05673268, g: 0.28804293, b: 0.97181314, a: 1}
+  m_IndirectSpecularColor: {r: 0.05683432, g: 0.2880699, b: 0.97097, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -492,6 +492,11 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 10, y: 400, z: 55.28}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &171478319 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 7368320235471276210, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
+  m_PrefabInstance: {fileID: 1948092569}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &188211576
 GameObject:
   m_ObjectHideFlags: 0
@@ -977,7 +982,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9176826492131991496, guid: 5672996eb87a0b94bae19a9931b3f363, type: 3}
       propertyPath: m_Mass
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9176826492131991496, guid: 5672996eb87a0b94bae19a9931b3f363, type: 3}
       propertyPath: m_UseGravity
@@ -1016,9 +1021,13 @@ PrefabInstance:
       value: CharacterControls1
       objectReference: {fileID: 0}
     - target: {fileID: 9176826492131991503, guid: 5672996eb87a0b94bae19a9931b3f363, type: 3}
-      propertyPath: audio
+      propertyPath: REDPJ
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 9176826492131991503, guid: 5672996eb87a0b94bae19a9931b3f363, type: 3}
+      propertyPath: audio
+      value: 
+      objectReference: {fileID: 1909916013}
     - target: {fileID: 9176826492131991503, guid: 5672996eb87a0b94bae19a9931b3f363, type: 3}
       propertyPath: Player
       value: 
@@ -1027,6 +1036,10 @@ PrefabInstance:
       propertyPath: Punchs
       value: 
       objectReference: {fileID: 369038084}
+    - target: {fileID: 9176826492131991503, guid: 5672996eb87a0b94bae19a9931b3f363, type: 3}
+      propertyPath: BLACKRB
+      value: 
+      objectReference: {fileID: 1979124450}
     - target: {fileID: 9176826492131991503, guid: 5672996eb87a0b94bae19a9931b3f363, type: 3}
       propertyPath: maxdist
       value: 2
@@ -1038,7 +1051,7 @@ PrefabInstance:
     - target: {fileID: 9176826492131991503, guid: 5672996eb87a0b94bae19a9931b3f363, type: 3}
       propertyPath: m_Rigidbody
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1979124450}
     - target: {fileID: 9176826492382944992, guid: 5672996eb87a0b94bae19a9931b3f363, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -1046,6 +1059,8 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 8687787800378350940, guid: 5672996eb87a0b94bae19a9931b3f363, type: 3}
     - {fileID: 9176826492131991502, guid: 5672996eb87a0b94bae19a9931b3f363, type: 3}
+    - {fileID: 8568038936767378255, guid: 5672996eb87a0b94bae19a9931b3f363, type: 3}
+    - {fileID: 3569372207426544901, guid: 5672996eb87a0b94bae19a9931b3f363, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5672996eb87a0b94bae19a9931b3f363, type: 3}
 --- !u!54 &509012565 stripped
 Rigidbody:
@@ -3298,6 +3313,11 @@ Rigidbody:
   m_CorrespondingSourceObject: {fileID: 9176826492131991496, guid: 5672996eb87a0b94bae19a9931b3f363, type: 3}
   m_PrefabInstance: {fileID: 454752359}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &1909916013 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8687787800378350951, guid: 5672996eb87a0b94bae19a9931b3f363, type: 3}
+  m_PrefabInstance: {fileID: 454752359}
+  m_PrefabAsset: {fileID: 0}
 --- !u!54 &1946995315 stripped
 Rigidbody:
   m_CorrespondingSourceObject: {fileID: 7368320236271539842, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
@@ -3512,7 +3532,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7368320236270648118, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
       propertyPath: AllRigidbodies.Array.size
-      value: 14
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7368320236270648118, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
       propertyPath: AllColliders.Array.data[0]
@@ -3533,51 +3553,51 @@ PrefabInstance:
     - target: {fileID: 7368320236270648118, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
       propertyPath: AllRigidbodies.Array.data[1]
       value: 
-      objectReference: {fileID: 1628571008}
+      objectReference: {fileID: 1421665561}
     - target: {fileID: 7368320236270648118, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
       propertyPath: AllRigidbodies.Array.data[2]
       value: 
-      objectReference: {fileID: 1628571008}
+      objectReference: {fileID: 1483676871}
     - target: {fileID: 7368320236270648118, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
       propertyPath: AllRigidbodies.Array.data[3]
       value: 
-      objectReference: {fileID: 1628571008}
+      objectReference: {fileID: 509012565}
     - target: {fileID: 7368320236270648118, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
       propertyPath: AllRigidbodies.Array.data[4]
       value: 
-      objectReference: {fileID: 1628571008}
+      objectReference: {fileID: 109077503}
     - target: {fileID: 7368320236270648118, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
       propertyPath: AllRigidbodies.Array.data[5]
       value: 
-      objectReference: {fileID: 1421665561}
+      objectReference: {fileID: 1493702944}
     - target: {fileID: 7368320236270648118, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
       propertyPath: AllRigidbodies.Array.data[6]
       value: 
-      objectReference: {fileID: 1483676871}
+      objectReference: {fileID: 1152143214}
     - target: {fileID: 7368320236270648118, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
       propertyPath: AllRigidbodies.Array.data[7]
       value: 
-      objectReference: {fileID: 509012565}
+      objectReference: {fileID: 171478319}
     - target: {fileID: 7368320236270648118, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
       propertyPath: AllRigidbodies.Array.data[8]
       value: 
-      objectReference: {fileID: 109077503}
+      objectReference: {fileID: 1946995315}
     - target: {fileID: 7368320236270648118, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
       propertyPath: AllRigidbodies.Array.data[9]
       value: 
-      objectReference: {fileID: 1493702944}
+      objectReference: {fileID: 1527476500}
     - target: {fileID: 7368320236270648118, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
       propertyPath: AllRigidbodies.Array.data[10]
       value: 
-      objectReference: {fileID: 1152143214}
+      objectReference: {fileID: 674802174}
     - target: {fileID: 7368320236270648118, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
       propertyPath: AllRigidbodies.Array.data[11]
       value: 
-      objectReference: {fileID: 1946995315}
+      objectReference: {fileID: 674802174}
     - target: {fileID: 7368320236270648118, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
       propertyPath: AllRigidbodies.Array.data[12]
       value: 
-      objectReference: {fileID: 1527476500}
+      objectReference: {fileID: 674802174}
     - target: {fileID: 7368320236270648118, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
       propertyPath: AllRigidbodies.Array.data[13]
       value: 
@@ -3586,6 +3606,8 @@ PrefabInstance:
     - {fileID: 3272688303711218410, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
     - {fileID: 3272688303711218408, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
     - {fileID: 2610565736356193152, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
+    - {fileID: 3280870825586511617, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
+    - {fileID: 7703620167501437259, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
 --- !u!65 &1979124437 stripped
 BoxCollider:
@@ -3614,10 +3636,10 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 2
+  m_IsKinematic: 0
+  m_Interpolate: 2
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!82 &1979124455 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 3272688303711218409, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}

@@ -16,6 +16,7 @@ public class Dashing : MonoBehaviour
     public float dashForce;
     public float dashUpwardForce;
     public float dashDuration;
+    public bool isActive;
 
     [Header("Cooldown")]
     public float dashCd;
@@ -37,10 +38,24 @@ public class Dashing : MonoBehaviour
             dashCdTimer -= Time.deltaTime;
         }
 
-        if (Input.GetKeyDown(dashKey) && dashCdTimer <= 0)
+        if (Input.GetKeyDown(KeyCode.Joystick1Button2) || Input.GetKeyDown("space"))
         {
             Dash();
-            
+            isActive = true;
+        } else if (Input.GetKeyUp(KeyCode.Joystick1Button2) || Input.GetKeyUp("space"))
+        {
+            isActive = false;
+        }
+
+        if (dashCdTimer <= 0)
+        {
+
+        }
+
+        if (isActive == false)
+        {
+            BoostVFX.Stop();
+            return;
         }
     }
 

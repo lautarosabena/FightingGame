@@ -83,7 +83,7 @@ public class PlayerMovement2 : MonoBehaviour
     }
     void Update()
     {
-        REDRB.useGravity = false;
+        //REDRB.useGravity = false;
         timersalto -= Time.deltaTime;
         Debug.Log(timersalto);
         //Debug.Log("Grounded" + Grounded);
@@ -95,61 +95,7 @@ public class PlayerMovement2 : MonoBehaviour
         //Player.Move(playerVelocity * Time.deltaTime);
         //Punching = 2;
 
-        if (Input.GetKey(KeyCode.Joystick1Button2) || Input.GetKeyDown("space"))
-        {
-
-            if (Punching == 1)
-            {
-                Punching = 2;
-
-                animator.SetBool("PunchRight", true);
-                
-                for (int i = 0; i < hitColliders.Length; i++)
-                {
-                    GameObject hitCollider = hitColliders[i].gameObject;
-                    if (hitCollider.CompareTag("Player"))
-                    {
-                        poss = hitCollider.transform.position;
-                        Instantiate(trompada2, poss, Quaternion.identity);
-                        trompada2.Play();
-                        audio.Play();
-                        Debug.Log("ASD");
-                        knock++;
-                    }
-                }
-                REDRB.isKinematic = false;
-                REDRB.AddForce(-poss * 150f);
-                REDRB.AddForceAtPosition(poss - transform.position * 50f, transform.position, ForceMode.Impulse);
-                //REDRB.isKinematic = true;
-                Invoke("desactivator", 0.5f);
-                Invoke("desactivator2", 1.5f);
-            }
-        }
-        else if (Input.GetKey(KeyCode.Joystick1Button3))
-        {
-            if (Punching == 1)
-            {
-                Punching = 2;
-
-                animator.SetBool("PunchLeft", true);
-                
-                for (int i = 0; i < hitColliders.Length; i++)
-                {
-                    GameObject hitCollider = hitColliders[i].gameObject;
-                    if (hitCollider.CompareTag("Player"))
-                    {
-                        Instantiate(trompada2, poss, Quaternion.identity);
-                        trompada2.Play();
-                        audio.Play();
-                        Debug.Log("ASD");
-                        knock++;
-                    }
-                }
-                Invoke("desactivator", 0.5f);
-                
-
-            }
-        }
+        
 
 
         if (cantaunt == false)
@@ -204,18 +150,7 @@ public class PlayerMovement2 : MonoBehaviour
         
         
 
-        if (Respawner.currentScene.name == "PlataformaLoca")
-        {
-
-            speed = 10f;
-
-
-
-
-        } else
-        {
-            speed = 20f;
-        }
+        
         
 
         currentMovement = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
@@ -252,12 +187,67 @@ public class PlayerMovement2 : MonoBehaviour
                 //OnMovement();
                 //OnTeclado();
                 handleRotation();
+            if (Input.GetKey(KeyCode.Joystick1Button2) || Input.GetKeyDown("space"))
+            {
 
-                
+                if (Punching == 1)
+                {
+                    Punching = 2;
 
+                    animator.SetBool("PunchRight", true);
 
-                
+                    for (int i = 0; i < hitColliders.Length; i++)
+                    {
+                        GameObject hitCollider = hitColliders[i].gameObject;
+                        if (hitCollider.CompareTag("Player"))
+                        {
+                            poss = hitCollider.transform.position;
+                            Instantiate(trompada2, poss, Quaternion.identity);
+                            trompada2.Play();
+                            audio.Play();
+                            Debug.Log("ASD");
+                            knock++;
+                            //REDRB.isKinematic = false;
+                            //REDRB.AddForce(-poss * 150f);
+                            //REDRB.AddForceAtPosition(poss - transform.position * 50f, transform.position, ForceMode.Impulse);
+                        }
+                    }
+
+                    //REDRB.isKinematic = true;
+                    Invoke("desactivator", 0.5f);
+                    Invoke("desactivator2", 1.5f);
+                }
             }
+            else if (Input.GetKey(KeyCode.Joystick1Button3))
+            {
+                if (Punching == 1)
+                {
+                    Punching = 2;
+
+                    animator.SetBool("PunchLeft", true);
+
+                    for (int i = 0; i < hitColliders.Length; i++)
+                    {
+                        GameObject hitCollider = hitColliders[i].gameObject;
+                        if (hitCollider.CompareTag("Player"))
+                        {
+                            Instantiate(trompada2, poss, Quaternion.identity);
+                            trompada2.Play();
+                            audio.Play();
+                            Debug.Log("ASD");
+                            knock++;
+                        }
+                    }
+                    Invoke("desactivator", 0.5f);
+
+
+                }
+            }
+
+
+
+
+        }
             
         
         
@@ -396,7 +386,7 @@ public class PlayerMovement2 : MonoBehaviour
     void desactivator() {
         animator.SetBool("PunchRight", false);
         animator.SetBool("PunchLeft", false);
-        REDRB.isKinematic = true;
+        //REDRB.isKinematic = true;
 
     }
 
