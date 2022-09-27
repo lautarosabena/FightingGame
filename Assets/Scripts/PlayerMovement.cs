@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     public int asd = 1;
     public int Jumping = 2;
     public int Punching = 1;
+    public int Punching2 = 3;
     private Vector3 inputVector;
     public float timer = 0;
     public GameObject obj;
@@ -210,9 +211,9 @@ public class PlayerMovement : MonoBehaviour
                 }
                 else if (Input.GetKey(KeyCode.Joystick2Button3))
                 {
-                    if (Punching == 1)
+                    if (Punching2 == 3)
                     {
-                        Punching = 2;
+                        Punching2 = 4;
 
                         animator.SetBool("PunchLeft", true);
                         animator.ResetTrigger("Taunt1");
@@ -376,6 +377,7 @@ public class PlayerMovement : MonoBehaviour
         animator.SetBool("PunchLeft", false);
         //BLACKRB.isKinematic = true;
         Debug.Log("sabanasapo");
+        Punching2 = 3;
 
     }
 
