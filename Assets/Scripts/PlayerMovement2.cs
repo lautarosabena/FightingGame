@@ -221,9 +221,9 @@ public class PlayerMovement2 : MonoBehaviour
             }
             else if (Input.GetKey(KeyCode.Joystick1Button3))
             {
-                if (Punching == 3)
+                if (Punching2 == 3)
                 {
-                    Punching = 4;
+                    Punching2 = 4;
 
                     animator.SetBool("PunchLeft", true);
 
