@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     public int asd = 1;
     public int Jumping = 2;
     public int Punching = 1;
+    public int Punching2 = 3;
     private Vector3 inputVector;
     public float timer = 0;
     public GameObject obj;
@@ -169,13 +170,13 @@ public class PlayerMovement : MonoBehaviour
 
                 float h = Input.GetAxisRaw("Joystick2Horizontal");
                 float v = Input.GetAxisRaw("Joystick2Vertical");
-                Player.Move(new Vector3(h, 0, v).normalized * Time.deltaTime * 30f);
+                Player.Move(new Vector3(h, 0, v).normalized * Time.deltaTime * 20f);
                 Player.Move(moveDirection * Time.deltaTime);
                 //Player.Move(-Vector3.up.normalized * Time.deltaTime * 10f);
                 //OnMovimiento();
                 handleRotation();
 
-                if (Input.GetKey(KeyCode.Joystick2Button2) || Input.GetKeyDown("space"))
+                if (Input.GetKey(KeyCode.Joystick2Button3) || Input.GetKeyDown("space"))
                 {
 
                     if (Punching == 1)
@@ -194,7 +195,7 @@ public class PlayerMovement : MonoBehaviour
                                 trompada2.Play();
                                 audio.Play();
                                 Debug.Log("ASDddd");
-                                knock++;
+                                knock = knock + 5;
                                 //BLACKRB.isKinematic = false;
                                 //BLACKRB.AddForce(-poss * 150f);
                                 //BLACKRB.AddForceAtPosition(poss - transform.position * 50f, transform.position, ForceMode.Impulse);
@@ -208,11 +209,11 @@ public class PlayerMovement : MonoBehaviour
 
                     }
                 }
-                else if (Input.GetKey(KeyCode.Joystick2Button3))
+                else if (Input.GetKey(KeyCode.Joystick2Button2))
                 {
-                    if (Punching == 1)
+                    if (Punching2 == 3)
                     {
-                        Punching = 2;
+                        Punching2 = 4;
 
                         animator.SetBool("PunchLeft", true);
                         animator.ResetTrigger("Taunt1");
@@ -228,7 +229,7 @@ public class PlayerMovement : MonoBehaviour
                                 trompada2.Play();
                                 audio.Play();
                                 Debug.Log("ASD");
-                                knock++;
+                                knock = knock + 2;
                             }
                         }
                         Invoke("desactivator", 0.5f);
@@ -376,6 +377,7 @@ public class PlayerMovement : MonoBehaviour
         animator.SetBool("PunchLeft", false);
         //BLACKRB.isKinematic = true;
         Debug.Log("sabanasapo");
+        Punching2 = 3;
 
     }
 

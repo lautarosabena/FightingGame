@@ -181,14 +181,17 @@ public class PlayerMovement2 : MonoBehaviour
                 float v = Input.GetAxisRaw("Vertical");
                 
                 //Player.Move(Vector3.forward * Time.deltaTime * 10f);
-                Player.Move(new Vector3(h, 0, v).normalized * Time.deltaTime * 30f);
+                Player.Move(new Vector3(h, 0, v).normalized * Time.deltaTime * 20f);
                 //Player.Move(-Vector3.up.normalized * Time.deltaTime * 10f);
                 //playerVelocity.y += -10f * Time.deltaTime;
                 //transform.position = transform.position + (new Vector3(h, 0, v).normalized * Time.deltaTime * 10f);
                 //OnMovement();
                 //OnTeclado();
+
+
+                
                 handleRotation();
-            if (Input.GetKey(KeyCode.Joystick1Button2) || Input.GetKeyDown("space"))
+            if (Input.GetKey(KeyCode.Joystick1Button3) || Input.GetKeyDown("space"))
             {
 
                 if (Punching == 1)
@@ -207,7 +210,7 @@ public class PlayerMovement2 : MonoBehaviour
                             trompada2.Play();
                             audio.Play();
                             Debug.Log("ASD");
-                            knock++;
+                            knock = knock + 5;
                             //REDRB.isKinematic = false;
                             //REDRB.AddForce(-poss * 150f);
                             //REDRB.AddForceAtPosition(poss - transform.position * 50f, transform.position, ForceMode.Impulse);
@@ -219,7 +222,7 @@ public class PlayerMovement2 : MonoBehaviour
                     Invoke("desactivator2", 1.5f);
                 }
             }
-            else if (Input.GetKey(KeyCode.Joystick1Button3))
+            else if (Input.GetKey(KeyCode.Joystick1Button2))
             {
                 if (Punching2 == 3)
                 {
@@ -236,7 +239,7 @@ public class PlayerMovement2 : MonoBehaviour
                             trompada2.Play();
                             audio.Play();
                             Debug.Log("ASD");
-                            knock++;
+                            knock = knock + 2;
                         }
                     }
                     Invoke("desactivator", 0.5f);

@@ -14,7 +14,7 @@ public class RagdollActivater : MonoBehaviour
     public AudioSource SonidoChoque2;
     public bool fixer = false;
     public int condition = 0;
-    public float timerr = 5f;
+    public float timerr = 3f;
     public PlayerMovement2 a;
     public static bool quase = false;
     public static bool sabanamogolico2 = false;
@@ -221,7 +221,7 @@ public class RagdollActivater : MonoBehaviour
 
     void reiniciartiempo() 
         {
-            timerr = 5f;
+            timerr = 3f;
             PJ.enabled = true;
         }
 }
