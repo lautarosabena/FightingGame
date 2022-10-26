@@ -39,7 +39,7 @@ public class Respawner : MonoBehaviour
     private string pointsNegroPrefsName = "pointsNegro";
     private string levelsPrefsName = "levels";
     public static Scene currentScene;
-
+    private bool isPaused = false;
 
     private void Awake()
     {
@@ -142,6 +142,21 @@ public class Respawner : MonoBehaviour
         {
             ChangeLevel();
             Debug.Log("CAMBIASODELEVEL" + CurrentLvl);
+        }
+
+
+        if (isPaused == false && Input.GetKeyUp(KeyCode.Joystick1Button7) || Input.GetKeyUp(KeyCode.Joystick1Button7))
+        {
+            Time.timeScale = 0f;
+
+            isPaused = true;
+            
+        }
+
+        if (isPaused == true && Input.GetKeyUp(KeyCode.Joystick1Button1) || Input.GetKeyUp(KeyCode.Joystick1Button1))
+        {
+            Time.timeScale = 1f;
+            isPaused = false;
         }
 
 
