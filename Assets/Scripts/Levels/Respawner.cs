@@ -30,6 +30,7 @@ public class Respawner : MonoBehaviour
     public static bool tremendo = false;
     public static int NewLvl = 1;
     int CurrentLvl = 0;
+    public GameObject pauseScreen;
 
     public static int pointsRojo;
     public static int pointsNegro;
@@ -148,14 +149,16 @@ public class Respawner : MonoBehaviour
         if (isPaused == false && Input.GetKeyUp(KeyCode.Joystick1Button7) || Input.GetKeyUp(KeyCode.Joystick1Button7))
         {
             Time.timeScale = 0f;
-
+            pauseScreen.SetActive(true);
             isPaused = true;
+            
             
         }
 
         if (isPaused == true && Input.GetKeyUp(KeyCode.Joystick1Button1) || Input.GetKeyUp(KeyCode.Joystick1Button1))
         {
             Time.timeScale = 1f;
+            pauseScreen.SetActive(false);
             isPaused = false;
         }
 
