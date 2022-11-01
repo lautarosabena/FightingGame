@@ -26,7 +26,9 @@ public class RagdollActivater2 : MonoBehaviour
     public Vector3 poss;
     public Vector3 respawn;
     public bool chan;
-    
+    public GameObject respawnmodel = GameObject.FindGameObjectWithTag("respawnmodel");
+    public GameObject respawnmodel2 = GameObject.FindGameObjectWithTag("respawnmodel2");
+
     void Awake()
     {
         chan = false;
@@ -36,12 +38,15 @@ public class RagdollActivater2 : MonoBehaviour
         MainCollider.enabled = true;
         //AllColliders[2].enabled = true;
         //SonidoChoque = GetComponent<AudioSource>();
+        respawnmodel.SetActive(false);
+        respawnmodel2.SetActive(true);
     }
 
     private void Start()
     {
         quase = false;
         fixer = true;
+        
     }
 
     // Update is called once per frame
@@ -56,6 +61,7 @@ public class RagdollActivater2 : MonoBehaviour
         //MainCollider.enabled = !isRagdoll;
         GetComponent<Rigidbody>().useGravity = !isRagdoll;
         GetComponent<Animator>().enabled = !isRagdoll;
+            
         }
 
         foreach (var rig in AllRigidbodies)
@@ -65,13 +71,18 @@ public class RagdollActivater2 : MonoBehaviour
             //rig.AddForce(transform.up * 500f);
         }
         MainCollider.enabled = false;
-        
-        
+        respawnmodel.SetActive(true);
+        respawnmodel2.SetActive(true);
+
 
     }
 
     void Update() 
     {
+        if (Input.GetKeyDown("t"))
+        {
+            b.knock = 15;
+        }
         Debug.Log(chan);
         
         chan = Respawner.reseter;
@@ -122,10 +133,13 @@ public class RagdollActivater2 : MonoBehaviour
             //Debug.Log(timerr);
             gameObject.layer = LayerMask.NameToLayer("RAGDOLLOFF");
             timerr -= Time.deltaTime;
+            respawnmodel2.SetActive(false);
+            respawnmodel.SetActive(true);
             if (timerr <= 0) 
             {
                 Levantarse();
                 reiniciartiempo();
+                
                 //colliderfollow = 1;
             } 
             
@@ -248,7 +262,9 @@ public class RagdollActivater2 : MonoBehaviour
             gameObject.layer = LayerMask.NameToLayer("RAGDOLL2");
             fixer = true;
             MainCollider.enabled = true;
-            
+            respawnmodel2.SetActive(true);
+            respawnmodel.SetActive(false);
+
         //colliderfollow = 0;
     }
 

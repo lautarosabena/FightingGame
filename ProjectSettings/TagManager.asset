@@ -22,6 +22,8 @@ TagManager:
   - RAGDOLLROJO
   - RAGDOLLNEGRO
   - PJROJO
+  - respawnmodel
+  - respawnmodel2
   layers:
   - Default
   - TransparentFX
