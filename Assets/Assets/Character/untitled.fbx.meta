@@ -3,7 +3,17 @@ guid: 99a21e6152f50e34cabca3f466742dd5
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Celeste
+    second: {fileID: 2100000, guid: 4e124d7bb78e95c44991a7d9d49d6871, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PJNegro
+    second: {fileID: 2100000, guid: 2c5896e4694429541abe0cfe6e32afbe, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

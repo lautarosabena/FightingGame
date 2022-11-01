@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.013041237, g: 0.08490247, b: 0.14522639, a: 1}
+  m_IndirectSpecularColor: {r: 0.0129307285, g: 0.08479188, b: 0.14511466, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -13465,6 +13465,14 @@ PrefabInstance:
       propertyPath: BoostVFX
       value: 
       objectReference: {fileID: 73678764}
+    - target: {fileID: 5550238044862881157, guid: 3e023fde0b411dd4397cc1818fcc47ce, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2c5896e4694429541abe0cfe6e32afbe, type: 2}
+    - target: {fileID: 5550238044862881157, guid: 3e023fde0b411dd4397cc1818fcc47ce, type: 3}
+      propertyPath: m_Materials.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4e124d7bb78e95c44991a7d9d49d6871, type: 2}
     - target: {fileID: 6198805113067715664, guid: 3e023fde0b411dd4397cc1818fcc47ce, type: 3}
       propertyPath: m_Name
       value: autoNegro
