@@ -228,7 +228,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8705487147086774034, guid: 5672996eb87a0b94bae19a9931b3f363, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 13.73
+      value: 12.71
       objectReference: {fileID: 0}
     - target: {fileID: 8705487147086774034, guid: 5672996eb87a0b94bae19a9931b3f363, type: 3}
       propertyPath: m_LocalPosition.y
@@ -236,7 +236,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8705487147086774034, guid: 5672996eb87a0b94bae19a9931b3f363, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.65
+      value: -12.13
       objectReference: {fileID: 0}
     - target: {fileID: 8705487147086774034, guid: 5672996eb87a0b94bae19a9931b3f363, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1579,6 +1579,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2099761116}
     - target: {fileID: 7368320236270648118, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
+      propertyPath: respawnmodel3
+      value: 
+      objectReference: {fileID: 972590591}
+    - target: {fileID: 7368320236270648118, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
       propertyPath: AllColliders.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -2494,6 +2498,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 931787420}
   m_CullTransparentMesh: 1
+--- !u!1 &972590591 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4094256247874132931, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
+  m_PrefabInstance: {fileID: 562332572}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &976826689
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3453,6 +3462,10 @@ PrefabInstance:
       value: plataforma (1)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 9fe0e51fb3ac2d84fafcd84e2b8ce656, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9fe0e51fb3ac2d84fafcd84e2b8ce656, type: 3}
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
@@ -3663,6 +3676,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 868a7b12f92f251438b71e0aa49f55f0, type: 3}
       propertyPath: m_Name
       value: obstaculo
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 868a7b12f92f251438b71e0aa49f55f0, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 868a7b12f92f251438b71e0aa49f55f0, type: 3}
       propertyPath: m_TagString

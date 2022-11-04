@@ -86,7 +86,7 @@ public class PlayerMovement2 : MonoBehaviour
     {
         //REDRB.useGravity = false;
         timersalto -= Time.deltaTime;
-        Debug.Log(timersalto);
+        //Debug.Log(timersalto);
         //Debug.Log("Grounded" + Grounded);
         //Sistema de golpes
         //Debug.Log(knock);
