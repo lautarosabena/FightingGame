@@ -28,6 +28,7 @@ public class RagdollActivater2 : MonoBehaviour
     public bool chan;
     public GameObject respawnmodel = GameObject.FindGameObjectWithTag("respawnmodel");
     public GameObject respawnmodel2 = GameObject.FindGameObjectWithTag("respawnmodel2");
+    public GameObject positioncheck;
 
     void Awake()
     {
@@ -79,6 +80,7 @@ public class RagdollActivater2 : MonoBehaviour
 
     void Update() 
     {
+        respawnmodel.transform.position = positioncheck.transform.position - new Vector3(0, 0, 0);
         if (Input.GetKeyDown("t"))
         {
             b.knock = 15;
@@ -133,7 +135,7 @@ public class RagdollActivater2 : MonoBehaviour
             //Debug.Log(timerr);
             gameObject.layer = LayerMask.NameToLayer("RAGDOLLOFF");
             timerr -= Time.deltaTime;
-            respawnmodel2.SetActive(false);
+            //respawnmodel2.SetActive(false);
             respawnmodel.SetActive(true);
             if (timerr <= 0) 
             {
