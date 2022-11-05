@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9195728981064540903}
   - component: {fileID: 7577155801389252525}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: buumSFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 800469652710196473}
   - component: {fileID: 5870142700186090408}
   - component: {fileID: 5474286017661108139}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bomb
   m_TagString: Coins
   m_Icon: {fileID: 0}
@@ -179,8 +179,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Explosion: {fileID: 100006, guid: e076683e0305e35498b8e8834978c0fa, type: 3}
   Explosiondamage: 0
-  BuumSFX: {fileID: 7577155801389252525}
-  ScreamSFX: {fileID: 8331316267891633952}
 --- !u!65 &5474286017661108139
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -204,7 +202,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6625936164095878725}
   - component: {fileID: 8331316267891633952}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ScreamSFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -333,7 +331,7 @@ GameObject:
   - component: {fileID: 1581148926499736985}
   - component: {fileID: 7049036073074333806}
   - component: {fileID: 7259617938896852726}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5192,6 +5190,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: fffdd4e3b1e519a44a0b2662a13f83b8, type: 3}
       propertyPath: m_Name
       value: bomba
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fffdd4e3b1e519a44a0b2662a13f83b8, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fffdd4e3b1e519a44a0b2662a13f83b8, type: 3}

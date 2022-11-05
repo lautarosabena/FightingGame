@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0129307285, g: 0.08479188, b: 0.14511466, a: 1}
+  m_IndirectSpecularColor: {r: 0.012907048, g: 0.08476836, b: 0.14509267, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -410,6 +410,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 10041ed75dfc83348b51293d1364069a, type: 3}
       propertyPath: m_Name
       value: PersonajeMixamo (1)@Dancing (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8896746483169365982, guid: 10041ed75dfc83348b51293d1364069a, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8896746483169365982, guid: 10041ed75dfc83348b51293d1364069a, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -1061,6 +1065,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plataforma
       objectReference: {fileID: 0}
+    - target: {fileID: 2086610883453839514, guid: 5ec258b4ae316bb4ba8db30a33169345, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7071182760956848314, guid: 5ec258b4ae316bb4ba8db30a33169345, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7202271454713460447, guid: 5ec258b4ae316bb4ba8db30a33169345, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7202271454713460447, guid: 5ec258b4ae316bb4ba8db30a33169345, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2c4a83e4b6c92ba48aedcbccf800ce47, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ec258b4ae316bb4ba8db30a33169345, type: 3}
 --- !u!1 &1298545670
@@ -1197,6 +1217,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 840dc1e6b49adb442a1dff9802aa8aed, type: 3}
       propertyPath: m_Name
       value: PersonajeMixamo@Defeated
+      objectReference: {fileID: 0}
+    - target: {fileID: 8896746483169365982, guid: 840dc1e6b49adb442a1dff9802aa8aed, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8896746483169365982, guid: 840dc1e6b49adb442a1dff9802aa8aed, type: 3}
       propertyPath: m_Materials.Array.data[0]

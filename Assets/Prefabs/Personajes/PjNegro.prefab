@@ -41,7 +41,7 @@ SkinnedMeshRenderer:
   m_GameObject: {fileID: 1448315004401686649}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
@@ -359,7 +359,13 @@ MonoBehaviour:
   chan: 0
   respawnmodel: {fileID: 0}
   respawnmodel2: {fileID: 0}
+  respawnmodel3: {fileID: 0}
   positioncheck: {fileID: 0}
+  timerinmortal: 0
+  lastnumber: 0
+  change: 0
+  recentknock: 0
+  thetimer: 0
 --- !u!114 &7368320236270648113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -595,7 +601,7 @@ SkinnedMeshRenderer:
   m_GameObject: {fileID: 4094256247874132931}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
   m_MotionVectors: 1

@@ -22,6 +22,15 @@ public class RagdollActivater : MonoBehaviour
     private Vector3 poss;
     public Vector3 respawn;
     public bool chan2;
+    public GameObject respawnmodel = GameObject.FindGameObjectWithTag("respawnmodel");
+    public GameObject respawnmodel2 = GameObject.FindGameObjectWithTag("respawnmodel2");
+    public GameObject respawnmodel3 = GameObject.FindGameObjectWithTag("respawnmodel3");
+    public GameObject positioncheck;
+    public float timerinmortal = 3;
+    public bool lastnumber = false;
+    public int change = 0;
+    public bool recentknock = false;
+    public float thetimer = 50f;
 
     //Rigidbody rigidbodii;
     // Start is called before the first frame update
@@ -34,6 +43,8 @@ public class RagdollActivater : MonoBehaviour
         AllColliders = GetComponentsInChildren<Collider>(true);
         DoRagdoll(false);
         MainCollider.enabled = true;
+        respawnmodel.SetActive(false);
+        respawnmodel2.SetActive(true);
     }
 
     // Update is called once per frame
@@ -56,6 +67,11 @@ public class RagdollActivater : MonoBehaviour
             respawn = rig.transform.position + Vector3.up * 10;
         }
         MainCollider.enabled = false;
+
+        respawnmodel.SetActive(true);
+        respawnmodel2.SetActive(true);
+
+        thetimer = 0.3f;
     }
 
     private void Start()
@@ -66,7 +82,48 @@ public class RagdollActivater : MonoBehaviour
 
     void Update() 
     {
+        timerinmortal -= Time.deltaTime;
+        if (timerinmortal >= 0)
+        {
+            gameObject.layer = LayerMask.NameToLayer("INMORTAL");
+            if (thetimer <= 0 && recentknock == true)
+            {
 
+
+                if (lastnumber == true)
+                {
+                    respawnmodel2.SetActive(true);
+                    respawnmodel3.SetActive(false);
+                    thetimer = 0.3f;
+                }
+
+                if (lastnumber == false)
+                {
+                    respawnmodel3.SetActive(true);
+                    respawnmodel2.SetActive(false);
+                    thetimer = 0.3f;
+                }
+
+
+            }
+        }
+        else
+        {
+            gameObject.layer = LayerMask.NameToLayer("RAGDOLL2");
+            respawnmodel2.SetActive(true);
+            respawnmodel3.SetActive(false);
+        }
+
+        thetimer -= Time.deltaTime;
+        if (thetimer <= 0)
+        {
+            lastnumber = !lastnumber;
+        }
+        respawnmodel.transform.position = positioncheck.transform.position - new Vector3(0, 0, 0);
+        if (Input.GetKeyDown("t"))
+        {
+            a.knock = 15;
+        }
 
         chan2 = Respawner.tremendo;
         if (chan2 == true)
@@ -215,6 +272,9 @@ public class RagdollActivater : MonoBehaviour
             gameObject.layer = LayerMask.NameToLayer("RAGDOLL");
             fixer = true;
             MainCollider.enabled = true;
+            respawnmodel.SetActive(false);
+            recentknock = true;
+            timerinmortal = 3;
         //colliderfollow = 0;
     }
 
