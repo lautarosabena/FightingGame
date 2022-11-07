@@ -85,6 +85,7 @@ public class PlayerMovement2 : MonoBehaviour
     }
     void Update()
     {
+        Debug.Log(isHitting);
         Collider[] hitColliders = Physics.OverlapSphere(Punchs.transform.position, 2.5f);
         if (isHitting == true)
         {
@@ -97,8 +98,7 @@ public class PlayerMovement2 : MonoBehaviour
                             Instantiate(trompada2, poss, Quaternion.identity);
                             trompada2.Play();
                             audio.Play();
-                            Debug.Log("ASD");
-                            knock = knock + 5;
+                            knock = knock + 3;
                             isHitting = false;
                             //REDRB.isKinematic = false;
                             //REDRB.AddForce(-poss * 150f);
@@ -213,11 +213,12 @@ public class PlayerMovement2 : MonoBehaviour
 
                 
                 handleRotation();
-            if (Input.GetKey(KeyCode.Joystick1Button3) || Input.GetKeyDown("space"))
+            if (Input.GetKeyUp(KeyCode.Joystick1Button3) && isHitting == false || Input.GetKeyDown("space"))
             {
-                isHitting = true;
+                
                 if (Punching == 1)
                 {
+                    isHitting = true;
                     Punching = 2;
                     Punching2 = 4;
                     animator.SetBool("PunchRight", true);
@@ -232,26 +233,17 @@ public class PlayerMovement2 : MonoBehaviour
                     Invoke("desactivator2", 1.5f);
                 }
             }
-            else if (Input.GetKey(KeyCode.Joystick1Button2))
+            else if (Input.GetKeyUp(KeyCode.Joystick1Button2))
             {
+                
                 if (Punching2 == 3)
                 {
+                    isHitting = true;
                     Punching2 = 4;
 
                     animator.SetBool("PunchLeft", true);
 
-                    for (int i = 0; i < hitColliders.Length; i++)
-                    {
-                        GameObject hitCollider = hitColliders[i].gameObject;
-                        if (hitCollider.CompareTag("Player"))
-                        {
-                            Instantiate(trompada2, poss, Quaternion.identity);
-                            trompada2.Play();
-                            audio.Play();
-                            Debug.Log("ASD");
-                            knock = knock + 2;
-                        }
-                    }
+                    
                     Invoke("desactivator", 0.5f);
 
 

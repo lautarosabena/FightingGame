@@ -84,7 +84,7 @@ public class PlayerMovement : MonoBehaviour
     {
 
         
-        Debug.Log(knock);
+        //Debug.Log(knock);
         if (isHitting == true)
         {
             Debug.Log("SACOWEA");
@@ -107,7 +107,6 @@ public class PlayerMovement : MonoBehaviour
                                     Instantiate(trompada2, poss, Quaternion.identity);
                                     trompada2.Play();
                                     audio.Play();
-                                // Debug.Log("ASDddd");
                                     knock = knock + 3;
                                     isHitting = false;
                                     //BLACKRB.isKinematic = false;
@@ -115,6 +114,9 @@ public class PlayerMovement : MonoBehaviour
                                     //BLACKRB.AddForceAtPosition(poss - transform.position * 50f, transform.position, ForceMode.Impulse);
                                 }
                             }
+
+                            
+
                         }
 
         
@@ -203,12 +205,13 @@ public class PlayerMovement : MonoBehaviour
                 //OnMovimiento();
                 handleRotation();
 
-                if (Input.GetKey(KeyCode.Joystick2Button3) || Input.GetKeyDown("space"))
+                if (Input.GetKeyUp(KeyCode.Joystick2Button3) || Input.GetKeyDown("space"))
                 {
 
-                    isHitting = true;
+                    
                     if (Punching == 1)
                     {
+                        isHitting = true;
                         Punching = 2;
 
                         animator.SetBool("PunchRight", true);
@@ -224,11 +227,12 @@ public class PlayerMovement : MonoBehaviour
 
                     }
                 }
-                else if (Input.GetKey(KeyCode.Joystick2Button2))
+                else if (Input.GetKeyUp(KeyCode.Joystick2Button2))
                 {
-                    isHitting = true;
+                    
                     if (Punching2 == 3)
                     {
+                        isHitting = true;
                         Punching2 = 4;
 
                         animator.SetBool("PunchLeft", true);
