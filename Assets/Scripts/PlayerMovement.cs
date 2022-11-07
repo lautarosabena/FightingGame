@@ -37,6 +37,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 moveDirection = Vector3.zero;
     private bool Grounded = false;
     private Vector3 playerVelocity;
+    public bool isHitting = false;
 
     [SerializeField] private PlayerInput PlayerInput;
     void Awake() 
@@ -81,6 +82,13 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        
+        Debug.Log(knock);
+        if (isHitting == true)
+        {
+            Debug.Log("SACOWEA");
+        }
         //BLACKRB.useGravity = false;
 
         //m_Rigidbody.AddForce(-poss * 10050f);
@@ -88,7 +96,26 @@ public class PlayerMovement : MonoBehaviour
         //Debug.Log(knock);
         Collider[] hitColliders = Physics.OverlapSphere(Punchs.transform.position, 2.5f);
         
-
+                        if (isHitting == true) 
+                        {
+                            for (int i = 0; i < hitColliders.Length; i++)
+                            {
+                                GameObject hitCollider = hitColliders[i].gameObject;
+                                if (hitCollider.CompareTag("Player"))
+                                {
+                                    poss = hitCollider.transform.position;
+                                    Instantiate(trompada2, poss, Quaternion.identity);
+                                    trompada2.Play();
+                                    audio.Play();
+                                // Debug.Log("ASDddd");
+                                    knock = knock + 3;
+                                    isHitting = false;
+                                    //BLACKRB.isKinematic = false;
+                                    //BLACKRB.AddForce(-poss * 150f);
+                                    //BLACKRB.AddForceAtPosition(poss - transform.position * 50f, transform.position, ForceMode.Impulse);
+                                }
+                            }
+                        }
 
         
 
@@ -97,7 +124,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (currentMovement.x != 0 || currentMovement.y != 0)
         {
-            Debug.Log("test");
+            //Debug.Log("test");
             animator.ResetTrigger("Taunt1");
             animator.ResetTrigger("Taunt2");
             animator.ResetTrigger("Taunt3");
@@ -179,28 +206,16 @@ public class PlayerMovement : MonoBehaviour
                 if (Input.GetKey(KeyCode.Joystick2Button3) || Input.GetKeyDown("space"))
                 {
 
+                    isHitting = true;
                     if (Punching == 1)
                     {
                         Punching = 2;
 
                         animator.SetBool("PunchRight", true);
                         
-                        for (int i = 0; i < hitColliders.Length; i++)
-                        {
-                            GameObject hitCollider = hitColliders[i].gameObject;
-                            if (hitCollider.CompareTag("Player"))
-                            {
-                                poss = hitCollider.transform.position;
-                                Instantiate(trompada2, poss, Quaternion.identity);
-                                trompada2.Play();
-                                audio.Play();
-                                Debug.Log("ASDddd");
-                                knock = knock + 5;
-                                //BLACKRB.isKinematic = false;
-                                //BLACKRB.AddForce(-poss * 150f);
-                                //BLACKRB.AddForceAtPosition(poss - transform.position * 50f, transform.position, ForceMode.Impulse);
-                            }
-                        }
+
+                        //acaaaaa
+                        
 
                         //REDRB.isKinematic = true;
                         Invoke("desactivator", 0.5f);
@@ -211,6 +226,7 @@ public class PlayerMovement : MonoBehaviour
                 }
                 else if (Input.GetKey(KeyCode.Joystick2Button2))
                 {
+                    isHitting = true;
                     if (Punching2 == 3)
                     {
                         Punching2 = 4;
@@ -220,18 +236,7 @@ public class PlayerMovement : MonoBehaviour
                         animator.ResetTrigger("Taunt2");
                         animator.ResetTrigger("Taunt3");
                         animator.ResetTrigger("Taunt4");
-                        for (int i = 0; i < hitColliders.Length; i++)
-                        {
-                            GameObject hitCollider = hitColliders[i].gameObject;
-                            if (hitCollider.CompareTag("Player"))
-                            {
-                                Instantiate(trompada2, poss, Quaternion.identity);
-                                trompada2.Play();
-                                audio.Play();
-                                Debug.Log("ASD");
-                                knock = knock + 2;
-                            }
-                        }
+                        
                         Invoke("desactivator", 0.5f);
 
                     }
@@ -376,15 +381,16 @@ public class PlayerMovement : MonoBehaviour
         animator.SetBool("PunchRight", false);
         animator.SetBool("PunchLeft", false);
         //BLACKRB.isKinematic = true;
-        Debug.Log("sabanasapo");
+        //Debug.Log("sabanasapo");
         Punching2 = 3;
+        isHitting = false;
 
     }
 
     void desactivator2()
     {
         Punching = 1;
-
+        isHitting = false;
     }
 
 

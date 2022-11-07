@@ -136,7 +136,7 @@ public class RagdollActivater : MonoBehaviour
             chan2 = false;
         }
         
-        Debug.Log(Respawner.reseter);
+        //Debug.Log(Respawner.reseter);
         
 
         if (fixer == true)

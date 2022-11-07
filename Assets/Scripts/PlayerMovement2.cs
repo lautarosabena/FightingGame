@@ -39,6 +39,7 @@ public class PlayerMovement2 : MonoBehaviour
     private Vector3 moveDirection = Vector3.zero;
     public float timersalto;
     public bool attacking = true;
+    public bool isHitting = false;
 
     [SerializeField] private PlayerInput PlayerInput;
     void Awake() 
@@ -84,13 +85,34 @@ public class PlayerMovement2 : MonoBehaviour
     }
     void Update()
     {
+        Collider[] hitColliders = Physics.OverlapSphere(Punchs.transform.position, 2.5f);
+        if (isHitting == true)
+        {
+            for (int i = 0; i < hitColliders.Length; i++)
+                    {
+                        GameObject hitCollider = hitColliders[i].gameObject;
+                        if (hitCollider.CompareTag("Player"))
+                        {
+                            poss = hitCollider.transform.position;
+                            Instantiate(trompada2, poss, Quaternion.identity);
+                            trompada2.Play();
+                            audio.Play();
+                            Debug.Log("ASD");
+                            knock = knock + 5;
+                            isHitting = false;
+                            //REDRB.isKinematic = false;
+                            //REDRB.AddForce(-poss * 150f);
+                            //REDRB.AddForceAtPosition(poss - transform.position * 50f, transform.position, ForceMode.Impulse);
+                        }
+                    }
+        }
         //REDRB.useGravity = false;
         timersalto -= Time.deltaTime;
         //Debug.Log(timersalto);
         //Debug.Log("Grounded" + Grounded);
         //Sistema de golpes
         //Debug.Log(knock);
-        Collider[] hitColliders = Physics.OverlapSphere(Punchs.transform.position, 2.5f);
+        
 
         Player.Move(moveDirection * Time.deltaTime);
         //Player.Move(playerVelocity * Time.deltaTime);
@@ -193,29 +215,17 @@ public class PlayerMovement2 : MonoBehaviour
                 handleRotation();
             if (Input.GetKey(KeyCode.Joystick1Button3) || Input.GetKeyDown("space"))
             {
-
+                isHitting = true;
                 if (Punching == 1)
                 {
                     Punching = 2;
                     Punching2 = 4;
                     animator.SetBool("PunchRight", true);
-
-                    for (int i = 0; i < hitColliders.Length; i++)
+                    if (isHitting == true) 
                     {
-                        GameObject hitCollider = hitColliders[i].gameObject;
-                        if (hitCollider.CompareTag("Player"))
-                        {
-                            poss = hitCollider.transform.position;
-                            Instantiate(trompada2, poss, Quaternion.identity);
-                            trompada2.Play();
-                            audio.Play();
-                            Debug.Log("ASD");
-                            knock = knock + 5;
-                            //REDRB.isKinematic = false;
-                            //REDRB.AddForce(-poss * 150f);
-                            //REDRB.AddForceAtPosition(poss - transform.position * 50f, transform.position, ForceMode.Impulse);
-                        }
+                        
                     }
+                    
 
                     //REDRB.isKinematic = true;
                     Invoke("desactivator", 0.5f);
@@ -391,6 +401,7 @@ public class PlayerMovement2 : MonoBehaviour
         animator.SetBool("PunchRight", false);
         animator.SetBool("PunchLeft", false);
         Punching2 = 3;
+        isHitting = false;
         //REDRB.isKinematic = true;
 
     }
@@ -398,7 +409,7 @@ public class PlayerMovement2 : MonoBehaviour
     void desactivator2()
     {
         Punching = 1;
-
+        isHitting = false;
     }
 
 

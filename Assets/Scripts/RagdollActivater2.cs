@@ -122,7 +122,7 @@ public class RagdollActivater2 : MonoBehaviour
             respawnmodel2.SetActive(true);
             respawnmodel3.SetActive(false);
         }
-        Debug.Log(thetimer);
+        //Debug.Log(thetimer);
        
 
         thetimer -= Time.deltaTime;
@@ -135,7 +135,7 @@ public class RagdollActivater2 : MonoBehaviour
         {
             b.knock = 15;
         }
-        Debug.Log(chan);
+        //Debug.Log(chan);
         
         chan = Respawner.reseter;
         if (chan == true)
@@ -254,7 +254,7 @@ public class RagdollActivater2 : MonoBehaviour
             
             //Debug.Log("Do something");
             DoRagdoll2(true);
-            Debug.Log("entrando ragdoll negro");
+            //Debug.Log("entrando ragdoll negro");
             poss = collision.transform.position;
             foreach (var rig in AllRigidbodies)
             {
@@ -317,7 +317,7 @@ public class RagdollActivater2 : MonoBehaviour
             respawnmodel.SetActive(false);
             recentknock = true;
             timerinmortal = 3;
-            
+            Debug.Log("REINICIO SAPO" + b.knock);
 
         //colliderfollow = 0;
     }
