@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.07483232, g: 0.091743454, b: 0.32295284, a: 1}
+  m_IndirectSpecularColor: {r: 0.07469557, g: 0.09161535, b: 0.32282594, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -361,12 +361,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be26ce63512acdf48b87089aa96825ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PJNEGRO: {fileID: 0}
-  PJNEGROCH: {fileID: 0}
-  PJROJOCH: {fileID: 0}
-  PJNEGROBody: {fileID: 0}
-  PJROJO: {fileID: 0}
-  PJROJOBody: {fileID: 0}
+  PJNEGRO: {fileID: 875253997}
+  PJNEGROCH: {fileID: 875253993}
+  PJROJOCH: {fileID: 217120068}
+  PJNEGROBody: {fileID: 875253992}
+  PJROJO: {fileID: 217120077}
+  PJROJOBody: {fileID: 217120053}
   respawn: {fileID: 88419150}
   isRagdoll: 0
   timerr: 45
@@ -946,6 +946,11 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.02, z: 0}
+--- !u!4 &217120077 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8705487147086774034, guid: 5672996eb87a0b94bae19a9931b3f363, type: 3}
+  m_PrefabInstance: {fileID: 217120047}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &289520916
 GameObject:
   m_ObjectHideFlags: 0
@@ -2228,6 +2233,11 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!4 &875253997 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2571606830877705052, guid: 87859b6d6ad75be40968c3a27740f20a, type: 3}
+  m_PrefabInstance: {fileID: 875253974}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
