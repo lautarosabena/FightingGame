@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.013041237, g: 0.08490247, b: 0.14522639, a: 1}
+  m_IndirectSpecularColor: {r: 0.0129307285, g: 0.08479188, b: 0.14511466, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1154,7 +1154,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: BLACKELIN GANA
+  m_Text: PERSONAJE 1 GANA
 --- !u!222 &1298545673
 CanvasRenderer:
   m_ObjectHideFlags: 0
