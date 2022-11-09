@@ -11794,7 +11794,7 @@ MonoBehaviour:
   PJROJOBody: {fileID: 0}
   respawn: {fileID: 1114154554}
   isRagdoll: 0
-  timerr: 45
+  timerr: 30
   escena: 0
   one: 0
   two: 0

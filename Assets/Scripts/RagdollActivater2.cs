@@ -16,7 +16,7 @@ public class RagdollActivater2 : MonoBehaviour
     public float timerr = 3f;
     //public PlayerMovement2 p;
     public static bool quase = false;
-    public static bool sabanamogolico2 = false;
+    public static bool sabana = false;
     public bool morision = true;
     // Start is called before the first frame update
     public AudioSource SonidoChoque;
@@ -249,20 +249,12 @@ public class RagdollActivater2 : MonoBehaviour
         if (collision.gameObject.tag == "car")
         {
             Respawner.pointsRojo++;
-            
-            
-            
-            //Debug.Log("Do something");
             DoRagdoll2(true);
-            //Debug.Log("entrando ragdoll negro");
             poss = collision.transform.position;
             foreach (var rig in AllRigidbodies)
             {
                 rig.AddForce(poss * 100f);
-                //Debug.Log("FUERZFUERZ");
-                //rig.AddForce(transform.up * 500f);
             }
-            //Debug.Log(timerr);
             gameObject.layer = LayerMask.NameToLayer("RAGDOLLOFF");
             morision = false;
             quase = true;
@@ -284,7 +276,6 @@ public class RagdollActivater2 : MonoBehaviour
             {
                 rig.AddForce(poss * 150f);
                 Debug.Log("FUERZFUERZ");
-                //rig.AddForce(transform.up * 500f);
             }
             morision = false;
             quase = true;
@@ -305,10 +296,8 @@ public class RagdollActivater2 : MonoBehaviour
             b.knock = 0;
             DoRagdoll2(true);
             DoRagdoll2(false);
-            sabanamogolico2 = false;
+            sabana = false;
             morision = true;
-            //player.transform.position = PJ.transform.position;
-            //PJ.transform.position = player.transform.position + new Vector3(0, 5, 0);
             MainCollider.transform.position = respawn;
             PJ.enabled = true;
             gameObject.layer = LayerMask.NameToLayer("RAGDOLL2");
@@ -317,9 +306,7 @@ public class RagdollActivater2 : MonoBehaviour
             respawnmodel.SetActive(false);
             recentknock = true;
             timerinmortal = 3;
-            Debug.Log("REINICIO SAPO" + b.knock);
-
-        //colliderfollow = 0;
+            Debug.Log("REINICIO" + b.knock);
     }
 
 

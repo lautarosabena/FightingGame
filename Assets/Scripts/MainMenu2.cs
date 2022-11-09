@@ -52,6 +52,8 @@ public class MainMenu2 : MonoBehaviour
 
     private bool ShowQuit = false;
 
+    private bool isMenu = false;
+
     public GameObject Player2ReadyImage;
 
     public float timeRemaining = 500;
@@ -146,7 +148,7 @@ public class MainMenu2 : MonoBehaviour
             animatorPJ2.SetBool("PJ2isReady", true);
         }
 
-        if(Input.GetKey(KeyCode.Joystick1Button3) || Input.GetKey(KeyCode.Joystick2Button3) || Input.GetKeyDown(KeyCode.I)){
+        if(Input.GetKeyUp(KeyCode.Joystick1Button3) || Input.GetKeyUp(KeyCode.Joystick2Button3) || Input.GetKeyUp(KeyCode.I)){
             ShowInstructions = !ShowInstructions;
             if(ShowInstructions){
             InstructionsButton();
@@ -156,11 +158,12 @@ public class MainMenu2 : MonoBehaviour
             
         }
 
-        if(Input.GetKey(KeyCode.Joystick1Button1)|| Input.GetKey(KeyCode.Joystick2Button1)|| Input.GetKeyDown(KeyCode.B)){
+    
+        if(Input.GetKeyUp(KeyCode.Joystick1Button1) || Input.GetKeyUp(KeyCode.Joystick2Button1) || Input.GetKeyUp(KeyCode.B)){
             ShowQuit = !ShowQuit;
             if(ShowQuit){
             QuitButton();
-            if(Input.GetKey(KeyCode.Joystick1Button0) || Input.GetKeyDown(KeyCode.K)){
+            if(Input.GetKeyUp(KeyCode.Joystick1Button0) || Input.GetKeyUp(KeyCode.K)){
                 Salir();
             }            
             } else {

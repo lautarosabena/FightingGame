@@ -17,7 +17,7 @@ public class RagdollActivater : MonoBehaviour
     public float timerr = 3f;
     public PlayerMovement2 a;
     public static bool quase = false;
-    public static bool sabanamogolico2 = false;
+    public static bool sabana = false;
     public bool morision = true;
     private Vector3 poss;
     public Vector3 respawn;
@@ -76,7 +76,7 @@ public class RagdollActivater : MonoBehaviour
 
     private void Start()
     {
-        sabanamogolico2 = false;
+        sabana = false;
         fixer = true;
     }
 
@@ -165,7 +165,7 @@ public class RagdollActivater : MonoBehaviour
         if (a.knock >= 15) 
         {
             DoRagdoll(true);
-            sabanamogolico2 = true;
+            sabana = true;
             //Debug.Log(timerr);
             gameObject.layer = LayerMask.NameToLayer("RAGDOLLOFF");
             
@@ -226,7 +226,7 @@ public class RagdollActivater : MonoBehaviour
             }
             gameObject.layer = LayerMask.NameToLayer("RAGDOLLOFF");
             morision = false;
-            sabanamogolico2 = true;
+            sabana = true;
             //Respawner.pointsRojo = Respawner.pointsRojo + 1;
         }
     }
@@ -249,7 +249,7 @@ public class RagdollActivater : MonoBehaviour
             //Debug.Log(timerr);
             gameObject.layer = LayerMask.NameToLayer("RAGDOLLOFF");
             morision = false;
-            sabanamogolico2 = true;
+            sabana = true;
             SonidoChoque.Play();
             SonidoChoque2.Play();
             
@@ -264,7 +264,7 @@ public class RagdollActivater : MonoBehaviour
             a.knock = 0;
             DoRagdoll(true);
             DoRagdoll(false);
-            sabanamogolico2 = false;
+            sabana = false;
             morision = true;
             MainCollider.transform.position = respawn;
             //PJ.transform.position = player.transform.position + new Vector3(0, 5, 0);

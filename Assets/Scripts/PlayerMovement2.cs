@@ -179,7 +179,7 @@ public class PlayerMovement2 : MonoBehaviour
         currentMovement = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
         transform.position += Vector3.up;
         transform.position -= Vector3.up;
-        //Debug.Log(RagdollActivater.sabanamogolico);
+
         //condition3 = PunchPush.knock;
         //transform.position = transform.position + new Vector3(0, -10, 0) * Time.deltaTime;
         timer -= Time.deltaTime;

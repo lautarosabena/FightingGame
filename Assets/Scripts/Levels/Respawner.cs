@@ -265,7 +265,7 @@ public class Respawner : MonoBehaviour
                                                
                     }
             
-            if(RagdollActivater.sabanamogolico2 == true && PJROJOBody.position.z >= 14 || PJROJOBody.position.z <= -18 || PJROJOBody.position.x <= -40 || PJROJOBody.position.x >= -4)
+            if(RagdollActivater.sabana == true && PJROJOBody.position.z >= 14 || PJROJOBody.position.z <= -18 || PJROJOBody.position.x <= -40 || PJROJOBody.position.x >= -4)
             {
                 PJROJOCH.enabled = false;
                 PJROJOCH.transform.position = respawn.position;
@@ -314,7 +314,7 @@ public class Respawner : MonoBehaviour
                 pointsNegro ++;
             }
 
-            if(RagdollActivater.sabanamogolico2 == true && PJROJOBody.position.y <= -10)
+            if(RagdollActivater.sabana == true && PJROJOBody.position.y <= -10)
             {
                 PJROJOCH.enabled = false;
                 //PJROJOCH.transform.position = respawn.position + new Vector3(0, 30, 0);
@@ -389,7 +389,7 @@ public class Respawner : MonoBehaviour
                 pointsNegro ++;
                 
             }
-            if(RagdollActivater.sabanamogolico2 == true && PJROJOBody.position.y <= -0)
+            if(RagdollActivater.sabana == true && PJROJOBody.position.y <= -0)
             {
                 PJROJOCH.enabled = false;
                 PJROJOCH.transform.position = respawn.position;

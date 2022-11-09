@@ -85,10 +85,7 @@ public class PlayerMovement : MonoBehaviour
 
         
         //Debug.Log(knock);
-        if (isHitting == true)
-        {
-            Debug.Log("SACOWEA");
-        }
+        
         //BLACKRB.useGravity = false;
 
         //m_Rigidbody.AddForce(-poss * 10050f);
@@ -194,7 +191,7 @@ public class PlayerMovement : MonoBehaviour
             //transform.position = transform.position + new Vector3(0, -3f, 0) * Time.deltaTime;
         
             
-            if (RagdollActivater.sabanamogolico2 == false)
+            if (RagdollActivater.sabana == false)
             {
 
                 float h = Input.GetAxisRaw("Joystick2Horizontal");
@@ -384,8 +381,6 @@ public class PlayerMovement : MonoBehaviour
     void desactivator() {
         animator.SetBool("PunchRight", false);
         animator.SetBool("PunchLeft", false);
-        //BLACKRB.isKinematic = true;
-        //Debug.Log("sabanasapo");
         Punching2 = 3;
         isHitting = false;
 
@@ -396,22 +391,6 @@ public class PlayerMovement : MonoBehaviour
         Punching = 1;
         isHitting = false;
     }
-
-
-
-    //void SetEnabled(bool enabled)
-    //{
-    //bool isKinematic = !enabled;
-    //bool gravityenable = enabled;
-    //foreach (Rigidbody rigidbody in rigidbodies)
-    //{
-    //Debug.Log(rigidbody);
-    // rigidbody.isKinematic = isKinematic;
-
-    //  }
-
-    //animator.enabled = !enabled;
-    // }
 
 }
 
