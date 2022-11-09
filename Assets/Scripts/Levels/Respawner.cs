@@ -71,28 +71,28 @@ public class Respawner : MonoBehaviour
             switch (NewLvl)
             {
                 case 1:
-                    SceneManager.LoadScene("PlataformaLoca");
+                    SceneManager.LoadScene("Nivel 1");
                     CurrentLvl = 1;
                     niveles++;
                     
                     break;
                 case 2:
-                    SceneManager.LoadScene("PilarGiratorio");
+                    SceneManager.LoadScene("Nivel 2");
                     CurrentLvl = 2;
                     niveles++;
                     break;
                 case 3:
-                    SceneManager.LoadScene("CalleLevel");
+                    SceneManager.LoadScene("Nivel 3");
                     CurrentLvl = 3;
                     niveles++;
                     break;
                 case 4:
-                    SceneManager.LoadScene("AutitosChocadores");
+                    SceneManager.LoadScene("Nivel 4");
                     CurrentLvl = 4;
                     niveles++;
                     break;
                 case 5:
-                    SceneManager.LoadScene("Monedacas");
+                    SceneManager.LoadScene("Nivel 5");
                     CurrentLvl = 5;
                     niveles++;
                     break;
@@ -280,7 +280,7 @@ public class Respawner : MonoBehaviour
             one = false;
         }
 
-        if (sceneName == "PilarGiratorio")
+        if (sceneName == "Nivel 2")
         {
             two = true;
             if (PJNEGRO.position.y <= -10)
@@ -328,7 +328,7 @@ public class Respawner : MonoBehaviour
             two = false;
         }
 
-        if (sceneName == "AutitosChocadores")
+        if (sceneName == "Nivel 4")
         {
             two = true;
             if (PJNEGRO.position.y <= -10)
@@ -356,7 +356,7 @@ public class Respawner : MonoBehaviour
         }
         
 
-        if (sceneName == "PlataformaLoca")
+        if (sceneName == "Nivel 1")
         {
             three = true;
             if (PJNEGRO.position.y <= -0)

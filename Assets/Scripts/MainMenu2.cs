@@ -159,17 +159,23 @@ public class MainMenu2 : MonoBehaviour
         }
 
     
-        if(Input.GetKeyUp(KeyCode.Joystick1Button1) || Input.GetKeyUp(KeyCode.Joystick2Button1) || Input.GetKeyUp(KeyCode.B)){
+        if(Input.GetKeyUp(KeyCode.Joystick1Button1) || Input.GetKeyUp(KeyCode.Joystick2Button1) || Input.GetKeyUp(KeyCode.B))
+        {
             ShowQuit = !ShowQuit;
-            if(ShowQuit){
-            QuitButton();
-            if(Input.GetKeyUp(KeyCode.Joystick1Button0) || Input.GetKeyUp(KeyCode.K)){
-                Salir();
-            }            
-            } else {
-            QuitBackButton();
-            }
+            
         }
+
+        if(ShowQuit)
+            {
+                QuitButton();
+                if(Input.GetKeyUp(KeyCode.Joystick1Button0) || Input.GetKeyUp(KeyCode.Joystick2Button0) || Input.GetKeyUp(KeyCode.K))
+                {
+                    Salir();
+                }            
+            } else 
+            {
+                QuitBackButton();
+            }
 
         if(PlayerOneReady == true){
             ShowPlayer1Ready = true;

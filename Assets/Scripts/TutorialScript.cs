@@ -26,7 +26,7 @@ public class TutorialScript : MonoBehaviour
     void Update()
     {
         if(Input.GetKey(KeyCode.Joystick1Button1) || Input.GetKey(KeyCode.Joystick2Button1)){
-            SceneManager.LoadScene("PlataformaLoca");
+            SceneManager.LoadScene("Nivel 1");
         }
         switch (ningunTutoHecho)
         {
@@ -110,7 +110,7 @@ public class TutorialScript : MonoBehaviour
             FinalTutoHecho = true;
             timerr -= Time.deltaTime;
             if(timerr <= 0){
-                SceneManager.LoadScene("PlataformaLoca");
+                SceneManager.LoadScene("Nivel 1");
             }        
                 
         }    
