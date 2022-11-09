@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.05683432, g: 0.2880699, b: 0.97097, a: 1}
+  m_IndirectSpecularColor: {r: 0.056808695, g: 0.28804883, b: 0.9709884, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -559,14 +559,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.73333335, g: 0.18823531, b: 0.21176472, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 442680e18fab2c94180e58b306101e24, type: 3}
+  m_Texture: {fileID: 2800000, guid: 420f20b06e46b0d47903e3132bca0161, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -1192,7 +1192,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 5354c384f418e01448586f0b376764de, type: 3}
+  m_Texture: {fileID: 2800000, guid: be751b8e706733d439df05b234b6f808, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -4617,14 +4617,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.1981132, g: 0.19344072, b: 0.1981132, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 442680e18fab2c94180e58b306101e24, type: 3}
+  m_Texture: {fileID: 2800000, guid: 420f20b06e46b0d47903e3132bca0161, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -4936,7 +4936,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 99b58ba6a6b2b3448848b4597e8b7ef2, type: 3}
+  m_Texture: {fileID: 2800000, guid: 1c8798264d72a2d42a7ff1fb85e39022, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
